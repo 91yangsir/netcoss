@@ -62,7 +62,7 @@ public class BusinessBean implements Serializable{
 	@JoinColumn(name="fk_server_id")
 	private ServerBean server;
 	
-	
+	 
 	public BusinessBean(){
 
 	}
