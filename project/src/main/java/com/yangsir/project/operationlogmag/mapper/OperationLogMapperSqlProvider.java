@@ -1,26 +1,32 @@
-package com.yangsir.project.loginlogmag.mapper;
+package com.yangsir.project.operationlogmag.mapper;
 
 import java.util.Map;
 
 import org.springframework.util.StringUtils;
 
 /**
- * 登陆日志mapper方法的提供类
+ * 操作日志mapper方法的提供类
  * @author guoqi
  *
  */
-public class LoginLogMapperSqlProvider {
-
+public class OperationLogMapperSqlProvider {
+	
 	/**
-	 * 登陆日志mapper方法countLoginLogByParams的提供类
+	 * 操作日志mapper方法countLoginLogByParams的提供类
 	 * @param map 参数
 	 * @return sql
 	 */
-	public String countLoginLogByParams(Map map) {
+	public String countOperationLogByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
-		StringBuilder sb = new StringBuilder("select count(*) from t_login_log where 1=1 ");
+		StringBuilder sb = new StringBuilder("select count(*) from t_operation_log where 1=1 ");
 		if (params.get("manager")!=null&&StringUtils.hasLength(((String)params.get("manager")).trim())) {
 			sb.append("and manager_name like concat('"+params.get("manager")+"','%') ");
+		}
+		if (params.get("type")!=null) {
+			sb.append("and operation_log_type = "+params.get("type")+" ");
+		}
+		if (params.get("model")!=null) {
+			sb.append("and operation_log_model = "+params.get("model")+" ");
 		}
 		if (params.get("startTime")!=null) {
 			sb.append("and login_log_time > '"+params.get("startTime")+"' ");
@@ -38,11 +44,17 @@ public class LoginLogMapperSqlProvider {
 	 * @param map 参数
 	 * @return sql
 	 */
-	public String findLoginLogByParams(Map map) {
+	public String findOperationLogByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
-		StringBuilder sb = new StringBuilder("select * from t_login_log where 1=1 ");
+		StringBuilder sb = new StringBuilder("select * from t_operation_log where 1=1 ");
 		if (params.get("manager")!=null&&StringUtils.hasLength(((String)params.get("manager")).trim())) {
 			sb.append("and manager_name like concat('"+params.get("manager")+"','%') ");
+		}
+		if (params.get("type")!=null) {
+			sb.append("and operation_log_type = "+params.get("type")+" ");
+		}
+		if (params.get("model")!=null) {
+			sb.append("and operation_log_model = "+params.get("model")+" ");
 		}
 		if (params.get("startTime")!=null) {
 			sb.append("and login_log_time > '"+params.get("startTime")+"' ");
@@ -53,5 +65,4 @@ public class LoginLogMapperSqlProvider {
 		sb.append("limit "+params.get("index")+","+params.get("rows"));
 		return sb.toString();
 	}
-	
 }
