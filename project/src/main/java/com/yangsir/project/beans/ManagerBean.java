@@ -50,10 +50,10 @@ public class ManagerBean implements Serializable {
 	@Column(name = "man_mail", length = 40)
 	private String managerMail;//管理员邮箱
 	
-//	@OneToOne(fetch=FetchType.LAZY)
-//	@Cascade(CascadeType.ALL)
-//	@JoinColumn(name="fk_role_id")
-	//private  RoleBean  role;  //管理对应的角色
+	@OneToOne(fetch=FetchType.LAZY)
+	@Cascade(CascadeType.ALL)
+	@JoinColumn(name="fk_role_id")
+	private  RoleBean  role;  //管理对应的角色
 
 	public ManagerBean() {
 		// TODO Auto-generated constructor stub
@@ -73,16 +73,16 @@ public class ManagerBean implements Serializable {
 
 
 
-//	public RoleBean getRole() {
-//		return role;
-//	}
-//
-//
-//
-//	public void setRole(RoleBean role) {
-//		this.role = role;
-//	}
-//
+	public RoleBean getRole() {
+		return role;
+	}
+
+
+
+	public void setRole(RoleBean role) {
+		this.role = role;
+	}
+
 
 
 	public ManagerBean(String managerAcc, String managerName, String managerPwd, String managerTel, String managerMail
@@ -136,6 +136,14 @@ public class ManagerBean implements Serializable {
 
 	public void setManagerTel(String managerTel) {
 		this.managerTel = managerTel;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "ManagerBean [id=" + id + ", managerAcc=" + managerAcc + ", managerName=" + managerName + ", managerPwd="
+				+ managerPwd + ", managerTel=" + managerTel + ", managerMail=" + managerMail + ", role=" + role + "]";
 	}
 
 
