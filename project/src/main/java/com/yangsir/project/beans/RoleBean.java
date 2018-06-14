@@ -2,54 +2,82 @@ package com.yangsir.project.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * @author xiongbing
- * @version 
+ * @version 1.0
  * @created 
  */
-public class RoleBean implements Serializable{
+@Entity
+@Table(name="t_role")
+public class RoleBean implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 5081056177957728087L;
+	@Id
+	@Column(name="id")
+	@GenericGenerator(name="hibernate.id",strategy="identity")
+	@GeneratedValue(generator="hibernate.id")
+	private long id;
+	/**
+	 *  rolenName  角色名称
+	 */
+	@Column(name="role_name",length=20)
+	private String rolenName;
+	/**
+	 *  roleType 角色类型   1--超级管理员 2--普通管理员  3--用户
+	 */
+	@Column(name="role_type",length=20)
+	private int  roleType;
 	
-	private String menuName;//菜单名称
-	private String menuNum;//菜单编号
-	private String menuLevel;//菜单等级
-
-	public RoleBean(){
-
+	public RoleBean() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public String getMenuName() {
-		return menuName;
+	
+	public long getId() {
+		return id;
 	}
 
-	public void setMenuName(String menuName) {
-		this.menuName = menuName;
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public String getMenuNum() {
-		return menuNum;
+
+	public String getRolenName() {
+		return rolenName;
 	}
 
-	public void setMenuNum(String menuNum) {
-		this.menuNum = menuNum;
+	public void setRolenName(String rolenName) {
+		this.rolenName = rolenName;
 	}
 
-	public String getMenuLevel() {
-		return menuLevel;
+	public int getRoleType() {
+		return roleType;
 	}
 
-	public void setMenuLevel(String menuLevel) {
-		this.menuLevel = menuLevel;
+	public void setRoleType(int roleType) {
+		this.roleType = roleType;
 	}
+
 
 	@Override
 	public String toString() {
-		return "RoleBean [menuName=" + menuName + ", menuNum=" + menuNum + ", menuLevel=" + menuLevel + "]";
+		return "RoleBean [id=" + id + ", rolenName=" + rolenName + ", roleType=" + roleType + "]";
 	}
+
+	
+	
 
 	
 
