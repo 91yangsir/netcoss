@@ -1,48 +1,45 @@
 package com.yangsir.project.costmag.queryrepository.impl;
 
 import java.util.List;
-import java.util.Map;
 
+import javax.annotation.Resource;
+
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Repository;
+
+import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.CostBean;
+import com.yangsir.project.costmag.mapper.CostMapper;
 import com.yangsir.project.costmag.queryrepository.ICostQueryRepository;
 
 /**
  * @author Administrator
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:35
+ * @created 13-6ï¿½ï¿½-2018 16:34:35
  */
+@Repository
 public class CostQueryRepositoryImpl implements ICostQueryRepository {
 
-	public CostQueryRepositoryImpl(){
-
+	@Resource
+	private CostMapper costMapper;
+	
+	@Override
+	public CostBean getCostBeanById(long id) {
+		// TODO Auto-generated method stub
+		return costMapper.getCostBeanById(id);
 	}
 
-	public void finalize() throws Throwable {
-
-	}
-
-	/**
-	 * 
-	 * @param map
-	 */
-	public int countCostBeanByNameAndType(Map map){
-		return 0;
-	}
-
-	/**
-	 * 
-	 * @param id
-	 */
-	public CostBean getCostBeanById(long id){
+	@Override
+	public Page<?> findAllCostBean() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param map
-	 */
-	public List<?> getListByNameAndType(Map map){
+	@Override
+	public List<BusinessBean> getCostBeanByIdBusiness(long id) {
+		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

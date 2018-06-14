@@ -1,45 +1,41 @@
 package com.yangsir.project.costmag.handleservice.impl;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import com.yangsir.project.beans.CostBean;
+import com.yangsir.project.costmag.handlerepository.ICostHandleRepository;
 import com.yangsir.project.costmag.handleservice.ICostHandleService;
 
 /**
  * @author Administrator
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:35
+ * @created 13-6ï¿½ï¿½-2018 16:34:35
  */
+@Service
 public class CostHandleServiceImpl implements ICostHandleService {
 
-	public CostHandleServiceImpl(){
+	@Resource
+	private ICostHandleRepository costHandleRepository;
 
+	@Override
+	public void deleteCostBean(CostBean cost) {
+		// TODO Auto-generated method stub
+		costHandleRepository.delete(cost);
 	}
 
-	public void finalize() throws Throwable {
-
+	@Override
+	public CostBean saveCostBean(CostBean cost) {
+		// TODO Auto-generated method stub
+		costHandleRepository.save(cost);
+		return cost;
 	}
 
-	/**
-	 * 
-	 * @param cost
-	 */
-	public void deleteCostBean(CostBean cost){
-
+	@Override
+	public CostBean updateCostBean(CostBean cost) {
+		// TODO Auto-generated method stub
+		costHandleRepository.saveAndFlush(cost);
+		return cost;
 	}
-
-	/**
-	 * 
-	 * @param cost
-	 */
-	public void saveCostBean(CostBean cost){
-
-	}
-
-	/**
-	 * 
-	 * @param cost
-	 */
-	public void updateCostBean(CostBean cost){
-
-	}
-
 }

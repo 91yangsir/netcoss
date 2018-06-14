@@ -1,39 +1,42 @@
 package com.yangsir.project.costmag.queryservice.impl;
 
-import java.util.Map;
+import java.util.Set;
 
+import javax.annotation.Resource;
+
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
+
+import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.CostBean;
-import com.yangsir.project.beans.Pager;
+import com.yangsir.project.costmag.queryrepository.ICostQueryRepository;
 import com.yangsir.project.costmag.queryservice.ICostQueryService;
 
 /**
  * @author Administrator
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:35
+ * @created 13-6ï¿½ï¿½-2018 16:34:35
  */
+@Service
 public class CostServiceImpl implements ICostQueryService {
 
-	public CostServiceImpl(){
-
+	@Resource
+	private ICostQueryRepository costQueryRepositoryImpl;
+	@Override
+	public CostBean getCostBeanById(long id) {
+		// TODO Auto-generated method stub
+		return costQueryRepositoryImpl.getCostBeanById(id);
 	}
 
-	public void finalize() throws Throwable {
-
-	}
-
-	/**
-	 * 
-	 * @param id
-	 */
-	public CostBean getCostBeanById(long id){
+	@Override
+	public Page<?> findAllCostBean() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param map
-	 */
-	public Pager getListByNameAndTypeToPager(Map map){
+	@Override
+	public Set<BusinessBean> getCostBeanByIdBusiness(long id) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
