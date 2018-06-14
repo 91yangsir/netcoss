@@ -2,9 +2,9 @@ package com.yangsir.project.beans;
 
 
 /**
- * @author Administrator
+ * @author xiongbing
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:34
+ * @created 
  */
 public class BillBean {
 

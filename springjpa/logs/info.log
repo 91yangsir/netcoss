@@ -1,0 +1,626 @@
+2018-06-05 11:22:57  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 11:22:57  [ main:45 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 11:22:57  [ main:61 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 11:22:57  [ main:456 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 11:22:58  [ main:1317 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:22:58 CST 2018]; root of context hierarchy
+2018-06-05 11:22:58  [ main:1615 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 11:22:59  [ main:2723 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 11:22:59  [ main:2888 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:23:00  [ main:2953 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 11:23:00  [ main:3144 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 11:23:00  [ main:3149 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 11:23:00  [ main:3153 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 11:23:00  [ main:3709 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 11:23:00  [ main:3817 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 11:23:01  [ main:4052 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 11:23:01  [ main:4758 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:23:03  [ Thread-1:6409 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:22:58 CST 2018]; root of context hierarchy
+2018-06-05 11:23:03  [ Thread-1:6416 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:23:03  [ Thread-1:6497 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 11:28:08  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 11:28:08  [ main:25 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 11:28:08  [ main:31 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 11:28:08  [ main:237 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 11:28:08  [ main:839 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:28:08 CST 2018]; root of context hierarchy
+2018-06-05 11:28:09  [ main:1034 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 11:28:10  [ main:2194 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 11:28:10  [ main:2391 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:28:10  [ main:2463 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 11:28:10  [ main:2678 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 11:28:10  [ main:2682 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 11:28:10  [ main:2686 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 11:28:11  [ main:3229 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 11:28:11  [ main:3348 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 11:28:11  [ main:3638 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 11:28:12  [ main:4307 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:28:13  [ Thread-1:5314 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:28:08 CST 2018]; root of context hierarchy
+2018-06-05 11:28:13  [ Thread-1:5317 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:28:13  [ Thread-1:5368 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 11:28:45  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 11:28:45  [ main:25 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 11:28:45  [ main:27 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15be6bb, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@39f31e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1fcfece, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1ceabc1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@15eef3d]
+2018-06-05 11:28:45  [ main:211 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 11:28:46  [ main:806 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@14ba872: startup date [Tue Jun 05 11:28:46 CST 2018]; root of context hierarchy
+2018-06-05 11:28:46  [ main:975 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 11:28:47  [ main:1912 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 11:28:47  [ main:2025 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:28:47  [ main:2082 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 11:28:47  [ main:2245 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 11:28:47  [ main:2250 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 11:28:47  [ main:2255 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 11:28:48  [ main:2794 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 11:28:48  [ main:2962 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 11:28:48  [ main:3166 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 11:28:49  [ main:3803 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:28:50  [ Thread-1:5048 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@14ba872: startup date [Tue Jun 05 11:28:46 CST 2018]; root of context hierarchy
+2018-06-05 11:28:50  [ Thread-1:5050 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:28:50  [ Thread-1:5082 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 11:29:26  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 11:29:26  [ main:22 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 11:29:26  [ main:26 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 11:29:26  [ main:213 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 11:29:26  [ main:849 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:29:26 CST 2018]; root of context hierarchy
+2018-06-05 11:29:27  [ main:1039 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 11:29:28  [ main:2010 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 11:29:28  [ main:2149 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:29:28  [ main:2204 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 11:29:28  [ main:2358 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 11:29:28  [ main:2363 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 11:29:28  [ main:2367 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 11:29:28  [ main:2865 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 11:29:29  [ main:2958 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 11:29:29  [ main:3163 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 11:29:29  [ main:3824 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:29:30  [ Thread-1:4631 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:29:26 CST 2018]; root of context hierarchy
+2018-06-05 11:29:30  [ Thread-1:4638 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:29:30  [ Thread-1:4677 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 11:30:26  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 11:30:26  [ main:24 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 11:30:26  [ main:28 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 11:30:26  [ main:232 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 11:30:26  [ main:843 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:30:26 CST 2018]; root of context hierarchy
+2018-06-05 11:30:27  [ main:1057 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 11:30:28  [ main:2193 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 11:30:28  [ main:2313 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:30:28  [ main:2384 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 11:30:28  [ main:2559 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 11:30:28  [ main:2562 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 11:30:28  [ main:2565 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 11:30:29  [ main:3037 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 11:30:29  [ main:3188 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 11:30:29  [ main:3430 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 11:30:30  [ main:4124 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:30:30  [ Thread-1:4970 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:30:26 CST 2018]; root of context hierarchy
+2018-06-05 11:30:31  [ Thread-1:4978 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:30:31  [ Thread-1:5018 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 11:31:37  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 11:31:37  [ main:21 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 11:31:37  [ main:25 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 11:31:38  [ main:214 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 11:31:38  [ main:859 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:31:38 CST 2018]; root of context hierarchy
+2018-06-05 11:31:39  [ main:1048 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 11:31:40  [ main:2187 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 11:31:40  [ main:2342 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:31:40  [ main:2412 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 11:31:40  [ main:2601 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 11:31:40  [ main:2607 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 11:31:40  [ main:2613 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 11:31:41  [ main:3126 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 11:31:41  [ main:3222 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 11:31:41  [ main:3447 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 11:31:42  [ main:4117 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:31:43  [ Thread-1:5501 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@10eb4b4: startup date [Tue Jun 05 11:31:38 CST 2018]; root of context hierarchy
+2018-06-05 11:31:43  [ Thread-1:5504 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:31:43  [ Thread-1:5540 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 11:36:38  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 11:36:38  [ main:41 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 11:36:38  [ main:47 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15be6bb, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@39f31e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1fcfece, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1ceabc1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@15eef3d]
+2018-06-05 11:36:39  [ main:270 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 11:36:39  [ main:1055 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@14ba872: startup date [Tue Jun 05 11:36:39 CST 2018]; root of context hierarchy
+2018-06-05 11:36:40  [ main:1277 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 11:36:41  [ main:2262 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 11:36:41  [ main:2381 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:36:41  [ main:2419 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 11:36:41  [ main:2574 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 11:36:41  [ main:2577 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 11:36:41  [ main:2581 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 11:36:41  [ main:3041 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 11:36:42  [ main:3136 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 11:36:42  [ main:3331 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 11:36:42  [ main:3969 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:36:44  [ Thread-1:5371 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@14ba872: startup date [Tue Jun 05 11:36:39 CST 2018]; root of context hierarchy
+2018-06-05 11:36:44  [ Thread-1:5374 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:36:44  [ Thread-1:5413 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 11:37:51  [ main:1 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 11:37:51  [ main:42 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 11:37:51  [ main:46 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@15be6bb, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@39f31e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1fcfece, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1ceabc1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@15eef3d]
+2018-06-05 11:37:52  [ main:328 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 11:37:52  [ main:924 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@14ba872: startup date [Tue Jun 05 11:37:52 CST 2018]; root of context hierarchy
+2018-06-05 11:37:53  [ main:1115 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 11:37:54  [ main:2244 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 11:37:54  [ main:2396 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:37:54  [ main:2453 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 11:37:54  [ main:2645 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 11:37:54  [ main:2654 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 11:37:54  [ main:2657 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 11:37:55  [ main:3245 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 11:37:55  [ main:3366 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 11:37:55  [ main:3562 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 11:37:56  [ main:4358 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:37:57  [ Thread-1:5675 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@14ba872: startup date [Tue Jun 05 11:37:52 CST 2018]; root of context hierarchy
+2018-06-05 11:37:57  [ Thread-1:5678 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:37:57  [ Thread-1:5724 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 11:55:16  [ main:1 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 11:55:16  [ main:25 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 11:55:16  [ main:29 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 11:55:16  [ main:234 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 11:55:17  [ main:920 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 11:55:17 CST 2018]; root of context hierarchy
+2018-06-05 11:55:17  [ main:1175 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 11:55:18  [ main:2419 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 11:55:19  [ main:2639 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:55:19  [ main:2710 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 11:55:19  [ main:2970 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 11:55:19  [ main:2976 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 11:55:19  [ main:2980 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 11:55:20  [ main:3611 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 11:55:20  [ main:3716 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 11:55:20  [ main:3995 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 11:55:21  [ main:4712 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:55:23  [ Thread-1:6828 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 11:55:17 CST 2018]; root of context hierarchy
+2018-06-05 11:55:23  [ Thread-1:6833 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 11:55:23  [ Thread-1:6899 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:13:51  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:13:51  [ main:26 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:13:51  [ main:31 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 13:13:51  [ main:235 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:13:51  [ main:860 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:13:51 CST 2018]; root of context hierarchy
+2018-06-05 13:13:52  [ main:1069 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:13:53  [ main:2224 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:13:53  [ main:2388 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:13:53  [ main:2449 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:13:53  [ main:2621 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:13:53  [ main:2625 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:13:53  [ main:2629 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:13:54  [ main:3217 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:13:54  [ main:3353 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:13:54  [ main:3632 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:13:55  [ main:4407 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:13:57  [ Thread-1:6187 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:13:51 CST 2018]; root of context hierarchy
+2018-06-05 13:13:57  [ Thread-1:6191 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:13:57  [ Thread-1:6240 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:14:34  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:14:34  [ main:30 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:14:34  [ main:34 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 13:14:34  [ main:210 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:14:35  [ main:766 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:14:35 CST 2018]; root of context hierarchy
+2018-06-05 13:14:35  [ main:945 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:14:36  [ main:1932 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:14:36  [ main:2081 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:14:36  [ main:2141 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:14:36  [ main:2279 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:14:36  [ main:2283 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:14:36  [ main:2287 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:14:37  [ main:2834 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:14:37  [ main:2958 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:14:37  [ main:3231 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:14:38  [ main:3941 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:14:40  [ Thread-1:5678 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:14:35 CST 2018]; root of context hierarchy
+2018-06-05 13:14:40  [ Thread-1:5681 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:14:40  [ Thread-1:5726 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:22:14  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:22:14  [ main:28 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:22:14  [ main:32 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 13:22:14  [ main:234 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:22:15  [ main:915 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:22:15 CST 2018]; root of context hierarchy
+2018-06-05 13:22:15  [ main:1176 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:22:16  [ main:2283 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:22:16  [ main:2415 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:22:16  [ main:2464 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:22:17  [ main:2619 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:22:17  [ main:2649 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:22:17  [ main:2652 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:22:17  [ main:3370 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:22:18  [ main:3512 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:22:18  [ main:3816 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:22:19  [ main:4574 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:22:21  [ Thread-1:6502 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:22:15 CST 2018]; root of context hierarchy
+2018-06-05 13:22:21  [ Thread-1:6506 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:22:21  [ Thread-1:6549 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:25:30  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:25:30  [ main:32 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:25:30  [ main:37 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 13:25:30  [ main:308 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:25:31  [ main:1033 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:25:31 CST 2018]; root of context hierarchy
+2018-06-05 13:25:31  [ main:1297 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:25:32  [ main:2300 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:25:32  [ main:2441 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:25:32  [ main:2502 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:25:32  [ main:2664 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:25:32  [ main:2668 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:25:32  [ main:2672 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:25:33  [ main:3143 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:25:33  [ main:3301 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:25:33  [ main:3579 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:25:34  [ main:4253 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:25:35  [ main:4818 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:25:35  [ main:4856 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:26:15  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:26:15  [ main:24 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:26:15  [ main:28 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 13:26:15  [ main:249 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:26:16  [ main:841 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:26:16 CST 2018]; root of context hierarchy
+2018-06-05 13:26:16  [ main:1042 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:26:17  [ main:2122 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:26:17  [ main:2314 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:26:17  [ main:2379 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:26:17  [ main:2598 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:26:17  [ main:2609 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:26:17  [ main:2625 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:26:18  [ main:3214 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:26:18  [ main:3323 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:26:18  [ main:3564 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:26:19  [ main:4486 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:26:20  [ main:5192 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:26:20  [ main:5237 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:27:36  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:27:36  [ main:23 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:27:36  [ main:28 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 13:27:36  [ main:251 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:27:37  [ main:1047 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:27:37 CST 2018]; root of context hierarchy
+2018-06-05 13:27:37  [ main:1390 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:27:38  [ main:2683 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:27:38  [ main:2814 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:27:38  [ main:2878 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:27:39  [ main:3106 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:27:39  [ main:3111 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:27:39  [ main:3119 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:27:39  [ main:3792 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:27:39  [ main:3898 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:27:40  [ main:4134 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:27:41  [ main:4939 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:27:42  [ Thread-1:6166 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:27:37 CST 2018]; root of context hierarchy
+2018-06-05 13:27:42  [ Thread-1:6172 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:27:42  [ Thread-1:6219 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:30:05  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:30:05  [ main:24 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:30:05  [ main:29 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 13:30:05  [ main:248 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:30:06  [ main:978 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1a3af25: startup date [Tue Jun 05 13:30:06 CST 2018]; root of context hierarchy
+2018-06-05 13:30:06  [ main:1251 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:30:07  [ main:2423 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:30:07  [ main:2626 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:30:07  [ main:2700 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:30:08  [ main:2949 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:30:08  [ main:2961 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:30:08  [ main:2966 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:30:08  [ main:3601 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:30:08  [ main:3714 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:30:09  [ main:3986 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:30:10  [ main:4818 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:30:10  [ main:5574 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:30:10  [ main:5612 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:30:52  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:30:52  [ main:25 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:30:52  [ main:29 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63f509, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4784bc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b7ac2f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@56f20, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10b0854]
+2018-06-05 13:30:52  [ main:241 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:30:53  [ main:947 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1662a77: startup date [Tue Jun 05 13:30:53 CST 2018]; root of context hierarchy
+2018-06-05 13:30:53  [ main:1203 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:30:54  [ main:2303 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:30:54  [ main:2435 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:30:54  [ main:2491 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:30:54  [ main:2709 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:30:54  [ main:2720 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:30:54  [ main:2725 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:30:55  [ main:3308 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:30:55  [ main:3408 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:30:55  [ main:3651 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:30:56  [ main:4342 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:30:57  [ main:4984 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:30:57  [ main:5028 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:52:10  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:52:10  [ main:32 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:52:10  [ main:142 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 13:52:11  [ main:984 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:52:13  [ main:2485 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 13:52:13 CST 2018]; root of context hierarchy
+2018-06-05 13:52:14  [ main:3300 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:52:16  [ main:5734 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:52:17  [ main:6250 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:52:17  [ main:6406 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:52:17  [ main:6796 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:52:17  [ main:6796 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:52:17  [ main:6811 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:52:18  [ main:7706 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:52:18  [ main:7971 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:52:19  [ main:8346 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:52:20  [ main:9596 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:52:22  [ Thread-1:11642 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 13:52:13 CST 2018]; root of context hierarchy
+2018-06-05 13:52:22  [ Thread-1:11643 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:52:22  [ Thread-1:11695 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:53:05  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:53:05  [ main:15 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:53:05  [ main:15 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 13:53:05  [ main:219 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:53:06  [ main:831 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 13:53:06 CST 2018]; root of context hierarchy
+2018-06-05 13:53:06  [ main:1007 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:53:07  [ main:2010 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:53:07  [ main:2136 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:53:07  [ main:2183 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:53:07  [ main:2370 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:53:07  [ main:2370 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:53:07  [ main:2370 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:53:08  [ main:2904 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:53:08  [ main:2997 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:53:08  [ main:3200 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:53:09  [ main:3968 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:53:11  [ Thread-1:5865 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 13:53:06 CST 2018]; root of context hierarchy
+2018-06-05 13:53:11  [ Thread-1:5865 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:53:11  [ Thread-1:5912 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 13:54:27  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 13:54:27  [ main:15 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 13:54:27  [ main:46 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 13:54:27  [ main:235 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 13:54:28  [ main:828 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 13:54:28 CST 2018]; root of context hierarchy
+2018-06-05 13:54:28  [ main:1062 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 13:54:29  [ main:2125 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 13:54:29  [ main:2298 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:54:29  [ main:2345 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 13:54:29  [ main:2501 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 13:54:29  [ main:2516 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 13:54:29  [ main:2516 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 13:54:30  [ main:2954 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 13:54:30  [ main:3094 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 13:54:30  [ main:3313 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 13:54:31  [ main:3925 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:54:32  [ Thread-1:5448 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 13:54:28 CST 2018]; root of context hierarchy
+2018-06-05 13:54:32  [ Thread-1:5463 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 13:54:32  [ Thread-1:5495 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 14:00:23  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 14:00:23  [ main:31 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 14:00:23  [ main:47 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 14:00:23  [ main:250 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 14:00:24  [ main:860 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:00:24 CST 2018]; root of context hierarchy
+2018-06-05 14:00:24  [ main:1063 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 14:00:25  [ main:2115 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 14:00:25  [ main:2225 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:00:25  [ main:2272 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 14:00:25  [ main:2444 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 14:00:25  [ main:2444 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 14:00:25  [ main:2459 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 14:00:26  [ main:3115 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 14:00:26  [ main:3255 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2018-06-05 14:00:27  [ main:3537 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 14:00:27  [ main:4223 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:00:29  [ Thread-1:5911 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:00:24 CST 2018]; root of context hierarchy
+2018-06-05 14:00:29  [ Thread-1:5911 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:00:29  [ Thread-1:5958 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 14:01:27  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 14:01:27  [ main:0 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 14:01:27  [ main:32 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 14:01:27  [ main:312 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 14:01:28  [ main:1078 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:01:28 CST 2018]; root of context hierarchy
+2018-06-05 14:01:28  [ main:1317 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 14:01:29  [ main:2317 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 14:01:29  [ main:2441 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:01:29  [ main:2489 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 14:01:29  [ main:2645 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 14:01:29  [ main:2645 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 14:01:29  [ main:2661 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 14:01:30  [ main:3129 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 14:01:30  [ main:3222 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 14:01:30  [ main:3441 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 14:01:31  [ main:4065 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:01:32  [ Thread-1:5580 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:01:28 CST 2018]; root of context hierarchy
+2018-06-05 14:01:32  [ Thread-1:5580 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:01:32  [ Thread-1:5627 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 14:03:01  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 14:03:01  [ main:16 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 14:03:01  [ main:31 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 14:03:01  [ main:218 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 14:03:02  [ main:799 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:03:02 CST 2018]; root of context hierarchy
+2018-06-05 14:03:02  [ main:1001 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 14:03:03  [ main:2031 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 14:03:03  [ main:2172 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:03:03  [ main:2219 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 14:03:04  [ main:2422 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 14:03:04  [ main:2422 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 14:03:04  [ main:2422 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 14:03:04  [ main:3046 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 14:03:04  [ main:3187 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 14:03:05  [ main:3421 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 14:03:05  [ main:4155 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:03:07  [ Thread-1:5831 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:03:02 CST 2018]; root of context hierarchy
+2018-06-05 14:03:07  [ Thread-1:5846 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:03:07  [ Thread-1:5878 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 14:06:58  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 14:06:58  [ main:16 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 14:06:58  [ main:31 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 14:06:58  [ main:250 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 14:06:59  [ main:907 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:06:59 CST 2018]; root of context hierarchy
+2018-06-05 14:06:59  [ main:1125 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 14:07:00  [ main:2238 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 14:07:00  [ main:2403 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:07:00  [ main:2465 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 14:07:00  [ main:2652 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 14:07:00  [ main:2652 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 14:07:00  [ main:2668 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 14:07:01  [ main:3245 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 14:07:01  [ main:3340 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 14:07:01  [ main:3574 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 14:07:02  [ main:4213 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:07:04  [ Thread-1:5872 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:06:59 CST 2018]; root of context hierarchy
+2018-06-05 14:07:04  [ Thread-1:5888 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:07:04  [ Thread-1:5934 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 14:24:40  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 14:24:40  [ main:15 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 14:24:40  [ main:31 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 14:24:40  [ main:235 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 14:24:41  [ main:953 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:24:41 CST 2018]; root of context hierarchy
+2018-06-05 14:24:41  [ main:1172 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 14:24:42  [ main:2250 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 14:24:42  [ main:2392 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:24:42  [ main:2438 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 14:24:42  [ main:2594 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 14:24:42  [ main:2610 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 14:24:42  [ main:2610 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 14:24:43  [ main:3166 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 14:24:43  [ main:3275 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 14:24:43  [ main:3479 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 14:24:44  [ main:4321 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:24:46  [ Thread-1:6289 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:24:41 CST 2018]; root of context hierarchy
+2018-06-05 14:24:46  [ Thread-1:6305 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:24:46  [ Thread-1:6351 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 14:28:02  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 14:28:02  [ main:15 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 14:28:02  [ main:32 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 14:28:02  [ main:250 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 14:28:03  [ main:846 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:28:03 CST 2018]; root of context hierarchy
+2018-06-05 14:28:03  [ main:1049 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 14:28:04  [ main:2145 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 14:28:05  [ main:2320 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:28:05  [ main:2377 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 14:28:05  [ main:2549 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 14:28:05  [ main:2565 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 14:28:05  [ main:2565 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 14:28:05  [ main:3064 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 14:28:05  [ main:3204 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 14:28:06  [ main:3486 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 14:28:06  [ main:4282 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:28:08  [ Thread-1:5953 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 14:28:03 CST 2018]; root of context hierarchy
+2018-06-05 14:28:08  [ Thread-1:5953 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 14:28:08  [ Thread-1:6015 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 15:06:32  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 15:06:32  [ main:63 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 15:06:32  [ main:219 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 15:06:33  [ main:1056 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 15:06:35  [ main:3267 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 15:06:35 CST 2018]; root of context hierarchy
+2018-06-05 15:06:36  [ main:4017 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 15:06:39  [ main:6934 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 15:06:39  [ main:7356 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:06:39  [ main:7528 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 15:06:40  [ main:7871 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 15:06:40  [ main:7871 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 15:06:40  [ main:7886 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 15:06:41  [ main:8887 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 15:06:41  [ main:9091 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 15:06:41  [ main:9559 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 15:06:43  [ main:10963 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:06:46  [ Thread-1:14053 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 15:06:35 CST 2018]; root of context hierarchy
+2018-06-05 15:06:46  [ Thread-1:14069 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:06:46  [ Thread-1:14100 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 15:07:16  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 15:07:16  [ main:0 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 15:07:16  [ main:16 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 15:07:16  [ main:204 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 15:07:16  [ main:822 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 15:07:16 CST 2018]; root of context hierarchy
+2018-06-05 15:07:17  [ main:1041 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 15:07:18  [ main:2071 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 15:07:18  [ main:2244 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:07:18  [ main:2291 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 15:07:18  [ main:2528 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 15:07:18  [ main:2528 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 15:07:18  [ main:2543 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 15:07:19  [ main:3089 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 15:07:19  [ main:3246 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 15:07:19  [ main:3480 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 15:07:20  [ main:4120 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:07:21  [ Thread-1:5744 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 15:07:16 CST 2018]; root of context hierarchy
+2018-06-05 15:07:21  [ Thread-1:5760 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:07:21  [ Thread-1:5807 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 15:10:10  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 15:10:10  [ main:16 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 15:10:10  [ main:31 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 15:10:10  [ main:203 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 15:10:11  [ main:766 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 15:10:11 CST 2018]; root of context hierarchy
+2018-06-05 15:10:11  [ main:968 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 15:10:12  [ main:2014 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 15:10:12  [ main:2171 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:10:12  [ main:2217 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 15:10:13  [ main:2436 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 15:10:13  [ main:2436 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 15:10:13  [ main:2436 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 15:10:13  [ main:2966 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 15:10:13  [ main:3155 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 15:10:14  [ main:3390 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 15:10:14  [ main:4037 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:10:16  [ Thread-1:5659 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 15:10:11 CST 2018]; root of context hierarchy
+2018-06-05 15:10:16  [ Thread-1:5690 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:10:16  [ Thread-1:5721 ] - [ INFO ]  {dataSource-1} closed
+2018-06-05 15:15:39  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-06-05 15:15:39  [ main:15 ] - [ INFO ]  Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2018-06-05 15:15:39  [ main:31 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13d0772, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@67f029, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a20f67, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1c758ac, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@9cd3b1]
+2018-06-05 15:15:39  [ main:234 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-06-05 15:15:40  [ main:859 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 15:15:40 CST 2018]; root of context hierarchy
+2018-06-05 15:15:40  [ main:1062 ] - [ INFO ]  Loading properties file from class path resource [mysql.properties]
+2018-06-05 15:15:41  [ main:2060 ] - [ INFO ]  {dataSource-1} inited
+2018-06-05 15:15:41  [ main:2201 ] - [ INFO ]  Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:15:41  [ main:2248 ] - [ INFO ]  HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-06-05 15:15:42  [ main:2420 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2018-06-05 15:15:42  [ main:2420 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2018-06-05 15:15:42  [ main:2420 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2018-06-05 15:15:42  [ main:3028 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-06-05 15:15:42  [ main:3184 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-06-05 15:15:43  [ main:3528 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2018-06-05 15:15:43  [ main:4311 ] - [ INFO ]  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:15:45  [ Thread-1:6029 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c6f217: startup date [Tue Jun 05 15:15:40 CST 2018]; root of context hierarchy
+2018-06-05 15:15:45  [ Thread-1:6029 ] - [ INFO ]  Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-06-05 15:15:45  [ Thread-1:6076 ] - [ INFO ]  {dataSource-1} closed
