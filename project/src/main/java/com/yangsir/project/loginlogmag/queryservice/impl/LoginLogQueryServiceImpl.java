@@ -20,7 +20,7 @@ import com.yangsir.project.loginlogmag.queryservice.ILoginLogQueryService;
 public class LoginLogQueryServiceImpl implements ILoginLogQueryService {
 
 	@Resource
-	public ILoginLogQueryRepository loginLogQueryRepository;
+	public ILoginLogQueryRepository loginLogQueryRepositoryImpl;
 
 	/**
 	 * 根据参数分页查询登录日志
@@ -31,8 +31,8 @@ public class LoginLogQueryServiceImpl implements ILoginLogQueryService {
 	public Pager findLoginLogByParams2Pager(Map params,Pager pager){
 		params.put("index", pager.getIndex());
 		params.put("rows", pager.getRows());
-		pager.setDatas(loginLogQueryRepository.findLoginLogByParams(params));
-		pager.setTotalRows(loginLogQueryRepository.countLoginLogByParams(params));
+		pager.setDatas(loginLogQueryRepositoryImpl.findLoginLogByParams(params));
+		pager.setTotalRows(loginLogQueryRepositoryImpl.countLoginLogByParams(params));
 		return pager;
 	}
 
