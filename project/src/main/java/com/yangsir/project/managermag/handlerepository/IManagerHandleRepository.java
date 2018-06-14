@@ -1,26 +1,19 @@
 package com.yangsir.project.managermag.handlerepository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.stereotype.Repository;
+
 import com.yangsir.project.beans.ManagerBean;
 
 /**
  * @author Administrator
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:37
+ * @created 13-6ï¿½ï¿½-2018 16:34:37
  */
-public interface IManagerHandleRepository {
 
-	/**
-	 * 
-	 * @param manger
-	 */
-	public void deleteManager(ManagerBean manger);
+@Repository
+public interface IManagerHandleRepository  extends JpaRepository<ManagerBean, Long>,JpaSpecificationExecutor<ManagerBean>{
 
-	/**
-	 * 
-	 * @param manager
-	 */
-	public void saveManager(ManagerBean manager);
-
-	public int updateManager();
 
 }

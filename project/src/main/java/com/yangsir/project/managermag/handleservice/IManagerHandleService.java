@@ -5,8 +5,10 @@ import com.yangsir.project.beans.ManagerBean;
 /**
  * @author Administrator
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:37
+ * @created 13-6ï¿½ï¿½-2018 16:34:37
  */
+
+
 public interface IManagerHandleService {
 
 	/**
@@ -21,6 +23,6 @@ public interface IManagerHandleService {
 	 */
 	public void saveManager(ManagerBean manager);
 
-	public int updateManatger();
+	public void updateManatger(ManagerBean manager);
 
 }
