@@ -57,7 +57,9 @@ public class BusinessBean implements Serializable{
 	@JoinColumn(name="fk_cost_id")
 	private CostBean cost;
 	
-	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@Cascade(value= {CascadeType.SAVE_UPDATE})
+	@JoinColumn(name="fk_server_id")
 	private ServerBean server;
 	
 	
