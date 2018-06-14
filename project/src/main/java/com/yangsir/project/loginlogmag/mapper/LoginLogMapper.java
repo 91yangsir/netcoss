@@ -4,10 +4,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.SelectProvider;
 import org.aspectj.weaver.tools.Trace;
+import org.junit.runners.Parameterized.Parameters;
 
 import com.yangsir.project.beans.LoginLogBean;
 
@@ -26,7 +28,7 @@ public interface LoginLogMapper {
 	 * @return 返回登陆日志总数
 	 */
 	@SelectProvider(type=LoginLogMapperSqlProvider.class,method="countLoginLogByParams")
-	public int countLoginLogByParams(Map params);
+	public int countLoginLogByParams(@Param("params")Map params);
 	
 	/**
 	 * 根据参数查询登陆日志集合
@@ -41,5 +43,5 @@ public interface LoginLogMapper {
 			@Result(property="managerName",column="manager_name",javaType=String.class)
 	})
 	@SelectProvider(type=LoginLogMapperSqlProvider.class,method="findLoginLogByParams")
-	public List<LoginLogBean> findLoginLogByParams(Map params);
+	public List<LoginLogBean> findLoginLogByParams(@Param("params")Map params);
 }

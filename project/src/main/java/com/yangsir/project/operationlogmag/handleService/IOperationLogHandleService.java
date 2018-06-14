@@ -3,28 +3,17 @@ package com.yangsir.project.operationlogmag.handleService;
 import com.yangsir.project.beans.OperationLogBean;
 
 /**
- * @author Administrator
+ * @author guoqi
  * @version 1.0
- * @created 13-6��-2018 16:34:37
+ * @created 13-6��-2018 16:34:37
+ * 操作日志业务层接口
  */
 public interface IOperationLogHandleService {
 
 	/**
-	 * 
-	 * @param operationLog
-	 */
-	public void deleteOperationLog(OperationLogBean operationLog);
-
-	/**
-	 * 
-	 * @param operationLog
+	 * 新增操作日志
+	 * @param operationLog 操作日志信息
 	 */
 	public void saveOperationLog(OperationLogBean operationLog);
-
-	/**
-	 * 
-	 * @param operationLog
-	 */
-	public void updateOperationLog(OperationLogBean operationLog);
 
 }
