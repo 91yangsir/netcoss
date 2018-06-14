@@ -215,7 +215,7 @@
 	<jpa:repositories base-package="com.yangsir.project"
 		entity-manager-factory-ref="localEntityManagerFactoryBean">
 	</jpa:repositories>
-	
+	 
 
 	<!-- 开启切面的动态代理支持 -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
