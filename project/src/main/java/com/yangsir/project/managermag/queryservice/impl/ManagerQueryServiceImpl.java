@@ -2,6 +2,10 @@ package com.yangsir.project.managermag.queryservice.impl;
 
 import java.util.Map;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import com.yangsir.project.beans.ManagerBean;
 import com.yangsir.project.managermag.queryrepository.IManagerQueryRepository;
 import com.yangsir.project.managermag.queryservice.IManagerQueryService;
@@ -9,19 +13,15 @@ import com.yangsir.project.managermag.queryservice.IManagerQueryService;
 /**
  * @author Administrator
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:40
+ * @created 13-6ï¿½ï¿½-2018 16:34:40
  */
+@Service
 public class ManagerQueryServiceImpl implements IManagerQueryService {
+		@Resource
+	public IManagerQueryRepository managerQueryRepository;
 
-	public IManagerQueryRepository m_IManagerQueryRepository;
-
-	public ManagerQueryServiceImpl(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
+	
+	
 
 	/**
 	 * 
@@ -36,7 +36,7 @@ public class ManagerQueryServiceImpl implements IManagerQueryService {
 	 * @param id
 	 */
 	public ManagerBean getManger(long id){
-		return null;
+		return managerQueryRepository.getManager(id);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.role.test;
+package com.power.test;
 
 public class RoleTest {
 
