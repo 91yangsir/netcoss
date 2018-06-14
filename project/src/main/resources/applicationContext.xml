@@ -144,7 +144,7 @@
 		<!-- 扫描ORM映射关系 -->
 		<property name="packagesToScan">
 			<list>
-				<value>com.yangsir.project</value>
+				<value>com.yangsir.project.beans</value>
 			</list>
 		</property>
 		<property name="jpaProperties">
@@ -167,7 +167,7 @@
 	<bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- basePackage 代表着哪些包需要扫描SQLMapper映射文件， 如果有多个包，格式为：package01;package02;package03…… -->
 		<property name="basePackage"
-			value="com.yangsir.project"></property>
+			value="com.yangsir.project.managermag.mapper;"></property>
 		<property name="sqlSessionFactoryBeanName" value="sessionFactory"></property>
 	</bean>
 	
@@ -212,7 +212,7 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="operation" />
 	</aop:config>
 	<!-- 将JPA接口与SessionFactory进行关联 -->
-	<jpa:repositories base-package="com.study.ssj"
+	<jpa:repositories base-package="com.yangsir.project"
 		entity-manager-factory-ref="localEntityManagerFactoryBean">
 	</jpa:repositories>
 	
