@@ -1,19 +1,24 @@
 package com.yangsir.project.beans;
 
+import java.io.Serializable;
 
 /**
- * @author Administrator
+ * @author xiongbing
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:34
+ * @created 
  */
-public class BillBean {
+public class BillBean implements Serializable {
+	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public BillBean(){
 
 	}
 
-	public void finalize() throws Throwable {
-
-	}
+	
 
 }
