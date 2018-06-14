@@ -4,7 +4,6 @@ import java.util.Map;
 
 import com.yangsir.project.beans.Pager;
 import com.yangsir.project.beans.UserBean;
-import com.yangsir.project.usermag.queryrepository.IUserQueryRepository1;
 import com.yangsir.project.usermag.queryservice.IUserQueryService;
 
 /**
@@ -14,29 +13,20 @@ import com.yangsir.project.usermag.queryservice.IUserQueryService;
  */
 public class UserQueryServiceImpl implements IUserQueryService {
 
-	public IUserQueryRepository1 m_IUserQueryRepository;
 
 	public UserQueryServiceImpl(){
 
 	}
 
-	public void finalize() throws Throwable {
-
-	}
-
-	/**
-	 * 
-	 * @param map
-	 */
-	public Pager findUser2PageByMap(Map map){
+	@Override
+	public UserBean getUserById(Long id) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public UserBean findUserById(int id){
+	@Override
+	public Pager findUser2PageByMap(Map map) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

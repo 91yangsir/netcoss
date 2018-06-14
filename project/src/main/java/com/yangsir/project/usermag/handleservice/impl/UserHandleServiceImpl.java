@@ -2,65 +2,52 @@ package com.yangsir.project.usermag.handleservice.impl;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import com.yangsir.project.beans.UserBean;
-import com.yangsir.project.usermag.handlerepository.IUserQueryRepository;
+import com.yangsir.project.usermag.handlerepository.IUserHandleRepository;
 import com.yangsir.project.usermag.handleservice.IUserHandleService;
 
 /**
  * @author Administrator
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:42
+ * @created 13-6ï¿½ï¿½-2018 16:34:42
  */
+
+@Service
 public class UserHandleServiceImpl implements IUserHandleService {
 
-	public IUserQueryRepository m_IUserQueryRepository;
-
+	@Resource
+	private IUserHandleRepository userHandleRepositoryImpl;
+	
 	public UserHandleServiceImpl(){
 
 	}
 
-	public void finalize() throws Throwable {
+	@Override
+	public void deleteUser(UserBean user) {
 
+		userHandleRepositoryImpl.delete(user);
 	}
 
-	/**
-	 * 
-	 * @param list
-	 */
-	public void deleteBatchUser(List list){
+	@Override
+	public void saveBatchUser(List<UserBean> users) {
 
+		userHandleRepositoryImpl.save(users);
 	}
 
-	/**
-	 * 
-	 * @param user
-	 */
-	public void deleteUser(UserBean user){
+	@Override
+	public void saveUser(UserBean user) {
 
+		userHandleRepositoryImpl.save(user);
 	}
 
-	/**
-	 * 
-	 * @param list
-	 */
-	public void saveBatchUser(List list){
+	@Override
+	public void updateUser(UserBean user) {
 
-	}
-
-	/**
-	 * 
-	 * @param user
-	 */
-	public void saveUser(UserBean user){
-
-	}
-
-	/**
-	 * 
-	 * @param user
-	 */
-	public void updateUser(UserBean user){
-
+		userHandleRepositoryImpl.saveAndFlush(user);
 	}
 
 }

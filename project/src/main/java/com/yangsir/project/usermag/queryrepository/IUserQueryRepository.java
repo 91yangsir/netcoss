@@ -1,17 +1,14 @@
-package com.yangsir.project.usermag.queryservice;
+package com.yangsir.project.usermag.queryrepository;
 
 import java.util.Map;
 
 import com.yangsir.project.beans.Pager;
 import com.yangsir.project.beans.UserBean;
 
-/**
- * @author Administrator
- * @version 1.0
- * @created 13-6��-2018 16:34:38
- */
-public interface IUserQueryService {
 
+public interface IUserQueryRepository {
+	
+	
 	/**
 	 * 根据id查询用户
 	 * @param id
