@@ -25,7 +25,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 public class ManagerBean implements Serializable {
 
-	/**
+	/** 
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
