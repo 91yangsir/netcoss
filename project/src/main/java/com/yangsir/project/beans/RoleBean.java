@@ -4,52 +4,64 @@ import java.io.Serializable;
 
 /**
  * @author xiongbing
- * @version 
+ * @version 1.0
  * @created 
  */
-public class RoleBean implements Serializable{
+public class RoleBean implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 5081056177957728087L;
+	private long id;
+	/**
+	 *  rolenName  角色名称
+	 */
+	private String rolenName;
+	/**
+	 *  roleType 角色类型   1--超级管理员 2--普通管理员  3--用户
+	 */
+	private int  roleType;//角色类型   1--超级管理员 2--普通管理员  3--用户
 	
-	private String menuName;//菜单名称
-	private String menuNum;//菜单编号
-	private String menuLevel;//菜单等级
-
-	public RoleBean(){
-
+	public RoleBean() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public String getMenuName() {
-		return menuName;
+	
+	public long getId() {
+		return id;
 	}
 
-	public void setMenuName(String menuName) {
-		this.menuName = menuName;
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public String getMenuNum() {
-		return menuNum;
+
+	public String getRolenName() {
+		return rolenName;
 	}
 
-	public void setMenuNum(String menuNum) {
-		this.menuNum = menuNum;
+	public void setRolenName(String rolenName) {
+		this.rolenName = rolenName;
 	}
 
-	public String getMenuLevel() {
-		return menuLevel;
+	public int getRoleType() {
+		return roleType;
 	}
 
-	public void setMenuLevel(String menuLevel) {
-		this.menuLevel = menuLevel;
+	public void setRoleType(int roleType) {
+		this.roleType = roleType;
 	}
+
 
 	@Override
 	public String toString() {
-		return "RoleBean [menuName=" + menuName + ", menuNum=" + menuNum + ", menuLevel=" + menuLevel + "]";
+		return "RoleBean [id=" + id + ", rolenName=" + rolenName + ", roleType=" + roleType + "]";
 	}
+
+	
+	
 
 	
 
