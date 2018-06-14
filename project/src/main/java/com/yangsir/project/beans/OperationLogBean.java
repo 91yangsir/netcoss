@@ -37,7 +37,7 @@ public class OperationLogBean implements Serializable{
 	 * 操作类型
 	 */
 	@Column(name="operation_log_type")
-	private int operationLogType;
+	private Integer operationLogType;
 	
 	/**
 	 * 操作时间
@@ -55,7 +55,7 @@ public class OperationLogBean implements Serializable{
 	 * 操作模块
 	 */
 	@Column(name="operation_log_model")
-	private int operationLogModel;
+	private Integer operationLogModel;
 	
 	/**
 	 * 操作数据
@@ -75,11 +75,11 @@ public class OperationLogBean implements Serializable{
 		this.id = id;
 	}
 
-	public int getOperationLogType() {
+	public Integer getOperationLogType() {
 		return operationLogType;
 	}
 
-	public void setOperationLogType(int operationLogType) {
+	public void setOperationLogType(Integer operationLogType) {
 		this.operationLogType = operationLogType;
 	}
 
@@ -99,11 +99,11 @@ public class OperationLogBean implements Serializable{
 		this.managerName = managerName;
 	}
 
-	public int getOperationLogModel() {
+	public Integer getOperationLogModel() {
 		return operationLogModel;
 	}
 
-	public void setOperationLogModel(int operationLogModel) {
+	public void setOperationLogModel(Integer operationLogModel) {
 		this.operationLogModel = operationLogModel;
 	}
 

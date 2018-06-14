@@ -38,7 +38,7 @@ public class LoginLogBean implements Serializable{
 	 * 操作类型
 	 */
 	@Column(name="login_log_type")
-	private int loginLogType;
+	private Integer loginLogType;
 	
 	/**
 	 * 操作时间
@@ -70,11 +70,11 @@ public class LoginLogBean implements Serializable{
 		this.id = id;
 	}
 
-	public int getLoginLogType() {
+	public Integer getLoginLogType() {
 		return loginLogType;
 	}
 
-	public void setLoginLogType(int loginLogType) {
+	public void setLoginLogType(Integer loginLogType) {
 		this.loginLogType = loginLogType;
 	}
 
