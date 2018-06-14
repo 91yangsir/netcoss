@@ -1,13 +1,18 @@
 package com.yangsir.project.beans;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -42,6 +47,12 @@ public class MenuBean implements Serializable{
 	 */
 	@Column(name="menu_level",length=20)
 	private int menuLevel;
+	/**
+	 * list 一个菜单权限可能被多个角色所共有
+	 */
+	@ManyToMany(fetch=FetchType.LAZY,mappedBy="list")
+	@Cascade(value= {CascadeType.REFRESH})
+	private List<RoleBean> list;
 
 	public MenuBean() {
 	// TODO Auto-generated constructor stub
@@ -82,12 +93,26 @@ public class MenuBean implements Serializable{
 		this.menuLevel = menuLevel;
 	}
 
+	
+
+	public List<RoleBean> getList() {
+		return list;
+	}
+
+
+	public void setList(List<RoleBean> list) {
+		this.list = list;
+	}
+
 
 	@Override
 	public String toString() {
 		return "MenuBean [id=" + id + ", menuName=" + menuName + ", menuNum=" + menuNum + ", menuLevel=" + menuLevel
-				+ "]";
+				+ ", list=" + list + "]";
 	}
+
+
+	
 
 
 

@@ -7,6 +7,6 @@ public interface IMenuQueryRepository{
 	public MenuBean getMenuById(long id);
 	
 	
-	
+	public MenuBean getMenuByName(String name);
 
 }

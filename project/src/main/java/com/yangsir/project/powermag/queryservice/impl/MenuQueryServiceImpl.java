@@ -17,6 +17,12 @@ public class MenuQueryServiceImpl implements IMenuQueryService {
 		// TODO Auto-generated method stub
 		return menuQueryRepository.getMenuById(id);
 	}
+
+	@Override
+	public MenuBean getMenuByName(String name) {
+		// TODO Auto-generated method stub
+		return menuQueryRepository.getMenuByName(name);
+	}
 	
 	
 

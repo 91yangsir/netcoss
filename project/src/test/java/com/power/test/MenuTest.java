@@ -19,13 +19,13 @@ public class MenuTest {
 	private IMenuHandleServcie  menuHandleServiceImpl;
 	@Resource
 	private IMenuQueryService  menuQueryServiceImpl;
-	
+	//通过名字查菜单才能显示该菜单对应的角色。
 	@Test
 	public void addMenu() {
 		MenuBean bean=new MenuBean();
-		bean.setMenuLevel(1);
-		bean.setMenuName("用户自助服务系统");
-		bean.setMenuNum("1");
+		bean.setMenuLevel(2);
+		bean.setMenuName("权限管理系统");
+		bean.setMenuNum("13");
 		menuHandleServiceImpl.addMenu(bean);
 	}
 	
@@ -47,7 +47,15 @@ public class MenuTest {
 	@Test
 	public void getMenu() {
 		
-		MenuBean bean = (MenuBean) menuQueryServiceImpl.getMenuById(1l);
+		MenuBean bean = (MenuBean) menuQueryServiceImpl.getMenuById(9l);
 		System.out.println(bean);
+	}
+	
+	@Test
+	public void getMenuName() {
+		
+		MenuBean bean = (MenuBean) menuQueryServiceImpl.getMenuByName("权限管理系统");
+		System.out.println(bean);
+		
 	}
 }

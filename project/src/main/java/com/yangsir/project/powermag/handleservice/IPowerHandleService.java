@@ -1,5 +1,9 @@
 package com.yangsir.project.powermag.handleservice;
 
+import java.util.List;
+
+import com.yangsir.project.beans.MenuBean;
+import com.yangsir.project.beans.RoleBean;
 
 /**
  * @author Administrator
@@ -8,5 +12,12 @@ package com.yangsir.project.powermag.handleservice;
  */
 public interface IPowerHandleService  {
 	
+	public void addRole(RoleBean bean);
+	
+	public void roleChoicePower(RoleBean role,List<MenuBean> list);
+	
+	public void deleteRoleById(long id);
+	
+	public void updateRolePower(RoleBean bean);
 
 }
