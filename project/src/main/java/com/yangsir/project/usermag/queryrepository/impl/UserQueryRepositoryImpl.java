@@ -12,7 +12,7 @@ import com.yangsir.project.usermag.mapper.UserMapper;
 import com.yangsir.project.usermag.queryrepository.IUserQueryRepository;
 
 /**
- * @author Administrator
+ * @author dl
  * @version 1.0
  * @created 13-6��-2018 16:34:42
  */

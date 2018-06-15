@@ -7,7 +7,7 @@ import com.yangsir.project.beans.UserBean;
 import com.yangsir.project.usermag.queryservice.IUserQueryService;
 
 /**
- * @author Administrator
+ * @author dl
  * @version 1.0
  * @created 13-6��-2018 16:34:43
  */

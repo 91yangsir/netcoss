@@ -13,7 +13,7 @@ import com.yangsir.project.beans.Pager;
 import com.yangsir.project.beans.UserBean;
 
 /**
- * @author Administrator
+ * @author dl
  * @version 1.0
  * @created 13-6��-2018 16:34:42
  */
@@ -36,6 +36,7 @@ public interface UserMapper {
 		@Result(property="userPost",column="user_post",javaType=String.class),
 		@Result(property="userQQ",column="user_qq",javaType=String.class),
 		@Result(property="userPost",column="user_post",javaType=String.class),
+		@Result(property="userState",column="user_state",javaType=Integer.class),
 	})
 	@Select(value= {"select * from t_customer where id=#{id}"})
 	public UserBean getUserById(Long id);

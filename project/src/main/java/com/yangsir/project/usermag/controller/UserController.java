@@ -6,9 +6,9 @@ import com.yangsir.project.beans.Pager;
 import com.yangsir.project.beans.UserBean;
 
 /**
- * @author Administrator
+ * @author dl
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:42
+ * @created 13-6ï¿½ï¿½-2018 16:34:42
  */
 public class UserController {
 
@@ -19,8 +19,5 @@ public class UserController {
 
 	}
 
-	public void finalize() throws Throwable {
-
-	}
 
 }
