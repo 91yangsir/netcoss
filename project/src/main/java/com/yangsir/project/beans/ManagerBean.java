@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -50,7 +51,7 @@ public class ManagerBean implements Serializable {
 	@Column(name = "man_mail", length = 40)
 	private String managerMail;//管理员邮箱
 	
-	@OneToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@Cascade(CascadeType.ALL)
 	@JoinColumn(name="fk_role_id")
 	private  RoleBean  role;  //管理对应的角色
