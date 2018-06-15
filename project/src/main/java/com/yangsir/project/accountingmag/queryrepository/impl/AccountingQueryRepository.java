@@ -1,6 +1,9 @@
 package com.yangsir.project.accountingmag.queryrepository.impl;
 
 import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
 
 import com.yangsir.project.accountingmag.mapper.AccountingMapper;
 import com.yangsir.project.accountingmag.queryrepository.IAccountingQueryRepository;
@@ -9,28 +12,44 @@ import com.yangsir.project.beans.DayUseBean;
 import com.yangsir.project.beans.MonthUseBean;
 
 /**
- * @author Administrator
+ * @author guoqi
  * @version 1.0
- * @created 13-6��-2018 16:34:34
+ * @created 13-6��-2018 16:34:34
+ * 账务查询持久层实现类
  */
+@Repository
 public class AccountingQueryRepository implements IAccountingQueryRepository {
 
-	public AccountingMapper m_AccountingMapper;
+	public AccountingMapper accountingMapper;
 
-	public AccountingQueryRepository(){
-
+	@Override
+	public int countDuratingOfMonthByParams(Map params) {
+		return accountingMapper.countDuratingOfMonthByParams(params);
 	}
 
-	public void finalize() throws Throwable {
-
+	@Override
+	public List<MonthUseBean> findDuratingOfMonthByParams(Map params) {
+		return accountingMapper.findDuratingOfMonthByParams(params);
 	}
 
-	public int countAllDuratingOfMonth(){
-		return 0;
+	@Override
+	public int countDuratingOfDayByParams(Map params) {
+		return accountingMapper.countDuratingOfDayByParams(params);
 	}
 
-	public List findAllDuratingOfMonth(){
-		return null;
+	@Override
+	public List<DayUseBean> findDuratingOfDayByParams(Map params) {
+		return accountingMapper.findDuratingOfDayByParams(params);
+	}
+
+	@Override
+	public int countDuratingOfYearByParams(Map params) {
+		return accountingMapper.countDuratingOfYearByParams(params);
+	}
+
+	@Override
+	public List<YearUseBean> findDuratingOfYearByParams(Map params) {
+		return accountingMapper.findDuratingOfYearByParams(params);
 	}
 
 }
