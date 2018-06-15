@@ -2,8 +2,13 @@ package com.yangsir.project.usermag.queryservice.impl;
 
 import java.util.Map;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import com.yangsir.project.beans.Pager;
 import com.yangsir.project.beans.UserBean;
+import com.yangsir.project.usermag.queryrepository.IUserQueryRepository;
 import com.yangsir.project.usermag.queryservice.IUserQueryService;
 
 /**
@@ -11,17 +16,20 @@ import com.yangsir.project.usermag.queryservice.IUserQueryService;
  * @version 1.0
  * @created 13-6��-2018 16:34:43
  */
+@Service
 public class UserQueryServiceImpl implements IUserQueryService {
 
-
+	@Resource
+	private IUserQueryRepository userQueryRepositoryImpl;
+	
 	public UserQueryServiceImpl(){
 
 	}
 
 	@Override
 	public UserBean getUserById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return userQueryRepositoryImpl.getUserById(id);
 	}
 
 	@Override

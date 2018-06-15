@@ -49,7 +49,7 @@ public interface UserMapper {
 
 	
 	/**
-	 * 根据账号查询用户信息
+	 * 根据用户账号查询用户信息
 	 * @param acc
 	 * @return
 	 */
