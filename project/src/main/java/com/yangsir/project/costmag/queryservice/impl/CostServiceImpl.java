@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.CostBean;
+import com.yangsir.project.beans.Pager;
 import com.yangsir.project.costmag.queryrepository.ICostQueryRepository;
 import com.yangsir.project.costmag.queryservice.ICostQueryService;
 
@@ -29,15 +30,21 @@ public class CostServiceImpl implements ICostQueryService {
 	}
 
 	@Override
-	public Page<?> findAllCostBean() {
+	public Pager findAllCostBean(Pager pager) {
 		// TODO Auto-generated method stub
-		return null;
+		return costQueryRepositoryImpl.findAllCostBean(pager);
 	}
 
 	@Override
 	public Set<BusinessBean> getCostBeanByIdBusiness(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return costQueryRepositoryImpl.getCostBeanByIdBusiness(id);
+	}
+
+	@Override
+	public int getCostBeanByBusinessBeanNums(Long id) {
+		// TODO Auto-generated method stub
+		return costQueryRepositoryImpl.getCostBeanByBusinessBeanNums(id);
 	}
 
 }

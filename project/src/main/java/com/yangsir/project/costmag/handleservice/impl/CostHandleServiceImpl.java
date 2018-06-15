@@ -38,4 +38,18 @@ public class CostHandleServiceImpl implements ICostHandleService {
 		costHandleRepository.saveAndFlush(cost);
 		return cost;
 	}
+
+	@Override
+	public CostBean updateCostTypeStart(CostBean cost) {
+		// TODO Auto-generated method stub
+		cost.setCostType(1);
+		return costHandleRepository.saveAndFlush(cost);
+	}
+
+	@Override
+	public CostBean updateCostTypeOut(CostBean cost) {
+		// TODO Auto-generated method stub
+		cost.setCostType(0);
+		return costHandleRepository.saveAndFlush(cost);
+	}
 }

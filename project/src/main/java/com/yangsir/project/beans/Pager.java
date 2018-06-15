@@ -28,7 +28,6 @@ public class Pager implements Serializable{
 	private int page;
 	private int rows;
 	private int index;
-	
 	private int totalRows;
 	private int totalPage;
 	private List<?> datas;
