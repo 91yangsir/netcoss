@@ -1,6 +1,7 @@
 package com.yangsir.project.costmag.queryrepository.impl;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.CostBean;
+import com.yangsir.project.beans.Pager;
 import com.yangsir.project.costmag.mapper.CostMapper;
 import com.yangsir.project.costmag.queryrepository.ICostQueryRepository;
 
@@ -30,16 +32,26 @@ public class CostQueryRepositoryImpl implements ICostQueryRepository {
 	}
 
 	@Override
-	public Page<?> findAllCostBean() {
+	public Pager findAllCostBean(Pager pager) {
 		// TODO Auto-generated method stub
-		return null;
+		int totalnums = costMapper.getCostBeanNums();//获取对象的个数
+		pager.setTotalRows(totalnums);
+		List<CostBean> list = costMapper.getCostByMapToPager(pager);
+		pager.setDatas(list);
+		return pager;
 	}
 
 	@Override
-	public List<BusinessBean> getCostBeanByIdBusiness(long id) {
+	public Set<BusinessBean> getCostBeanByIdBusiness(long id) {
 		// TODO Auto-generated method stub
-		return null;
+		Set<BusinessBean> set = costMapper.getBusinessBeanById(id);
+		return set;
 	}
 
+	@Override
+	public int getCostBeanByBusinessBeanNums(Long id) {
+		// TODO Auto-generated method stub
+		return costMapper.getCostBeanByBusinessBeanNums(id);
+	}
 
 }

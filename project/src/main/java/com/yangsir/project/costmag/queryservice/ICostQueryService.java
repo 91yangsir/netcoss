@@ -27,11 +27,18 @@ public interface ICostQueryService {
 	 * 分页查询所有的对象
 	 * @return
 	 */
-	public Page<?> findAllCostBean();
+	public Pager findAllCostBean(Pager pager);
 	/**
 	 * 根据资费id查询所有的使用此资费的业务对象
 	 * @param id
 	 * @return
 	 */
 	public Set<BusinessBean> getCostBeanByIdBusiness(long id);
+	
+	/**
+	 * 通过资费id查询该资费下用户的个数
+	 * @param cost
+	 * @return
+	 */
+	public int getCostBeanByBusinessBeanNums(Long id);
 }
