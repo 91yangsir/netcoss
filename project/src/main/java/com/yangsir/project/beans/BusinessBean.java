@@ -46,9 +46,13 @@ public class BusinessBean implements Serializable{
 	@Column(name="business_cost_next")
 	private Long businessCostNext;
 	
+	@Column(name="business_state")
+	private Integer businessState;
+	
+	
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@Cascade(value= {CascadeType.ALL})
+	@Cascade(value= {CascadeType.SAVE_UPDATE})
 	@JoinColumn(name= "fk_user_id")
 	private UserBean user;
 	
@@ -137,10 +141,19 @@ public class BusinessBean implements Serializable{
 		this.server = server;
 	}
 
+	public Integer getBusinessState() {
+		return businessState;
+	}
+
+
+	public void setBusinessState(Integer businessState) {
+		this.businessState = businessState;
+	}
+
 	@Override
 	public String toString() {
 		return "BusinessBean [id=" + id + ", businessAcc=" + businessAcc + ", businessPwd=" + businessPwd
-				+ ", businessCostNext=" + businessCostNext + ", user=" + user + ", cost=" + cost + ", server=" + server
-				+ "]";
+				+ ", businessCostNext=" + businessCostNext + ", businessState=" + businessState + ", user=" + user
+				+ ", cost=" + cost + ", server=" + server + "]";
 	}
 }
