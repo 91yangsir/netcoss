@@ -1,6 +1,10 @@
 package testmanager;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,6 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yangsir.project.beans.ManagerBean;
+import com.yangsir.project.beans.Pager;
 import com.yangsir.project.managermag.handleservice.IManagerHandleService;
 import com.yangsir.project.managermag.queryservice.IManagerQueryService;
 
@@ -22,6 +27,29 @@ public class TestManagerHandleService {
 	private  IManagerQueryService   managerQueryServiceImpl;
 	
 	
+	/**
+	 *管理員分页模糊查詢
+	 */
+	@Test
+	public void getmanager2page() {
+		
+		Map  m = new HashMap<>();
+		 m.put("managerName", "李");
+		m.put("roleid", 11);
+		Pager	pager =new Pager(1,10);
+		System.out.println(managerQueryServiceImpl.findManagerByParams2Pager(m, pager));
+		
+	}
+	
+	
+	
+	
+	@Test
+	public void  getManagerBean() {
+		
+		System.out.println(managerQueryServiceImpl.getManger(1));
+
+}
 	
 	@Test
 	public void saveManager() {
@@ -59,4 +87,7 @@ public class TestManagerHandleService {
 		 managerHandleServiceImpl.deleteManager(m);
 	}
 	
+
+
+
 }
