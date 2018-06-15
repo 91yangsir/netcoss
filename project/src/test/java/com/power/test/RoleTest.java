@@ -76,13 +76,11 @@ public class RoleTest {
 		bean.setList(list);
 		powerHanderServiceImpl.updateRolePower(bean);
 		
-		
 	}
 	
 	@Test
 	public void findRoleByPage() {
 		List<RoleBean> list=powerQueryServiceImpl.findByPage(2,2);
 		System.out.println(list.get(0));
-		
 	}
 }

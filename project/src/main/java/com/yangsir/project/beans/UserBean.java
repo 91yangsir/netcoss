@@ -1,6 +1,7 @@
 package com.yangsir.project.beans;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -77,6 +78,10 @@ public class UserBean implements Serializable{
 	@OneToMany(fetch=FetchType.LAZY,mappedBy="user")
 	@Cascade(value= {CascadeType.ALL})
 	private Set<BusinessBean> business;
+	
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="user")
+	@Cascade(value= {CascadeType.ALL})
+	private List<BillBean> bills;
 
 	public UserBean(){
 

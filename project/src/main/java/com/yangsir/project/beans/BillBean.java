@@ -4,10 +4,15 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -45,7 +50,10 @@ public class BillBean implements Serializable {
 	@Column(name="bill_state",length=20)
 	private int billState;//账单状态  0--未支付  1--已支付
 	
-//	private UserBean user;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@Cascade(value= {CascadeType.SAVE_UPDATE})
+	@JoinColumn(name="fk_user_id")
+	private UserBean user;
 	
 	public BillBean() {
 		// TODO Auto-generated constructor stub
@@ -115,23 +123,20 @@ public class BillBean implements Serializable {
 
 
 
-	@Override
-	public String toString() {
-		return "BillBean [id=" + id + ", billYear=" + billYear + ", billMonth=" + billMonth + ", billMoney=" + billMoney
-				+ ", billType=" + billType + ", billState=" + billState + "]";
+	public UserBean getUser() {
+		return user;
 	}
 
 
-//	public UserBean getUser() {
-//		return user;
-//	}
+	public void setUser(UserBean user) {
+		this.user = user;
+	}
 
-
-//	public void setUser(UserBean user) {
-//		this.user = user;
-//	}
-
-
+	@Override
+	public String toString() {
+		return "BillBean [id=" + id + ", billYear=" + billYear + ", billMonth=" + billMonth + ", billMoney=" + billMoney
+				+ ", billType=" + billType + ", billState=" + billState + ", user=" + user + "]";
+	}
 	
 
 
