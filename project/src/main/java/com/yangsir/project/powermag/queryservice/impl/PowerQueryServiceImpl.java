@@ -25,4 +25,10 @@ public class PowerQueryServiceImpl implements IPowerQueryService{
 		return powerQueryRepositoryImpl.findRoleByName(name);
 	}
 
+	@Override
+	public List<RoleBean> findByPage(int page, int rows) {
+		// TODO Auto-generated method stub
+		return powerQueryRepositoryImpl.findByPage(page, rows);
+	}
+
 }

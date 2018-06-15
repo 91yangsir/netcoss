@@ -22,4 +22,6 @@ public interface IPowerQueryRepository {
 	 * @return 0代表不存在，1代表存在。
 	 */
 	public RoleBean findRoleByName(String name);
+	
+	public List<RoleBean> findByPage(int page,int rows);
 }

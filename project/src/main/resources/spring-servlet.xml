@@ -73,7 +73,7 @@
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
 	</bean>
-
+ 
 	
 	<!-- 开启切面的动态代理支持 -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>

@@ -22,5 +22,6 @@ public interface IPowerQueryService {
 	 */
 	public RoleBean findRoleByName(String name);
 	
+	public List<RoleBean> findByPage(int page,int rows);
 	
 }

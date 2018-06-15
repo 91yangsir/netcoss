@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Repository;
 
+import com.github.pagehelper.PageHelper;
 import com.yangsir.project.beans.RoleBean;
 import com.yangsir.project.powermag.mapper.PowerMapper;
 import com.yangsir.project.powermag.queryrepository.IPowerQueryRepository;
@@ -23,6 +24,14 @@ public class PowerQueryRepositoryImpl implements IPowerQueryRepository {
 	public RoleBean findRoleByName(String name) {
 		// TODO Auto-generated method stub
 		return powerMapper.findRoleByName(name);
+	}
+
+	@Override
+	public List<RoleBean> findByPage(int page, int rows) {
+		// TODO Auto-generated method stub
+		PageHelper.startPage(page, rows);
+		List<RoleBean> list=powerMapper.findAllRole();
+		return list;
 	}
 
 }

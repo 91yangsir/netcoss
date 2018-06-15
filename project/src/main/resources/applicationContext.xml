@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
@@ -13,16 +14,17 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd
          http://www.springframework.org/schema/data/jpa
         http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
-      
-   <!-- 开启容器的自动扫描 -->
-   	<context:component-scan base-package="com.yangsir.project">
-   	<!-- 表示spring的容器中不包含业务层controller的组件,以及切面的组件也不包含，交给其子容器-->
-   	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-   	</context:component-scan>
-   	<!-- 引入外部的数据库配置文件 -->
-   	<context:property-placeholder location="classpath:mysql.properties" />
-   	<!--配置数据库连接池  -->
-   	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+
+	<!-- 开启容器的自动扫描 -->
+	<context:component-scan base-package="com.yangsir.project">
+		<!-- 表示spring的容器中不包含业务层controller的组件,以及切面的组件也不包含，交给其子容器 -->
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	<!-- 引入外部的数据库配置文件 -->
+	<context:property-placeholder location="classpath:mysql.properties" />
+	<!--配置数据库连接池 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
@@ -38,18 +40,17 @@
 		<property name="timeBetweenEvictionRunsMillis" value="60000" />
 		<!-- 空闲连接在连接池中，允许存在的最小时间：单位是毫秒 -->
 		<property name="minEvictableIdleTimeMillis" value="300000" />
-		<!-- 连接在连接池中，如果超过timeBetweenEvictionRunsMillis规定的时间，
-		将使用validationQuery中配置的SQL，进行连接校验 -->
+		<!-- 连接在连接池中，如果超过timeBetweenEvictionRunsMillis规定的时间， 将使用validationQuery中配置的SQL，进行连接校验 -->
 		<property name="testWhileIdle" value="true" />
 		<property name="validationQuery" value="select now() from dual"></property>
 		<!-- 申请新的连接时，将使用validationQuery中配置的SQL，进行连接校验 -->
 		<property name="testOnBorrow" value="true" />
 		<!-- 设置true,效果是：归还连接时，将使用validationQuery中配置的SQL，进行连接校验 -->
 		<property name="testOnReturn" value="false" />
-		
+
 		<property name="poolPreparedStatements" value="true" />
 		<property name="maxOpenPreparedStatements" value="20" />
-		
+
 		<property name="asyncInit" value="true" />
 		<!-- 开启监控插件，日志插件，防SQL注入插件 -->
 		<property name="filters" value="stat,log4j,wall" />
@@ -61,9 +62,9 @@
 			</list>
 		</property>
 	</bean>
-	
-	   	<!--配置数据库连接池  -->
-   	<bean id="dataSource1" class="com.alibaba.druid.pool.DruidDataSource"
+
+	<!--配置数据库连接池 -->
+	<bean id="dataSource1" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
@@ -79,18 +80,17 @@
 		<property name="timeBetweenEvictionRunsMillis" value="60000" />
 		<!-- 空闲连接在连接池中，允许存在的最小时间：单位是毫秒 -->
 		<property name="minEvictableIdleTimeMillis" value="300000" />
-		<!-- 连接在连接池中，如果超过timeBetweenEvictionRunsMillis规定的时间，
-		将使用validationQuery中配置的SQL，进行连接校验 -->
+		<!-- 连接在连接池中，如果超过timeBetweenEvictionRunsMillis规定的时间， 将使用validationQuery中配置的SQL，进行连接校验 -->
 		<property name="testWhileIdle" value="true" />
 		<property name="validationQuery" value="select now() from dual"></property>
 		<!-- 申请新的连接时，将使用validationQuery中配置的SQL，进行连接校验 -->
 		<property name="testOnBorrow" value="true" />
 		<!-- 设置true,效果是：归还连接时，将使用validationQuery中配置的SQL，进行连接校验 -->
 		<property name="testOnReturn" value="false" />
-		
+
 		<property name="poolPreparedStatements" value="true" />
 		<property name="maxOpenPreparedStatements" value="20" />
-		
+
 		<property name="asyncInit" value="true" />
 		<!-- 开启监控插件，日志插件，防SQL注入插件 -->
 		<property name="filters" value="stat,log4j,wall" />
@@ -101,8 +101,8 @@
 				<ref bean="log-filter" />
 			</list>
 		</property>
-	</bean> 
-	
+	</bean>
+
 	<!-- 慢SQL记录 -->
 	<bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">
 		<!-- 慢sql时间设置,即执行时间大于200毫秒的都是慢sql -->
@@ -127,13 +127,13 @@
 			</list>
 		</property>
 	</bean>
-	 
+
 	<aop:config>
 		<aop:advisor advice-ref="druid-stat-interceptor"
 			pointcut-ref="druid-stat-pointcut" />
 	</aop:config>
-	
-		<!-- 配置SessionFactory,这一个配置的是SpringJPA -->
+
+	<!-- 配置SessionFactory,这一个配置的是SpringJPA -->
 	<bean id="localEntityManagerFactoryBean"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
@@ -155,12 +155,24 @@
 			</props>
 		</property>
 	</bean>
-	
-		<!--  配置Mybatis的SessionFactory -->
+
+	<!-- 配置Mybatis的SessionFactory -->
 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource1"></property>
 		<!-- typeAliasesPackage 代表着哪些包需要取类的类别名， 如果有多个包，同时需要取类的类别名，格式为： package01;package02;package03…… -->
 		<property name="typeAliasesPackage" value="com.yangsir.project.beans"></property>
+		<!-- 注意其他配置 -->
+		<property name="plugins">
+			<array>
+				<bean class="com.github.pagehelper.PageInterceptor">
+					<property name="properties">
+						<!--使用下面的方式配置参数，一行配置一个 -->
+						<value>
+						</value>
+					</property>
+				</bean>
+			</array>
+		</property>
 	</bean>
 
 	<!-- 第5步 配置MapperScanner -->
@@ -177,13 +189,12 @@
 					com.yangsir.project.usersystemmag.mapper"></property>
 		<property name="sqlSessionFactoryBeanName" value="sessionFactory"></property>
 	</bean>
-	
+
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="localEntityManagerFactoryBean"></property>
 	</bean>
-	
-	<tx:annotation-driven transaction-manager="transactionManager"/> 
+	<tx:annotation-driven transaction-manager="transactionManager" />
 	<!-- 开启spring的声明式事务管理 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
@@ -212,7 +223,7 @@
 				propagation="REQUIRED" />
 		</tx:attributes>
 	</tx:advice>
-	
+
 	<aop:config>
 		<aop:pointcut id="operation"
 			expression="execution(* com.yangsir.project.*mag.service.impl.*ServiceImpl.*(..))" />
@@ -222,9 +233,9 @@
 	<jpa:repositories base-package="com.yangsir.project"
 		entity-manager-factory-ref="localEntityManagerFactoryBean">
 	</jpa:repositories>
-	  
+
 
 	<!-- 开启切面的动态代理支持 -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-   	
+
 </beans>
