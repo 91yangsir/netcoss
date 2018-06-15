@@ -54,20 +54,6 @@ public interface CostMapper {
 	 * @param id
 	 * @return
 	 */
-//	@Results({
-//		@Result(id=true,property="id",column="id",javaType=long.class),
-//		@Result(property="costName",column="cost_name",javaType=String.class),
-//		@Result(property="costType",column="cost_type",javaType=int.class),
-//		@Result(property="costTime",column="cost_time",javaType=int.class),
-//		@Result(property="costBase",column="cost_base",javaType=double.class),
-//		@Result(property="costUnit",column="cost_unit",javaType=double.class),
-//		@Result(property="costStart",column="cost_start",javaType=Date.class),
-//		@Result(property="costExplain",column="cost_explain",javaType=String.class),
-//		@Result(property="business",javaType=Set.class,column="id",many=@Many(fetchType=FetchType.LAZY,select="getBusinessBeanById"))
-//	})
-//	@Select("select * from t_cost where id = #{id}")
-//	public CostBean getCostBeanWithBusinessBeanId(long id);
-//	@ResultType(BusinessBean.class)
 	@Results({
 		@Result(id=true,property="id",column="id",javaType=long.class),
 		@Result(id=true,property="businessAcc",column="business_acc",javaType=String.class),
