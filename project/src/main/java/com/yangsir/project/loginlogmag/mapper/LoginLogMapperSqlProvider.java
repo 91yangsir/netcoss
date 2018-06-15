@@ -23,10 +23,10 @@ public class LoginLogMapperSqlProvider {
 			sb.append("and manager_name like concat('"+params.get("manager")+"','%') ");
 		}
 		if (params.get("startTime")!=null) {
-			sb.append("and login_log_time > '"+params.get("startTime")+"' ");
+			sb.append("and login_log_time >= '"+params.get("startTime")+"' ");
 		}
 		if (params.get("endTime")!=null) {
-			sb.append("and login_log_time < '"+params.get("endTime")+"' ");
+			sb.append("and login_log_time <= '"+params.get("endTime")+"' ");
 		}
 		
 		return sb.toString();

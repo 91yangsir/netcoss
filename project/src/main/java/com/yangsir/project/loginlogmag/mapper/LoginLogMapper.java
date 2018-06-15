@@ -8,8 +8,6 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.SelectProvider;
-import org.aspectj.weaver.tools.Trace;
-import org.junit.runners.Parameterized.Parameters;
 
 import com.yangsir.project.beans.LoginLogBean;
 

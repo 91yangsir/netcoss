@@ -29,10 +29,10 @@ public class OperationLogMapperSqlProvider {
 			sb.append("and operation_log_model = "+params.get("model")+" ");
 		}
 		if (params.get("startTime")!=null) {
-			sb.append("and login_log_time > '"+params.get("startTime")+"' ");
+			sb.append("and login_log_time >= '"+params.get("startTime")+"' ");
 		}
 		if (params.get("endTime")!=null) {
-			sb.append("and login_log_time < '"+params.get("endTime")+"' ");
+			sb.append("and login_log_time <= '"+params.get("endTime")+"' ");
 		}
 		
 		return sb.toString();
@@ -57,10 +57,10 @@ public class OperationLogMapperSqlProvider {
 			sb.append("and operation_log_model = "+params.get("model")+" ");
 		}
 		if (params.get("startTime")!=null) {
-			sb.append("and login_log_time > '"+params.get("startTime")+"' ");
+			sb.append("and login_log_time >= '"+params.get("startTime")+"' ");
 		}
 		if (params.get("endTime")!=null) {
-			sb.append("and login_log_time < '"+params.get("endTime")+"' ");
+			sb.append("and login_log_time <= '"+params.get("endTime")+"' ");
 		}
 		sb.append("limit "+params.get("index")+","+params.get("rows"));
 		return sb.toString();
