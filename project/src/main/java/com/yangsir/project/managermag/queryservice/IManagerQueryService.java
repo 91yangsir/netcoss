@@ -3,11 +3,12 @@ package com.yangsir.project.managermag.queryservice;
 import java.util.Map;
 
 import com.yangsir.project.beans.ManagerBean;
+import com.yangsir.project.beans.Pager;
 
 /**
  * @author Administrator
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:37
+ * @created 13-6ï¿½ï¿½-2018 16:34:37
  */
 public interface IManagerQueryService {
 
@@ -15,7 +16,7 @@ public interface IManagerQueryService {
 	 * 
 	 * @param map
 	 */
-	public ManagerBean getManagerByMap(Map map);
+	public Pager findManagerByParams2Pager(Map params,Pager pager);
 
 	/**
 	 * 
