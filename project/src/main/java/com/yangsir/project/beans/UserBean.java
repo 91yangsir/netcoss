@@ -66,7 +66,8 @@ public class UserBean implements Serializable{
 	@Column(name="user_qq",length=15)
 	private String userQQ;
 	
-	
+	@Column(name="user_state")
+	private Integer userState;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@Cascade(value= {CascadeType.SAVE_UPDATE})
@@ -177,11 +178,20 @@ public class UserBean implements Serializable{
 		this.business = business;
 	}
 
+	public Integer getUserState() {
+		return userState;
+	}
+
+	public void setUserState(Integer userState) {
+		this.userState = userState;
+	}
+
 	@Override
 	public String toString() {
 		return "UserBean [id=" + id + ", userName=" + userName + ", userGender=" + userGender + ", userCard=" + userCard
 				+ ", userAcc=" + userAcc + ", userPwd=" + userPwd + ", userTel=" + userTel + ", userAddress="
-				+ userAddress + ", userPost=" + userPost + ", userQQ=" + userQQ + ", role=" + role + ", business="
-				+ business + "]";
+				+ userAddress + ", userPost=" + userPost + ", userQQ=" + userQQ + ", userState=" + userState + ", role="
+				+ role + ", business=" + business + "]";
 	}
+	
 }
