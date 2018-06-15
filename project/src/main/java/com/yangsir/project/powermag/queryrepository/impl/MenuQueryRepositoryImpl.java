@@ -14,13 +14,13 @@ public class MenuQueryRepositoryImpl implements IMenuQueryRepository {
 	private MenuMapper menuMapper;
 	@Override
 	public MenuBean getMenuById(long id) {
-		// TODO Auto-generated method stub
+	
 		return  menuMapper.getMenuById(id);
 		
 	}
 	@Override
 	public MenuBean getMenuByName(String name) {
-		// TODO Auto-generated method stub
+		
 		return menuMapper.getMenuByName(name);
 	}
 
