@@ -29,10 +29,10 @@ public class OperationLogAspect {
 	@Resource
 	private IOperationLogHandleService operationLogHandleServiceImpl;
 
-	@Autowired  
+//	@Autowired  
 	HttpServletRequest request;
 	
-	@Pointcut(value="@annotation(com.gq.mybatis.annotation.MyLog)")
+	@Pointcut(value="@annotation(com.yangsir.project.annotation.OperationLog)")
 	public void annotation() {}
 	
 	/**

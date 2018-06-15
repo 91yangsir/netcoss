@@ -1,7 +1,7 @@
 package com.yangsir.project.accountingmag.mapper;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 
@@ -18,10 +18,10 @@ public class AccountingMapperSqlProvider {
 	public String countDuratingOfMonthByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select count(*) from t_times_month where 1=1 ");
-		if (((List<String>)params.get("business")).size()!=0) {
+		if (((Set<String>)params.get("business")).size()!=0) {
 			sb.append("and business_acc in (");
-			List<String> list = (List<String>)params.get("business");
-			for (String str : list) {
+			Set<String> Set = (Set<String>)params.get("business");
+			for (String str : Set) {
 				sb.append(str+",");
 			}
 			sb.substring(0, sb.lastIndexOf(","));
@@ -45,10 +45,10 @@ public class AccountingMapperSqlProvider {
 	public String findDuratingOfMonthByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select count(*) from t_times_month where 1=1 ");
-		if (((List<String>)params.get("business")).size()!=0) {
+		if (((Set<String>)params.get("business")).size()!=0) {
 			sb.append("and business_acc in (");
-			List<String> list = (List<String>)params.get("business");
-			for (String str : list) {
+			Set<String> Set = (Set<String>)params.get("business");
+			for (String str : Set) {
 				sb.append(str+",");
 			}
 			sb.substring(0, sb.lastIndexOf(","));
@@ -72,10 +72,10 @@ public class AccountingMapperSqlProvider {
 	public String countDuratingOfDayByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select count(*) from t_times_day where 1=1 ");
-		if (((List<String>)params.get("business")).size()!=0) {
+		if (((Set<String>)params.get("business")).size()!=0) {
 			sb.append("and business_acc in (");
-			List<String> list = (List<String>)params.get("business");
-			for (String str : list) {
+			Set<String> Set = (Set<String>)params.get("business");
+			for (String str : Set) {
 				sb.append(str+",");
 			}
 			sb.substring(0, sb.lastIndexOf(","));
@@ -99,10 +99,10 @@ public class AccountingMapperSqlProvider {
 	public String findDuratingOfDayByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select count(*) from t_times_day where 1=1 ");
-		if (((List<String>)params.get("business")).size()!=0) {
+		if (((Set<String>)params.get("business")).size()!=0) {
 			sb.append("and business_acc in (");
-			List<String> list = (List<String>)params.get("business");
-			for (String str : list) {
+			Set<String> Set = (Set<String>)params.get("business");
+			for (String str : Set) {
 				sb.append(str+",");
 			}
 			sb.substring(0, sb.lastIndexOf(","));
@@ -127,10 +127,10 @@ public class AccountingMapperSqlProvider {
 	public String countDuratingOfYearByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select count(*) from t_times_year where 1=1 ");
-		if (((List<String>)params.get("business")).size()!=0) {
+		if (((Set<String>)params.get("business")).size()!=0) {
 			sb.append("and business_acc in (");
-			List<String> list = (List<String>)params.get("business");
-			for (String str : list) {
+			Set<String> Set = (Set<String>)params.get("business");
+			for (String str : Set) {
 				sb.append(str+",");
 			}
 			sb.substring(0, sb.lastIndexOf(","));
@@ -154,10 +154,10 @@ public class AccountingMapperSqlProvider {
 	public String findDuratingOfYearByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select count(*) from t_times_year where 1=1 ");
-		if (((List<String>)params.get("business")).size()!=0) {
+		if (((Set<String>)params.get("business")).size()!=0) {
 			sb.append("and business_acc in (");
-			List<String> list = (List<String>)params.get("business");
-			for (String str : list) {
+			Set<String> Set = (Set<String>)params.get("business");
+			for (String str : Set) {
 				sb.append(str+",");
 			}
 			sb.substring(0, sb.lastIndexOf(","));
