@@ -1,6 +1,7 @@
 package com.yangsir.project.businessmag.queryservice.impl;
 
 import java.util.Map;
+import java.util.Set;
 
 import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.Pager;
@@ -26,6 +27,12 @@ public class BusinessQueryServiceImpl implements IBusinessQueryService {
 
 	@Override
 	public Pager findBusiness2PageByMap(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<BusinessBean> getBusinessByUserId(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -21,5 +21,12 @@ public interface IUserQueryRepository {
 	 * @param map   
 	 */
 	public Pager findUser2PageByMap(Map map);
+	
+	/**
+	 * 根据账号查询用户信息
+	 * @param acc
+	 * @return
+	 */
+	public UserBean getUserByAcc(String acc);
 
 }

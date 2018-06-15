@@ -30,13 +30,19 @@ public class UserQueryRepositoryImpl implements IUserQueryRepository {
 	@Override
 	public UserBean getUserById(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return userMapper.getUserById(id);
 	}
 
 	@Override
 	public Pager findUser2PageByMap(Map map) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public UserBean getUserByAcc(String acc) {
+
+		return userMapper.getUserByAcc(acc);
 	}
 
 

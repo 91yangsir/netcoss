@@ -1,6 +1,7 @@
 package com.yangsir.project.businessmag.queryservice;
 
 import java.util.Map;
+import java.util.Set;
 
 import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.Pager;
@@ -27,4 +28,12 @@ public interface IBusinessQueryService {
 	 */
 	public Pager findBusiness2PageByMap(Map map);
 	
+	
+	/**
+	 * 根据用户id查询业务信息
+	 * @param id
+	 * @return 业务集合
+	 */
+	public Set<BusinessBean> getBusinessByUserId(Long id);
+		
 }
