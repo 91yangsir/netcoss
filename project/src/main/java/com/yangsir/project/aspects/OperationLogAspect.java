@@ -10,8 +10,9 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.yangsir.project.annotation.OperationLog;
 import com.yangsir.project.beans.ManagerBean;
@@ -30,7 +31,7 @@ public class OperationLogAspect {
 	private IOperationLogHandleService operationLogHandleServiceImpl;
 
 //	@Autowired  
-	HttpServletRequest request;
+//	HttpServletRequest request;
 	
 	@Pointcut(value="@annotation(com.yangsir.project.annotation.OperationLog)")
 	public void annotation() {}
@@ -42,6 +43,7 @@ public class OperationLogAspect {
 	 */
 	@AfterReturning(value="annotation() && @annotation(mylog) ")
 	public void afterAdvice(JoinPoint jp,OperationLog mylog) {
+		HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
 		OperationLogBean operationLog = new OperationLogBean();
 		HttpSession session = request.getSession();
 		operationLog.setManagerName(((ManagerBean)session.getAttribute("user")).getManagerName());

@@ -3,6 +3,8 @@ package com.yangsir.project.accountingmag.queryrepository.impl;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Repository;
 
 import com.yangsir.project.accountingmag.mapper.AccountingMapper;
@@ -20,6 +22,7 @@ import com.yangsir.project.beans.MonthUseBean;
 @Repository
 public class AccountingQueryRepository implements IAccountingQueryRepository {
 
+	@Resource
 	public AccountingMapper accountingMapper;
 
 	@Override

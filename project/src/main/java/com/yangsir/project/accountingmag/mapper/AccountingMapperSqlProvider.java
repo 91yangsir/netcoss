@@ -19,12 +19,12 @@ public class AccountingMapperSqlProvider {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select count(*) from t_times_month where 1=1 ");
 		if (((Set<String>)params.get("business")).size()!=0) {
-			sb.append("and business_acc in (");
+			sb.append("and business_acc in ('");
 			Set<String> Set = (Set<String>)params.get("business");
 			for (String str : Set) {
-				sb.append(str+",");
+				sb.append(str+"'");
 			}
-			sb.substring(0, sb.lastIndexOf(","));
+//			sb.substring(0, sb.lastIndexOf(","));
 			sb.append(") ");
 		}
 		if (params.get("startTime")!=null) {
@@ -44,14 +44,14 @@ public class AccountingMapperSqlProvider {
 	 */
 	public String findDuratingOfMonthByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
-		StringBuilder sb = new StringBuilder("select count(*) from t_times_month where 1=1 ");
+		StringBuilder sb = new StringBuilder("select * from t_times_month where 1=1 ");
 		if (((Set<String>)params.get("business")).size()!=0) {
-			sb.append("and business_acc in (");
+			sb.append("and business_acc in ('");
 			Set<String> Set = (Set<String>)params.get("business");
 			for (String str : Set) {
-				sb.append(str+",");
+				sb.append(str+"'");
 			}
-			sb.substring(0, sb.lastIndexOf(","));
+//			sb.substring(0, sb.lastIndexOf(","));
 			sb.append(") ");
 		}
 		if (params.get("startTime")!=null) {
@@ -98,7 +98,7 @@ public class AccountingMapperSqlProvider {
 	 */
 	public String findDuratingOfDayByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
-		StringBuilder sb = new StringBuilder("select count(*) from t_times_day where 1=1 ");
+		StringBuilder sb = new StringBuilder("select * from t_times_day where 1=1 ");
 		if (((Set<String>)params.get("business")).size()!=0) {
 			sb.append("and business_acc in (");
 			Set<String> Set = (Set<String>)params.get("business");
@@ -153,7 +153,7 @@ public class AccountingMapperSqlProvider {
 	 */
 	public String findDuratingOfYearByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
-		StringBuilder sb = new StringBuilder("select count(*) from t_times_year where 1=1 ");
+		StringBuilder sb = new StringBuilder("select * from t_times_year where 1=1 ");
 		if (((Set<String>)params.get("business")).size()!=0) {
 			sb.append("and business_acc in (");
 			Set<String> Set = (Set<String>)params.get("business");
