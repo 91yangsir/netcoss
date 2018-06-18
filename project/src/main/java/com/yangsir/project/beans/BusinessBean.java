@@ -156,4 +156,6 @@ public class BusinessBean implements Serializable{
 				+ ", businessCostNext=" + businessCostNext + ", businessState=" + businessState + ", user=" + user
 				+ ", cost=" + cost + ", server=" + server + "]";
 	}
+
+
 }
