@@ -22,9 +22,6 @@ public class UserQueryServiceImpl implements IUserQueryService {
 	@Resource
 	private IUserQueryRepository userQueryRepositoryImpl;
 	
-	public UserQueryServiceImpl(){
-
-	}
 
 	@Override
 	public UserBean getUserById(Long id) {
@@ -36,7 +33,7 @@ public class UserQueryServiceImpl implements IUserQueryService {
 	public Pager findUser2PageByMap(Map map,Pager pager) {
 
 		map.put("index", pager.getIndex());
-		map.put("rows", pager.getPage());
+		map.put("rows", pager.getRows());
 		pager.setDatas(userQueryRepositoryImpl.findUserByParams(map));
 		pager.setTotalRows(userQueryRepositoryImpl.countUserByParams(map));
 		return pager;

@@ -1,5 +1,6 @@
 package com.yangsir.project.businessmag.mapper;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -8,6 +9,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.mapping.FetchType;
 
 import com.yangsir.project.beans.BusinessBean;
@@ -85,12 +87,32 @@ public interface BusinessMapper {
 	@Select(value= {"select * from t_business where business_acc=#{acc}"})
 	public BusinessBean getBusinessByAcc(@Param("acc")String acc);
 	
-	
 	/**
-	 * 分页查询业务
-	 * @param map
+	 * 根据多参数查询业务数量
+	 * @param params
 	 * @return
 	 */
-	public Pager findBusiness2PageByMap(Map map);
+	@SelectProvider(type=BusinessMapperProvider.class,method = "countBusinessByParams")
+	public int countBusinessByParams(@Param("params")Map params);
+	
+	
+	/**
+	 * 根据参数查询业务，获得集合
+	 * @param params
+	 * @return
+	 */
+	@Results({
+		@Result(id=true,property="id",column="id",javaType=Long.class),
+		@Result(property="businessAcc",column="business_acc",javaType=String.class),
+		@Result(property="businessPwd",column="business_pwd",javaType=String.class),
+		@Result(property="businessState",column="business_state",javaType=Integer.class),
+		@Result(property="businessCostNext",column="business_cost_next",javaType=Long.class),
+		
+		@Result(property="user.userAcc",column="user_acc",javaType=String.class),
+		@Result(property="cost.costName",column="cost_name",javaType=String.class),
+		@Result(property="server.serverIp",column="server_ip",javaType=String.class),
+	})
+	@SelectProvider(type=BusinessMapperProvider.class,method = "findBusinessByParams")
+	public List<BusinessBean> findBusinessByParams(@Param("params")Map params);
 	
 }

@@ -1,5 +1,6 @@
 package com.yangsir.project.businessmag.queryrepository.impl;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -24,20 +25,11 @@ public class BusinessQueryRepositoryImpl implements IBusinessQueryRepository {
 	@Resource
 	private BusinessMapper businessMapper;
 	
-	public BusinessQueryRepositoryImpl() {
-		// TODO Auto-generated constructor stub
-	}
 	
 	@Override
 	public BusinessBean getBusinessById(Long id) {
 
 		return businessMapper.getBusinessById(id);
-	}
-
-	@Override
-	public Pager findBusiness2PageByMap(Map map) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -50,6 +42,19 @@ public class BusinessQueryRepositoryImpl implements IBusinessQueryRepository {
 	public BusinessBean getBusinessByAcc(String acc) {
 
 		return businessMapper.getBusinessByAcc(acc);
+	}
+
+	
+	@Override
+	public int countBusinessByParams(Map params) {
+
+		return businessMapper.countBusinessByParams(params);
+	}
+
+	@Override
+	public List<BusinessBean> findBusinessByParams(Map params) {
+
+		return businessMapper.findBusinessByParams(params);
 	}
 
 }

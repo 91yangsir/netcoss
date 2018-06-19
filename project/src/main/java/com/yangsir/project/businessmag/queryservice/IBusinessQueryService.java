@@ -22,18 +22,18 @@ public interface IBusinessQueryService {
 	
 	
 	/**
-	 * 分页查询业务
-	 * @param map
-	 * @return
-	 */
-	public Pager findBusiness2PageByMap(Map map);
-	
-	
-	/**
 	 * 根据用户id查询业务信息
 	 * @param id
 	 * @return 业务集合
 	 */
 	public Set<BusinessBean> getBusinessByUserId(Long id);
+	
+
+	/**
+	 * 分页查询业务
+	 * @param map
+	 * @return
+	 */
+	public Pager findBusiness2PageByMap(Map map,Pager pager);
 		
 }
