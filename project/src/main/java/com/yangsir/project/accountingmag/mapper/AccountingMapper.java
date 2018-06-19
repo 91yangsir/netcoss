@@ -38,7 +38,7 @@ public interface AccountingMapper {
 		@Result(id=true,property="id",column="id",javaType=Long.class),
 		@Result(property="monthTime",column="month_time",javaType=Double.class),
 		@Result(property="businessAcc",column="business_acc",javaType=String.class),
-		@Result(property="month",column="month",javaType=Date.class),
+		@Result(property="month",column="month",javaType=String.class),
 		@Result(property="serverIP",column="server_ip",javaType=String.class),
 		@Result(property="monthMoney",column="month_money",javaType=Double.class)
 	})
@@ -62,7 +62,7 @@ public interface AccountingMapper {
 		@Result(id=true,property="id",column="id",javaType=Long.class),
 		@Result(property="dayTime",column="day_time",javaType=Double.class),
 		@Result(property="businessAcc",column="business_acc",javaType=String.class),
-		@Result(property="day",column="day",javaType=Date.class),
+		@Result(property="day",column="day",javaType=String.class),
 		@Result(property="serverIP",column="server_ip",javaType=String.class),
 		@Result(property="dayMoney",column="day_money",javaType=Double.class)
 	})
@@ -85,7 +85,7 @@ public interface AccountingMapper {
 		@Result(id=true,property="id",column="id",javaType=Long.class),
 		@Result(property="yearTime",column="year_time",javaType=Double.class),
 		@Result(property="businessAcc",column="business_acc",javaType=String.class),
-		@Result(property="year",column="year",javaType=Date.class),
+		@Result(property="year",column="year",javaType=String.class),
 		@Result(property="serverIP",column="server_ip",javaType=String.class)
 	})
 	@SelectProvider(type=AccountingMapperSqlProvider.class,method="findDuratingOfYearByParams")

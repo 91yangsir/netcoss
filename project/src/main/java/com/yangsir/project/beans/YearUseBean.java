@@ -48,7 +48,7 @@ public class YearUseBean implements Serializable{
 	 * 年份
 	 */
 	@Column(name="year")
-	private Date year;
+	private String year;
 	
 	/**
 	 * 服务器IP
@@ -83,11 +83,11 @@ public class YearUseBean implements Serializable{
 		this.businessAcc = businessAcc;
 	}
 
-	public Date getYear() {
+	public String getYear() {
 		return year;
 	}
 
-	public void setYear(Date year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 
