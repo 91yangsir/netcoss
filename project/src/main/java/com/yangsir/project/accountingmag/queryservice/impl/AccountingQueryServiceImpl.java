@@ -79,9 +79,6 @@ public class AccountingQueryServiceImpl implements IAccountingQueryService {
 	 */
 	@Override
 	public Pager findAllDuratingOfDay2pager(Map params, Pager pager) {
-		Set<String> business = new HashSet<>();
-		business.add((String) params.get("businessAcc"));
-		params.put("business", business);
 		params.put("index", pager.getIndex());
 		params.put("rows", pager.getRows());
 		pager.setDatas(accountingQueryRepositoryImpl.findDuratingOfDayByParams(params));

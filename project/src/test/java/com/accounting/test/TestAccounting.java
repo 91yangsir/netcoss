@@ -20,7 +20,28 @@ public class TestAccounting {
 	@Resource
 	private IAccountingQueryService accountingQueryServiceImpl;
 	
+	@Test
+	public void findDay() {
+		Pager pager = new Pager(1,10);
+		Map<String, Object> params = new HashMap<>();
+		
+		params.put("business", "qq");
+		
+		accountingQueryServiceImpl.findAllDuratingOfDay2pager(params, pager);
+		System.out.println(pager);
+		
+	}
 	
+	@Test
+	public void findYear() {
+		Pager pager = new Pager(1,10);
+		Map<String, Object> params = new HashMap<>();
+		params.put("accounting", "aaa");
+		
+		accountingQueryServiceImpl.findAllDuratingOfYear2pager(params, pager);
+		System.out.println(pager);
+		
+	}
 	
 	@Test
 	public void findMonth() {

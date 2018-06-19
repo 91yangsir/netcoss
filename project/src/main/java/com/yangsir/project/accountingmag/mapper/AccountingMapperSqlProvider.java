@@ -27,11 +27,8 @@ public class AccountingMapperSqlProvider {
 			sb = sb.deleteCharAt(sb.lastIndexOf(","));
 			sb.append(") ");
 		}
-		if (params.get("startTime")!=null) {
-			sb.append("and month >= '"+params.get("startTime")+"' ");
-		}
-		if (params.get("endTime")!=null) {
-			sb.append("and month <= '"+params.get("endTime")+"' ");
+		if (params.get("month")!=null) {
+			sb.append("and month like '"+params.get("month")+"%' ");
 		}
 		
 		return sb.toString();
@@ -46,7 +43,7 @@ public class AccountingMapperSqlProvider {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select * from t_times_month where 1=1 ");
 		if (((Set<String>)params.get("business")).size()!=0) {
-			sb.append("and business_acc in ('");
+			sb.append("and business_acc in (");
 			Set<String> Set = (Set<String>)params.get("business");
 			for (String str : Set) {
 				sb.append("'"+str+"',");
@@ -54,11 +51,8 @@ public class AccountingMapperSqlProvider {
 			sb = sb.deleteCharAt(sb.lastIndexOf(","));
 			sb.append(") ");
 		}
-		if (params.get("startTime")!=null) {
-			sb.append("and month >= '"+params.get("startTime")+"' ");
-		}
-		if (params.get("endTime")!=null) {
-			sb.append("and month <= '"+params.get("endTime")+"' ");
+		if (params.get("month")!=null) {
+			sb.append("and month like '"+params.get("month")+"%' ");
 		}
 		sb.append("limit "+params.get("index")+","+params.get("rows"));
 		return sb.toString();
@@ -72,20 +66,11 @@ public class AccountingMapperSqlProvider {
 	public String countDuratingOfDayByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select count(*) from t_times_day where 1=1 ");
-		if (((Set<String>)params.get("business")).size()!=0) {
-			sb.append("and business_acc in (");
-			Set<String> Set = (Set<String>)params.get("business");
-			for (String str : Set) {
-				sb.append("'"+str+"',");
-			}
-			sb = sb.deleteCharAt(sb.lastIndexOf(","));
-			sb.append(") ");
+		if (params.get("business")!=null) {
+			sb.append("and business_acc='"+params.get("business")+"' ");
 		}
-		if (params.get("startTime")!=null) {
-			sb.append("and day >= '"+params.get("startTime")+"' ");
-		}
-		if (params.get("endTime")!=null) {
-			sb.append("and day <= '"+params.get("endTime")+"' ");
+		if (params.get("day")!=null) {
+			sb.append("and day like '"+params.get("day")+"%' ");
 		}
 		
 		return sb.toString();
@@ -99,20 +84,11 @@ public class AccountingMapperSqlProvider {
 	public String findDuratingOfDayByParams(Map map) {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select * from t_times_day where 1=1 ");
-		if (((Set<String>)params.get("business")).size()!=0) {
-			sb.append("and business_acc in (");
-			Set<String> Set = (Set<String>)params.get("business");
-			for (String str : Set) {
-				sb.append("'"+str+"',");
-			}
-			sb = sb.deleteCharAt(sb.lastIndexOf(","));
-			sb.append(") ");
+		if (params.get("business")!=null) {
+			sb.append("and business_acc='"+params.get("business")+"' ");
 		}
-		if (params.get("startTime")!=null) {
-			sb.append("and day >= '"+params.get("startTime")+"' ");
-		}
-		if (params.get("endTime")!=null) {
-			sb.append("and day <= '"+params.get("endTime")+"' ");
+		if (params.get("day")!=null) {
+			sb.append("and day like '"+params.get("day")+"%' ");
 		}
 		sb.append("limit "+params.get("index")+","+params.get("rows"));
 		return sb.toString();
@@ -136,11 +112,8 @@ public class AccountingMapperSqlProvider {
 			sb = sb.deleteCharAt(sb.lastIndexOf(","));
 			sb.append(") ");
 		}
-		if (params.get("startTime")!=null) {
-			sb.append("and year >= '"+params.get("startTime")+"' ");
-		}
-		if (params.get("endTime")!=null) {
-			sb.append("and year <= '"+params.get("endTime")+"' ");
+		if (params.get("day")!=null) {
+			sb.append("and year like '"+params.get("year")+"%' ");
 		}
 		
 		return sb.toString();
@@ -163,11 +136,8 @@ public class AccountingMapperSqlProvider {
 			sb = sb.deleteCharAt(sb.lastIndexOf(","));
 			sb.append(") ");
 		}
-		if (params.get("startTime")!=null) {
-			sb.append("and year >= '"+params.get("startTime")+"' ");
-		}
-		if (params.get("endTime")!=null) {
-			sb.append("and year <= '"+params.get("endTime")+"' ");
+		if (params.get("year")!=null) {
+			sb.append("and year like '"+params.get("year")+"%' ");
 		}
 		sb.append("limit "+params.get("index")+","+params.get("rows"));
 		return sb.toString();
