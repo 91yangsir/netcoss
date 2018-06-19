@@ -23,15 +23,15 @@ public class TestBusinessHandleServiceImpl {
 	public void testSaveBusiness() {
 		BusinessBean business = new BusinessBean();
 		
-		business.setBusinessAcc("yoyo");
-		business.setBusinessPwd("666000");
+		business.setBusinessAcc("jojo");
+		business.setBusinessPwd("444666");
 		business.setBusinessState(1);
 		
 		UserBean user = new UserBean();
-		user.setId(1l);
+		user.setId(2l);
 		business.setUser(user);
 		
-		business.setBusinessCostNext(2l);
+		business.setBusinessCostNext(1l);
 		
 		businessHandleServiceImpl.saveBusiness(business);
 		
@@ -41,7 +41,7 @@ public class TestBusinessHandleServiceImpl {
 	public void testDeleteBusiness() {
 		BusinessBean business = new BusinessBean();
 		
-		business.setId(2l);
+		business.setId(4l);
 		
 		businessHandleServiceImpl.deleteBusiness(business);
 	}
@@ -49,9 +49,9 @@ public class TestBusinessHandleServiceImpl {
 	@Test
 	public void testUpdateBusiness() {
 		BusinessBean business = new BusinessBean();
+		business.setId(4l);
 		
-		business.setId(2l);
-		business.setBusinessAcc("jojo");
+		business.setBusinessAcc("啊哈哈");
 		business.setBusinessPwd("778899");
 		
 		businessHandleServiceImpl.updateBusiness(business);

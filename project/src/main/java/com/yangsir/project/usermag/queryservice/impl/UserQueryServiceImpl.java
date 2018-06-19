@@ -33,9 +33,13 @@ public class UserQueryServiceImpl implements IUserQueryService {
 	}
 
 	@Override
-	public Pager findUser2PageByMap(Map map) {
-		// TODO Auto-generated method stub
-		return null;
+	public Pager findUser2PageByMap(Map map,Pager pager) {
+
+		map.put("index", pager.getIndex());
+		map.put("rows", pager.getPage());
+		pager.setDatas(userQueryRepositoryImpl.findUserByParams(map));
+		pager.setTotalRows(userQueryRepositoryImpl.countUserByParams(map));
+		return pager;
 	}
 
 }

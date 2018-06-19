@@ -1,5 +1,6 @@
 package com.yangsir.project.usermag.queryrepository.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -33,16 +34,23 @@ public class UserQueryRepositoryImpl implements IUserQueryRepository {
 		return userMapper.getUserById(id);
 	}
 
-	@Override
-	public Pager findUser2PageByMap(Map map) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public UserBean getUserByAcc(String acc) {
 
 		return userMapper.getUserByAcc(acc);
+	}
+
+	@Override
+	public int countUserByParams(Map params) {
+		// TODO Auto-generated method stub
+		return userMapper.countUserByParams(params);
+	}
+
+	@Override
+	public List<UserBean> findUserByParams(Map params) {
+		// TODO Auto-generated method stub
+		return userMapper.findUserByParams(params);
 	}
 
 

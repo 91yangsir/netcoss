@@ -1,10 +1,16 @@
 package com.yangsir.project.usermag.queryrepository;
 
+import java.util.List;
 import java.util.Map;
 
 import com.yangsir.project.beans.Pager;
 import com.yangsir.project.beans.UserBean;
 
+/**
+ * 
+ * @author dl
+ *
+ */
 
 public interface IUserQueryRepository {
 	
@@ -17,16 +23,24 @@ public interface IUserQueryRepository {
 	public UserBean getUserById(Long id);
 
 	/**
-	 * 分页查询用户
-	 * @param map   
-	 */
-	public Pager findUser2PageByMap(Map map);
-	
-	/**
 	 * 根据用户账号查询用户信息
 	 * @param acc
 	 * @return
 	 */
 	public UserBean getUserByAcc(String acc);
+	
+	/**
+	 * 根据多参数查询用户数量
+	 * @param params 页面获得的参数
+	 * @return 
+	 */
+	public int countUserByParams(Map params);
+	
+	/**
+	 * 根据参数查询用户,获得用户集合
+	 * @param params 页面获得的参数
+	 * @return 分页的用户集合
+	 */
+	public List<UserBean> findUserByParams(Map params);
 
 }

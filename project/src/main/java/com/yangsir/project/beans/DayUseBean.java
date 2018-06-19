@@ -48,7 +48,7 @@ public class DayUseBean implements Serializable{
 	 * 日期
 	 */
 	@Column(name="day")
-	private Date day;
+	private String day;
 	
 	/**
 	 * 服务器IP
@@ -90,11 +90,11 @@ public class DayUseBean implements Serializable{
 		this.businessAcc = businessAcc;
 	}
 
-	public Date getDay() {
+	public String getDay() {
 		return day;
 	}
 
-	public void setDay(Date day) {
+	public void setDay(String day) {
 		this.day = day;
 	}
 

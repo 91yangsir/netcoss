@@ -23,6 +23,6 @@ public interface IUserQueryService {
 	 * 分页查询用户
 	 * @param map   
 	 */
-	public Pager findUser2PageByMap(Map map);
+	public Pager findUser2PageByMap(Map map,Pager pager);
 
 }

@@ -49,7 +49,7 @@ public class MonthUseBean implements Serializable{
 	 * 月份
 	 */
 	@Column(name="month")
-	private Date month;
+	private String month;
 	
 	/**
 	 * 服务器IP
@@ -90,11 +90,11 @@ public class MonthUseBean implements Serializable{
 		this.businessAcc = businessAcc;
 	}
 
-	public Date getMonth() {
+	public String getMonth() {
 		return month;
 	}
 
-	public void setMonth(Date month) {
+	public void setMonth(String month) {
 		this.month = month;
 	}
 

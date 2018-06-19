@@ -1,5 +1,6 @@
 package com.yangsir.project.usermag.mapper;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.mapping.FetchType;
 
 import com.yangsir.project.beans.BusinessBean;
@@ -64,9 +66,34 @@ public interface UserMapper {
 	
 	
 	/**
-	 * 分页查询用户
-	 * @param map   
+	 * 根据多参数查询用户数量
+	 * @param params 页面获得的参数
+	 * @return 
 	 */
-	public Pager findUser2PageByMap(Map map);
+	@SelectProvider(type=UserMapperProvider.class, method = "countUserByParams")
+	public int countUserByParams(@Param("params")Map params);
+	
+	
+	/**
+	 * 根据参数查询用户,获得用户集合
+	 * @param params 页面获得的参数
+	 * @return 分页的用户集合
+	 */
+	@Results({
+		@Result(id=true,property="id",column="id",javaType=Long.class),
+		@Result(property="userName",column="user_name",javaType=String.class),
+		@Result(property="userGender",column="user_gender",javaType=Integer.class),
+		@Result(property="userCard",column="user_card",javaType=String.class),
+		@Result(property="userAcc",column="user_acc",javaType=String.class),
+		@Result(property="userPwd",column="user_pwd",javaType=String.class),
+		@Result(property="userTel",column="user_tel",javaType=String.class),
+		@Result(property="userAddress",column="user_address",javaType=String.class),
+		@Result(property="userPost",column="user_post",javaType=String.class),
+		@Result(property="userQQ",column="user_qq",javaType=String.class),
+		@Result(property="userPost",column="user_post",javaType=String.class),
+		@Result(property="userState",column="user_state",javaType=Integer.class),
+	})
+	@SelectProvider(type=UserMapperProvider.class, method = "findUserByParams")
+	public List<UserBean> findUserByParams(@Param("params")Map params);
 	
 }
