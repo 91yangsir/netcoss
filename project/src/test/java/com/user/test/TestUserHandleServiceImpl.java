@@ -22,10 +22,10 @@ public class TestUserHandleServiceImpl {
 	public void testSaveUser() {
 		UserBean user = new UserBean();
 		
-		user.setUserName("喵喵喵");
+		user.setUserName("喵喵");
 		user.setUserGender(1);
 		user.setUserCard("224478552233665544");
-		user.setUserAcc("mmm");
+		user.setUserAcc("mm");
 		user.setUserPwd("333456");
 		user.setUserTel("11115555777");
 		user.setUserAddress("大河东路28号");

@@ -24,9 +24,6 @@ public class UserQueryRepositoryImpl implements IUserQueryRepository {
 	@Resource
 	private UserMapper userMapper;
 	
-	public UserQueryRepositoryImpl(){
-
-	}
 
 	@Override
 	public UserBean getUserById(Long id) {
