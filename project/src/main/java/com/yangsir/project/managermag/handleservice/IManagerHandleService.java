@@ -1,5 +1,7 @@
 package com.yangsir.project.managermag.handleservice;
 
+import javax.transaction.Transactional;
+
 import com.yangsir.project.beans.ManagerBean;
 
 /**
@@ -15,7 +17,8 @@ public interface IManagerHandleService {
 	 * 
 	 * @param manager
 	 */
-	public void deleteManager(ManagerBean manager);
+	@Transactional
+	public void deleteManager(long id);
 
 	/**
 	 * 
@@ -23,6 +26,8 @@ public interface IManagerHandleService {
 	 */
 	public void saveManager(ManagerBean manager);
 
+	
+	
 	public void updateManatger(ManagerBean manager);
 
 }

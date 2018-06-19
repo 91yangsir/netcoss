@@ -18,16 +18,16 @@ import com.yangsir.project.managermag.handleservice.IManagerHandleService;
 public class HandleManagerServiceImpl implements IManagerHandleService {
 
 	@Resource
-	public IManagerHandleRepository managerHandleRepository;
+	public IManagerHandleRepository managerHandleRepositoryImpl;
 
 	/**
 	 * 删除管理员
 	 * 
 	 * @param manager
 	 */
-	public void deleteManager(ManagerBean manager) {
+	public void deleteManager(long id) {
 
-		managerHandleRepository.delete(manager);
+		managerHandleRepositoryImpl.delete(id);
 
 	}
 
@@ -38,7 +38,7 @@ public class HandleManagerServiceImpl implements IManagerHandleService {
 	 */
 	public void saveManager(ManagerBean manager) {
 
-		managerHandleRepository.save(manager);
+		managerHandleRepositoryImpl.save(manager);
 
 	}
 
@@ -47,8 +47,10 @@ public class HandleManagerServiceImpl implements IManagerHandleService {
 	 */
 	public void updateManatger(ManagerBean manager) {
 
-		managerHandleRepository.saveAndFlush(manager);
+		managerHandleRepositoryImpl.saveAndFlush(manager);
 
 	}
+
+	
 
 }
