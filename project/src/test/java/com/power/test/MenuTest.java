@@ -24,15 +24,15 @@ public class MenuTest {
 	public void addMenu() {
 		MenuBean bean=new MenuBean();
 		bean.setMenuLevel(2);
-		bean.setMenuName("权限管理系统");
-		bean.setMenuNum("13");
+		bean.setMenuName("yangsir管理系统");
+		bean.setMenuNum("15");
 		menuHandleServiceImpl.addMenu(bean);
 	}
 	
 	@Test
 	public void updateMenu() {
 		MenuBean bean=new MenuBean();
-		bean.setId(7l);
+		bean.setId(15l);
 		bean.setMenuLevel(1);
 		bean.setMenuName("sdadasdd服we务系统");
 		bean.setMenuNum("1111");
@@ -42,7 +42,7 @@ public class MenuTest {
 	@Test
 	public void deleteMenu() {
 		
-		menuHandleServiceImpl.deleteMenu(6l);
+		menuHandleServiceImpl.deleteMenu(15);
 	}
 	@Test
 	public void getMenu() {

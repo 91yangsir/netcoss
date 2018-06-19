@@ -40,6 +40,6 @@ public class BillTest {
 	@Test
 	public void getMaxUseTimeBill() {
 		
-		System.out.println(queryBillServiceImpl.getMaxUseTimeBill("yangsir"));
+		System.out.println(queryBillServiceImpl.getMaxUseTimeBill("guosir"));
 	}
 }
