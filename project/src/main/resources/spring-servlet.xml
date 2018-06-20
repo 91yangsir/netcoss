@@ -52,7 +52,7 @@
 	 <bean id="freemarkerConfig"
 		class=" com.yangsir.project.factory.FreeMarkerConfigExtend">
 		<!-- 这里是配置试图解析器的模板路径，后面的值相当于是路径的前缀 -->
-		<property name="templateLoaderPath" value="/static/" />
+		<property name="templateLoaderPath" value="/view/" />
 		<property name="defaultEncoding" value="utf-8" />
 		<property name="freemarkerSettings">
 			<props>
