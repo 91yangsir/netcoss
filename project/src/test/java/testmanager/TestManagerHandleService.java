@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -16,78 +15,77 @@ import com.yangsir.project.beans.Pager;
 import com.yangsir.project.managermag.handleservice.IManagerHandleService;
 import com.yangsir.project.managermag.queryservice.IManagerQueryService;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations= {"classpath:applicationContext.xml"})
+@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 public class TestManagerHandleService {
-		
+
 	@Resource
-	private  IManagerHandleService   managerHandleServiceImpl;
+	private IManagerHandleService managerHandleServiceImpl;
 	@Resource
-	private  IManagerQueryService   managerQueryServiceImpl;
-	
-	
+	private IManagerQueryService managerQueryServiceImpl;
+
 	/**
-	 *管理員分页模糊查詢
+	 * 管理員分页模糊查詢
 	 */
 	@Test
 	public void getmanager2page() {
-		
-		Map  m = new HashMap<>();
-		 m.put("managerName", "李");
-		m.put("roleid", 11);
-		Pager	pager =new Pager(1,10);
-		System.out.println(managerQueryServiceImpl.findManagerByParams2Pager(m, pager));
-		
-	}
-	
-	
-	
-	
-	@Test
-	public void  getManagerBean() {
-		
-		System.out.println(managerQueryServiceImpl.getManger(1));
 
-}
-	
+		Map m = new HashMap<>();
+		m.put("managerName", "李");
+		m.put("roleid", 11);
+		Pager pager = new Pager(1, 10);
+		System.out.println(managerQueryServiceImpl.findManagerByParams2Pager(m, pager));
+
+	}
+
+	@Test
+	public void getManagerBean() {
+
+		System.out.println(managerQueryServiceImpl.getManger(6));
+
+	}
+
 	@Test
 	public void saveManager() {
-		
-		ManagerBean manager =new ManagerBean();
-		
-		manager.setManagerAcc("diao");
+
+		ManagerBean manager = new ManagerBean();
+
+		manager.setManagerAcc("尼玛");
 		manager.setManagerName("yangsir");
 		manager.setManagerTel("13398989989");
 		manager.setManagerMail("yy@163.com");
-		managerHandleServiceImpl.saveManager(manager);				
+		managerHandleServiceImpl.saveManager(manager);
 	}
-	
-	
+
 	/**
-	 * 修改管理员
+	 * 修改管理员get
 	 */
 	@Test
 	public void updateManager() {
+
+//		ManagerBean mb = managerQueryServiceImpl.getManger(7);
 		
-		ManagerBean  mb= managerQueryServiceImpl.getManger(1);
+		ManagerBean manager = new ManagerBean();
+		manager.setId(7);
+		manager.setManagerAcc("尼玛");
+		manager.setManagerName("yangsir");
+		manager.setManagerTel("13398989989");
+		manager.setManagerMail("yy@163.com");
 		
-		System.out.println(mb);
-		mb.setManagerName("太君");
+		System.out.println(manager);
+		manager.setManagerName("dfsdf");
+		managerHandleServiceImpl.updateManatger(manager);
 		
-		
-		 managerHandleServiceImpl.updateManatger(mb);
-		System.out.println(mb);
 	}
-	
+
 	@Test
 	public void deletemanger() {
 		
-		ManagerBean  m= managerQueryServiceImpl.getManger(2);
-		 managerHandleServiceImpl.deleteManager(m);
-	}
+		
 	
-
-
+		managerHandleServiceImpl.deleteManager(8);
+		
+		
+	}
 
 }
