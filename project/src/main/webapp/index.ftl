@@ -5,14 +5,10 @@
     <title></title>
 </head>
 <body>
-${user.userName}
-  <#if 1=1>
- 			电话撒旦画
-  </#if>
-<form action="menu">
-    账号：<input type="text" name="userName"/>
+<form  action="user/menu" method="POST">
+    账号：<input type="text" name="username"/>
     <br><br/>
-    密码：<input type="text" name="pwd"/>
+    密码：<input type="text" name="password"/>
     <br/><br/>
     <input type="submit" value="登录"/>
 </form>

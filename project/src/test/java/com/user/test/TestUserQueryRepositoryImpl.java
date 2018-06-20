@@ -20,8 +20,8 @@ public class TestUserQueryRepositoryImpl {
 	
 	@Test
 	public void getUserByAcc() {
-		UserBean user = userQueryRepositoryImpl.getUserByAcc("www");
-		
+		UserBean user = userQueryRepositoryImpl.getUserByAcc("郭sir");
+//		UserBean user = userQueryRepositoryImpl.getUserById(2l);
 		System.out.println(user);
 	}
 	

@@ -51,7 +51,7 @@ public class MenuBean implements Serializable{
 	 * list 一个菜单权限可能被多个角色所共有
 	 */
 	@ManyToMany(fetch=FetchType.LAZY,mappedBy="list")
-	@Cascade(value= {CascadeType.REFRESH})
+	@Cascade(value= {CascadeType.SAVE_UPDATE})
 	private List<RoleBean> list;
 
 	public MenuBean() {

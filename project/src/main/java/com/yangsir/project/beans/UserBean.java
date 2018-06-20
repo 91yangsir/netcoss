@@ -52,7 +52,7 @@ public class UserBean implements Serializable{
 	@Column(name="user_acc",length=20)
 	private String userAcc;
 	
-	@Column(name="user_pwd",length=20)
+	@Column(name="user_pwd",length=255)
 	private String userPwd;
 	
 	@Column(name="user_tel",length=11)

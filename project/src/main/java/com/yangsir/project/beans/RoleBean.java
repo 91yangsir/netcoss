@@ -49,6 +49,7 @@ public class RoleBean implements Serializable {
 	 * list 此角色的拥有的菜单权限集合。
 	 */
 	@ManyToMany(fetch=FetchType.LAZY)
+	@Cascade(value= {CascadeType.SAVE_UPDATE})
 	@JoinTable(name="t_power",joinColumns=@JoinColumn(name="fk_role_id"),
 	inverseJoinColumns=@JoinColumn(name="fk_menu_id"))
 	private List<MenuBean> list;

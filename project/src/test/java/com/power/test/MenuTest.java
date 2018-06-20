@@ -24,8 +24,8 @@ public class MenuTest {
 	public void addMenu() {
 		MenuBean bean=new MenuBean();
 		bean.setMenuLevel(2);
-		bean.setMenuName("yangsir管理系统");
-		bean.setMenuNum("15");
+		bean.setMenuName("用户管理系统");
+		bean.setMenuNum("021");
 		menuHandleServiceImpl.addMenu(bean);
 	}
 	
@@ -47,14 +47,14 @@ public class MenuTest {
 	@Test
 	public void getMenu() {
 		
-		MenuBean bean = (MenuBean) menuQueryServiceImpl.getMenuById(9l);
+		MenuBean bean = (MenuBean) menuQueryServiceImpl.getMenuById(28l);
 		System.out.println(bean);
 	}
 	
 	@Test
 	public void getMenuName() {
 		
-		MenuBean bean = (MenuBean) menuQueryServiceImpl.getMenuByName("权限管理系统");
+		MenuBean bean = (MenuBean) menuQueryServiceImpl.getMenuByName("前台营运系统");
 		System.out.println(bean);
 		
 	}

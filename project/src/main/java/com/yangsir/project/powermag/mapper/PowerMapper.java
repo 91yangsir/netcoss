@@ -26,13 +26,19 @@ public interface PowerMapper {
 		
 		
 	})
-	@ResultType(RoleBean.class)
 	@Select(value= {"select * from t_role"})
 	public List<RoleBean> findAllRole();
 	
 	
-	@ResultType(RoleBean.class)
-	@Select(value = "select id as id,role_name as roleName,role_type as roleType from t_role where role_name = #{name}")
+	@Results({
+		@Result(id=true,property="id",column="id",javaType=Integer.class),
+		@Result(property="roleName",column="role_name",javaType=String.class),
+		@Result(property="roleType",column="role_type",javaType=Integer.class),
+		@Result(property="list",column="id",javaType=List.class,many=@Many(fetchType=FetchType.LAZY,select="com.yangsir.project.powermag.mapper.MenuMapper.getMenuById1"))
+		
+		
+	})
+	@Select(value = "select * from t_role where role_name = #{name}")
 	public RoleBean findRoleByName(String name);
 	
 	@ResultType(RoleBean.class)

@@ -29,23 +29,27 @@ public class RoleTest {
 	@Test
 	public void addRole() {
 		RoleBean bean=new RoleBean();
-		bean.setRoleName("权限管理员");
+		bean.setRoleName("用户管理员");
 		bean.setRoleType(2);
 		powerHanderServiceImpl.addRole(bean);
 	}
 	
 	@Test
 	public void choicePower() {
-		RoleBean bean=new RoleBean();
-		bean.setRoleName("权限资费管理员");
-		bean.setRoleType(3);
-		MenuBean bean1=menuQueryServiceImpl.getMenuByName("权限管理系统");
+		RoleBean bean=powerQueryServiceImpl.findRoleByName("用户");
+		System.out.println(bean);
+//		RoleBean bean3=new RoleBean();
+//		bean3.setId(bean.getId());
+		MenuBean bean1=menuQueryServiceImpl.getMenuByName("用户自助服务系统");
 		System.out.println(bean1);
-		MenuBean bean2=menuQueryServiceImpl.getMenuByName("资费管理系统");
-		System.out.println(bean2);
+//		MenuBean bean4=new MenuBean();
+//		bean4.setId(bean1.getId());
+//		MenuBean bean2=menuQueryServiceImpl.getMenuByName("业务账单报表");
+//		System.out.println(bean2);
 		List<MenuBean> list=new ArrayList<>();
+//		list.add(bean4);
 		list.add(bean1);
-		list.add(bean2);
+//		list.add(bean2);
 		powerHanderServiceImpl.roleChoicePower(bean, list);
 		
 	}
