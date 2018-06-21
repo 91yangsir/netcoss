@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.yangsir.project.beans.ManagerBean;
 import com.yangsir.project.beans.Pager;
+import com.yangsir.project.beans.RoleBean;
 import com.yangsir.project.managermag.queryrepository.IManagerQueryRepository;
 import com.yangsir.project.managermag.queryservice.IManagerQueryService;
 
@@ -43,6 +44,12 @@ public class ManagerQueryServiceImpl implements IManagerQueryService {
 		pager.setTotalRows(managerQueryRepositoryImpl.countManagerByParams(params));
 		
 		return pager;
+	}
+
+	@Override
+	public RoleBean getRoleBeanByName(String roleName) {
+		// TODO Auto-generated method stub
+		return managerQueryRepositoryImpl.getRoleBeanByName(roleName);
 	}
 
 }

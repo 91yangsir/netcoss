@@ -24,7 +24,10 @@ import com.yangsir.project.loginlogmag.mapper.LoginLogMapperSqlProvider;
  * @created 13-6��-2018 16:34:40
  */
 public interface ManagerMapper {
-
+	
+	@ResultType(RoleBean.class)
+	@Select("select id as id , role_name  as name from t_role where role_name=#{roleName}")
+	public  RoleBean  getRoleBeanByName(@Param("roleName") String roleName);
 	/**
 	 * 
 	 * @param id
@@ -32,7 +35,7 @@ public interface ManagerMapper {
 	 */
 	// 查询客户
 	@Results({ @Result(id = true, property = "id", column = "id", javaType = Long.class),
-			@Result(property = "managerAcc", column = "man_mail", javaType = String.class),
+			@Result(property = "managerAcc", column = "man_acc", javaType = String.class),
 			@Result(property = "managerName", column = "man_name", javaType = String.class),
 			@Result(property = "managerPwd", column = "man_pwd", javaType = String.class),
 			@Result(property = "managerTel", column = "man_tel", javaType = String.class),
@@ -45,7 +48,7 @@ public interface ManagerMapper {
 	public ManagerBean getManager(long id);
 
 	@ResultType(RoleBean.class)
-	@Select("select id as id , role_name  as name from t_role where id=#{id}")
+	@Select("select  role_name  as roleName from t_role where id=#{id}")
 	public RoleBean getRoleById(long id);
 
 	/**
@@ -67,7 +70,7 @@ public interface ManagerMapper {
 	 * @return 返回分页的管理员集合
 	 */
 	@Results({ @Result(id = true, property = "id", column = "id", javaType = Long.class),
-		@Result(property = "managerAcc", column = "man_mail", javaType = String.class),
+		@Result(property = "managerAcc", column = "man_acc", javaType = String.class),
 		@Result(property = "managerName", column = "man_name", javaType = String.class),
 		@Result(property = "managerPwd", column = "man_pwd", javaType = String.class),
 		@Result(property = "managerTel", column = "man_tel", javaType = String.class),

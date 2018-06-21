@@ -7,6 +7,7 @@ import java.util.Map;
 import com.yangsir.project.beans.LoginLogBean;
 import com.yangsir.project.beans.ManagerBean;
 import com.yangsir.project.beans.Pager;
+import com.yangsir.project.beans.RoleBean;
 
 /**
  * @author Administrator
@@ -34,4 +35,7 @@ public interface IManagerQueryRepository {
 	 * @return 返回分页的管理员集合
 	 */
 	public List<ManagerBean> findManagerByParams(Map params);
+	
+	
+	public  RoleBean  getRoleBeanByName(String roleName);
 }

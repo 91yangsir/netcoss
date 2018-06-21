@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.yangsir.project.beans.LoginLogBean;
 import com.yangsir.project.beans.ManagerBean;
 import com.yangsir.project.beans.Pager;
+import com.yangsir.project.beans.RoleBean;
 import com.yangsir.project.managermag.mapper.ManagerMapper;
 import com.yangsir.project.managermag.queryrepository.IManagerQueryRepository;
 
@@ -43,6 +44,12 @@ public class ManagerQueryRepositoryImpl implements IManagerQueryRepository {
 	public List<ManagerBean> findManagerByParams(Map params) {
 		// TODO Auto-generated method stub
 		return managerMapper.findManagerByParams(params);
+	}
+
+	@Override
+	public RoleBean getRoleBeanByName(String roleName) {
+		// TODO Auto-generated method stub
+		return managerMapper.getRoleBeanByName(roleName);
 	}
 
 

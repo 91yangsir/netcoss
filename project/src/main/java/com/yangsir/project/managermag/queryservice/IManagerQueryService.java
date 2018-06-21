@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.yangsir.project.beans.ManagerBean;
 import com.yangsir.project.beans.Pager;
+import com.yangsir.project.beans.RoleBean;
 
 /**
  * @author Administrator
@@ -24,4 +25,10 @@ public interface IManagerQueryService {
 	 */
 	public ManagerBean getManger(long id);
 
+	/**
+	 * 
+	 */
+	
+	
+	public  RoleBean  getRoleBeanByName(String roleName);
 }

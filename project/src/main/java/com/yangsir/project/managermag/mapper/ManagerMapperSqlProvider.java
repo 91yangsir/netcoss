@@ -17,8 +17,8 @@ public class ManagerMapperSqlProvider {
 		if (params.get("managerTel") != null) {
 			sb.append("and m.man_tel like concat('" + params.get("managerTel") + "','%') ");
 		}
-		if (params.get("roleid") != null) {
-			sb.append("and r.id ='" + params.get("roleid") + "'");
+		if (params.get("roleName") != null) {
+			sb.append("and r.role_name ='" + params.get("roleName") + "'");
 		}
 	
 		return sb.toString();
@@ -36,8 +36,8 @@ public class ManagerMapperSqlProvider {
 		if (params.get("managerTel") != null) {
 			sb.append("and m.man_tel like concat('" + params.get("managerTel") + "','%') ");
 		}
-		if (params.get("roleid") != null) {
-			sb.append("and r.id ='" + params.get("roleid") + "'");
+		if (params.get("roleName") != null) {
+			sb.append("and r.role_name ='" + params.get("roleName") + "'");
 		}
 
 		sb.append("limit " + params.get("index") + "," + params.get("rows"));
