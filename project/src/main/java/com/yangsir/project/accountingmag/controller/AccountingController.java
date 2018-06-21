@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.yangsir.project.accountingmag.queryservice.IAccountingQueryService;
 import com.yangsir.project.beans.Pager;
+import com.yangsir.project.viewobject.DataGrid;
 
 /**
  * @author guoqi
@@ -37,31 +38,39 @@ public class AccountingController {
 	
 	@ResponseBody
 	@RequestMapping(value="/getYearUsePager",method= {RequestMethod.GET},produces = { "application/json;charset=utf-8" })
-	public Pager findYearUse2Pager(Pager pager,String accounting,String year) {
+	public DataGrid findYearUse2Pager(Pager pager,String accounting,String year) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("accounting", accounting);
 		params.put("year", year);
 		accountingQueryServiceImpl.findAllDuratingOfYear2pager(params, pager);
-		return pager;
+		DataGrid dataGrid = new DataGrid((long) pager.getTotalRows(), pager.getDatas());
+		System.out.println(dataGrid);
+		return dataGrid;
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/getMonthUsePager",method= {RequestMethod.GET},produces = { "application/json;charset=utf-8" })
-	public Pager findMonthUse2Pager(Pager pager,String accounting,String business,String month) {
+	public DataGrid findMonthUse2Pager(Pager pager,String accounting,String business,String month) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("accounting", accounting);
 		params.put("month", month);
 		params.put("business", business);
+		System.out.println(params);
 		accountingQueryServiceImpl.findAllDuratingOfMonth2pager(params, pager);
-		return pager;
+		DataGrid dataGrid = new DataGrid((long) pager.getTotalRows(), pager.getDatas());
+		System.out.println(dataGrid);
+		return dataGrid;
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/getDayUsePager",method= {RequestMethod.GET},produces = { "application/json;charset=utf-8" })
-	public Pager findDayUse2Pager(Pager pager,String business) {
+	public DataGrid findDayUse2Pager(Pager pager,String business,String day) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("business", business);
+		params.put("day", day);
 		accountingQueryServiceImpl.findAllDuratingOfDay2pager(params, pager);
-		return pager;
+		DataGrid dataGrid = new DataGrid((long) pager.getTotalRows(), pager.getDatas());
+		System.out.println(dataGrid);
+		return dataGrid;
 	}
 }

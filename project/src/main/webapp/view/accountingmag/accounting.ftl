@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <title>账务查询</title>
 </head>
-<base href="/project/">
-<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="static/bootstrap/css/bootstrap-theme.min.css"/>
-<link rel="stylesheet" href="static/bootstrap/css/project.css"/>
-<link rel="stylesheet" type="text/css" href="static/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css">
-<script src="static/js/jquery-3.3.1.min.js"></script>
-<script src="static/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="static/bootstrap/js/DatePicker/WdatePicker.js"></script>
-<script type="text/javascript" src="static/js/accounting.js"></script>
+<link rel="stylesheet" href="/project/static/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/project/static/bootstrap/css/bootstrap-theme.min.css"/>
+<link rel="stylesheet" href="/project/static/bootstrap/css/project.css"/>
+<link rel="stylesheet" href="/project/static/easyui/themes/default/easyui.css">
+<link rel="stylesheet" href="/project/static/easyui/themes/icon.css">
+<script src="/project/static/bootstrap/js/jquery-3.2.0.min.js"></script>
+<script src="/project/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/project/static/easyui/jquery.easyui.min.js"></script>
+<script src="/project/static/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script src="/project/static/bootstrap/js/DatePicker/WdatePicker.js"></script>
+<script src="/project/static/js/accounting.js"></script>
+<script src="/project/static/js/dateconvert.js"></script>
 
 <body>
 <div style="margin:20px 0;"></div>
@@ -42,11 +42,11 @@
                         <div class="col-md-5">
                             <div id="chooseYear">
                                 <label for="year">年份：</label>
-                                <input type="text" id="year" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy年'})" class="Wdate"/>
+                                <input type="text" id="year" readonly onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy'})" class="Wdate"/>
                             </div>
                             <div id="chooseMonth">
                                 <label for="month">月份：</label>
-                                <input type="text" id="month" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy年MM月'})" class="Wdate"/>
+                                <input type="text" id="month" readonly onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM'})" class="Wdate"/>
                             </div>
                         </div>
                     </div>
@@ -70,21 +70,35 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <div style="margin:20px 0;"></div>
-        <table id="dg" title="账务帐号为acc使用记录" style="width:700px;height:250px"
-               data-options="rownumbers:true,singleSelect:true,fitColumns:true,pagination:true,url:'datagrid_data1.json',method:'get'">
-            <thead>
-            <tr>
-                <th data-options="field:'itemid',width:80,align:'center'">业务账号</th>
-                <th data-options="field:'productid',width:100,align:'center'">服务器IP</th>
-                <th data-options="field:'listprice',width:80,align:'center'">时长</th>
-                <th data-options="field:'unitcost',width:80,align:'center'">日期</th>
-            </tr>
-            </thead>
+        <table id="dg" title="使用记录" style="width:700px;height:250px"
+               data-options="rownumbers:true,singleSelect:true,fitColumns:true,pagination:true,method:'get'">
         </table>
 
     </div>
 </div>
 
+<!-- 双击年使用情况显示的月使用记录窗口 -->
+<div id="win1" class="easyui-window" title="月使用记录" data-options="iconCls:'icon-save',resizable:false,closed:true" style="width:850px;height:400px;">
+	<div class="row">
+	    <div class="col-md-10 col-md-offset-1">
+	        <div style="margin:20px 0;"></div>
+	        <table id="dg_month" title="使用记录" style="width:700px;height:250px"
+	               data-options="rownumbers:true,singleSelect:true,fitColumns:true,pagination:true,method:'get'">
+	        </table>
+	    </div>
+	</div>
+</div>
 
+<!-- 双击月使用情况显示的每日使用记录窗口 -->
+<div id="win2" class="easyui-window" title="每日使用记录" data-options="iconCls:'icon-save',resizable:false,closed:true" style="width:850px;height:400px;">
+	<div class="row">
+	    <div class="col-md-10 col-md-offset-1">
+	        <div style="margin:20px 0;"></div>
+	        <table id="dg_day" title="使用记录" style="width:700px;height:250px"
+	               data-options="rownumbers:true,singleSelect:true,fitColumns:true,pagination:true,method:'get'">
+	        </table>
+	    </div>
+	</div>
+</div>
 </body>
 </html>

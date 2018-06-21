@@ -22,17 +22,17 @@ public class OperationLogMapperSqlProvider {
 		if (params.get("manager")!=null&&StringUtils.hasLength(((String)params.get("manager")).trim())) {
 			sb.append("and manager_name like concat('"+params.get("manager")+"','%') ");
 		}
-		if (params.get("type")!=null) {
+		if ((int)params.get("type")>=0) {
 			sb.append("and operation_log_type = "+params.get("type")+" ");
 		}
-		if (params.get("model")!=null) {
+		if ((int)params.get("model")>0) {
 			sb.append("and operation_log_model = "+params.get("model")+" ");
 		}
 		if (params.get("startTime")!=null) {
-			sb.append("and login_log_time >= '"+params.get("startTime")+"' ");
+			sb.append("and operation_log_time >= '"+params.get("startTime")+"' ");
 		}
 		if (params.get("endTime")!=null) {
-			sb.append("and login_log_time <= '"+params.get("endTime")+"' ");
+			sb.append("and operation_log_time <= '"+params.get("endTime")+"' ");
 		}
 		
 		return sb.toString();
@@ -50,18 +50,19 @@ public class OperationLogMapperSqlProvider {
 		if (params.get("manager")!=null&&StringUtils.hasLength(((String)params.get("manager")).trim())) {
 			sb.append("and manager_name like concat('"+params.get("manager")+"','%') ");
 		}
-		if (params.get("type")!=null) {
+		if ((int)params.get("type")>=0) {
 			sb.append("and operation_log_type = "+params.get("type")+" ");
 		}
-		if (params.get("model")!=null) {
+		if ((int)params.get("model")>0) {
 			sb.append("and operation_log_model = "+params.get("model")+" ");
 		}
 		if (params.get("startTime")!=null) {
-			sb.append("and login_log_time >= '"+params.get("startTime")+"' ");
+			sb.append("and operation_log_time >= '"+params.get("startTime")+"' ");
 		}
 		if (params.get("endTime")!=null) {
-			sb.append("and login_log_time <= '"+params.get("endTime")+"' ");
+			sb.append("and operation_log_time <= '"+params.get("endTime")+"' ");
 		}
+		sb.append("order by operation_log_time desc ");
 		sb.append("limit "+params.get("index")+","+params.get("rows"));
 		return sb.toString();
 	}

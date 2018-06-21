@@ -1,59 +1,107 @@
-function submitForm(){
-        $('#ff').form('submit');
-    }
-    function clearForm(){
-        $('#ff').form('reset');
-    }
 
-    //分页数据
-    function getData(){
-        var rows = [];
-        for(var i=1; i<=800; i++){
-            var amount = Math.floor(Math.random()*1000);
-            var price = Math.floor(Math.random()*1000);
-            rows.push({
-                inv: 'Inv No '+i,
-                date: $.fn.datebox.defaults.formatter(new Date()),
-                name: 'Name '+i,
-                amount: amount,
-                price: price,
-                cost: amount*price,
-                note: 'Note '+i
-            });
-        }
-        return rows;
-    }
+// 得到查询参数
+function queryParams() {
+	var data = {
+		manager : $('#manager').val(),
+		type : $('#type').combobox('getValue'),
+		model : $('#model').combobox('getValue'),
+		startTime : $('#startTime').datebox("getValue"),
+		endTime : $('#endTime').datebox("getValue")
+	};
+	console.log(data)
+	return data;
+}
 
-    function pagerFilter(data){
-        if (typeof data.length == 'number' && typeof data.splice == 'function'){	// is array
-            data = {
-                total: data.length,
-                rows: data
-            }
-        }
-        var dg = $(this);
-        var opts = dg.datagrid('options');
-        var pager = dg.datagrid('getPager');
-        pager.pagination({
-            onSelectPage:function(pageNum, pageSize){
-                opts.pageNumber = pageNum;
-                opts.pageSize = pageSize;
-                pager.pagination('refresh',{
-                    pageNumber:pageNum,
-                    pageSize:pageSize
-                });
-                dg.datagrid('loadData',data);
-            }
-        });
-        if (!data.originalRows){
-            data.originalRows = (data.rows);
-        }
-        var start = (opts.pageNumber-1)*parseInt(opts.pageSize);
-        var end = start + parseInt(opts.pageSize);
-        data.rows = (data.originalRows.slice(start, end));
-        return data;
-    }
+//查询和重置按钮
+function submitForm() {
+	getData();
+}
 
-    $(function(){
-        $('#dg').datagrid({loadFilter:pagerFilter}).datagrid('loadData', getData());
-    });
+function clearForm() {
+	$('#ff').form('reset');
+}
+
+// 自启动
+$(function() {
+	getData();
+});
+
+// 取得数据
+function getData() {
+	// 初始化表格
+	$('#dg').datagrid({
+		url : 'operationlog/getOperationLogPager',
+		queryParams : queryParams(),
+		// 格式化每个字段的显示
+		columns : [ [ {
+			field : 'managerName',
+			title : '管理员',
+			width : 50,
+			align : 'center'
+		},
+
+		{
+			field : 'operationLogModel',
+			title : '操作模块',
+			width : 50,
+			align : 'center',
+			formatter : function(value, row, index) {
+				if (value == 1) {
+					return '日志管理';
+				}else if(value == 2) {
+					return '用户管理';
+				}else if(value == 3) {
+					return '资费管理';
+				}else if(value == 4) {
+					return '权限管理';
+				}else if(value == 5) {
+					return '账单管理';
+				}else if(value == 6) {
+					return '账务查询管理';
+				}else if(value == 7) {
+					return '业务帐号管理';
+				} else{
+					return '管理员管理';
+				}
+			}
+		},
+		
+		{
+			field : 'operationLogType',
+			title : '操作类型',
+			width : 50,
+			align : 'center',
+			formatter : function(value, row, index) {
+				if (value == 0) {
+					return '新增';
+				} else if(value == 1) {
+					return '修改';
+				} else{
+					return '删除';
+				}
+			}
+		},
+
+		{
+			field : 'operationLogData',
+			title : '操作数据',
+			width : 100,
+			align : 'center'
+		},
+		
+		{
+			field : 'operationLogTime',
+			title : '操作时间',
+			width : 70,
+			align : 'center',
+			formatter : function(value, row, index) {
+				return formatDatebox(value)
+			}
+
+		}
+
+		] ]
+
+	});
+
+}

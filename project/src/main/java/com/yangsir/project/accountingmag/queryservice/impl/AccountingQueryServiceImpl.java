@@ -45,7 +45,7 @@ public class AccountingQueryServiceImpl implements IAccountingQueryService {
 				business.add(bus.getBusinessAcc());
 			}
 		} else {
-			business.add((String) params.get("businessAcc"));
+			business.add((String) params.get("business"));
 		}
 		
 		params.put("business", business);

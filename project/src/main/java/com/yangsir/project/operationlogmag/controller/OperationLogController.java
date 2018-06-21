@@ -1,6 +1,10 @@
 package com.yangsir.project.operationlogmag.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.yangsir.project.beans.Pager;
 import com.yangsir.project.operationlogmag.queryservice.IOperationLogQueryService;
+import com.yangsir.project.viewobject.DataGrid;
 
 /**
  * @author guoqi
@@ -21,8 +26,8 @@ import com.yangsir.project.operationlogmag.queryservice.IOperationLogQueryServic
  * @created 13-6��-2018 16:34:41
  * 操作日志控制层
  */
-@Controller
 @RequestMapping("/operationlog")
+@Controller
 public class OperationLogController {
 
 	@Resource
@@ -38,14 +43,33 @@ public class OperationLogController {
 	
 	@ResponseBody
 	@RequestMapping(value="/getOperationLogPager",method= {RequestMethod.GET},produces = { "application/json;charset=utf-8" })
-	public Pager findOperationLog2Pager(Pager pager,String manager,Integer type,Integer model,Date startTime,Date endTime) {
+	public DataGrid findOperationLog2Pager(Pager pager,String manager,int type,int model,Date startTime,Date endTime) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("manager", manager);
 		params.put("type", type);
 		params.put("model", model);
-		params.put("startTime", startTime);
-		params.put("endTime", endTime);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String startDate = "";
+		String endDate = "";
+		if (startTime!=null) {
+			startDate = sdf.format(startTime);
+		}
+		
+		params.put("startTime", startDate);
+
+		if (endTime!=null) {
+			//由于页面得到的日期是当天0点，在查询时应该是当天最后一刻，所以使用日历类加一天在转换回来
+			Calendar c = new GregorianCalendar();
+			c.setTime(endTime);  
+			c.add(Calendar.DAY_OF_MONTH, 1);
+			endTime = c.getTime();
+			endDate = sdf.format(endTime);
+		}
+		System.out.println(endDate);
+		params.put("endTime", endDate);
 		operationLogQueryServiceImpl.findOperationLogByParams2Pager(params, pager);
-		return pager;
+		DataGrid dataGrid = new DataGrid((long) pager.getTotalRows(), pager.getDatas());
+		System.out.println(dataGrid);
+		return dataGrid;
 	}
 }

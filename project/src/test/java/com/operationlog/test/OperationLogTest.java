@@ -45,7 +45,7 @@ public class OperationLogTest {
 		OperationLogBean operationLog = new OperationLogBean();
 		operationLog.setManagerName("xx");
 		operationLog.setOperationLogData("修改了xxxx");
-		operationLog.setOperationLogModel("11");
+		operationLog.setOperationLogModel(1);
 		operationLog.setOperationLogTime(new Date());
 		operationLog.setOperationLogType(0);
 		operationLogHandleServiceImpl.saveOperationLog(operationLog);

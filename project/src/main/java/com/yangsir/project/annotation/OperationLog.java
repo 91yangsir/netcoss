@@ -12,12 +12,12 @@ import java.lang.annotation.Target;
 public @interface OperationLog {
 	
 	/**
-	 * module 操作模块
-	 * type 操作类型
+	 * module 操作模块 1-日志管理 2-用户管理 3-资费管理 4-权限管理 5-账单管理 6-账务查询管理 7-业务帐号管理 8-管理员管理 
+	 * type 操作类型   0-新增  1-修改  2-删除
 	 */
 
-	String model() default "";
+	int model() default 0;
 
-	int type() default 0;
+	int type() default -1;
 	
 }

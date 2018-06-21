@@ -55,7 +55,7 @@ public class OperationLogBean implements Serializable{
 	 * 操作模块
 	 */
 	@Column(name="operation_log_model")
-	private String operationLogModel;
+	private Integer operationLogModel;
 	
 	/**
 	 * 操作数据
@@ -99,11 +99,11 @@ public class OperationLogBean implements Serializable{
 		this.managerName = managerName;
 	}
 
-	public String getOperationLogModel() {
+	public Integer getOperationLogModel() {
 		return operationLogModel;
 	}
 
-	public void setOperationLogModel(String operationLogModel) {
+	public void setOperationLogModel(Integer operationLogModel) {
 		this.operationLogModel = operationLogModel;
 	}
 
