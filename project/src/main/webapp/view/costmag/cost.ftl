@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>资费管理主页</title>
-    <link rel="stylesheet" type="text/css" href="static/easyui/themes/default/easyui.css?">
-    <link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css">
-    <script type="text/javascript" src="static/js/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="static/js/test.page.js"></script>
-    <script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
-    <script type="text/javascript" src="static/js/jquery.json-2.4.js"></script>
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="static/bootstrap/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" href="static/bootstrap/css/project.css"/>
+	<link rel="stylesheet" type="text/css" href="static/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css">
+	<script src="static/js/jquery-3.3.1.min.js"></script>
+	<script src="static/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="static/js/test.page.js"></script>
+	<script type="text/javascript" src="static/bootstrap/js/DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src="static/js/accounting.js"></script>
 </head>
 <body>
 <!--主体表格-->
