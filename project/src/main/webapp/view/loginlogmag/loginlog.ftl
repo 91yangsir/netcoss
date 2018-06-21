@@ -12,8 +12,8 @@
 <link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css">
 <script src="static/js/jquery-3.3.1.min.js"></script>
 <script src="static/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="static/bootstrap/js/DatePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="static/js/loginlog.js"></script>
 <script type="text/javascript" src="static/js/dateconvert.js"></script>
@@ -36,9 +36,9 @@
                             <td>操作类型:</td>
                             <td>
 	                            <select class="easyui-combobox" name="type" id="type" style="width:100px" data-options="panelHeight:76">
-								    <option value="0" selected>所有</option>
-								    <option value="1">登录</option>
-								    <option value="2">退出</option>
+								    <option value="-1" selected>所有</option>
+								    <option value="0">登录</option>
+								    <option value="1">退出</option>
 								</select>
 							</td>
                         </tr>
