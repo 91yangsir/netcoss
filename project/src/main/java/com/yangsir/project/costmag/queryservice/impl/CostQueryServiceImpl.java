@@ -19,7 +19,7 @@ import com.yangsir.project.costmag.queryservice.ICostQueryService;
  * @created 13-6��-2018 16:34:35
  */
 @Service
-public class CostServiceImpl implements ICostQueryService {
+public class CostQueryServiceImpl implements ICostQueryService {
 
 	@Resource
 	private ICostQueryRepository costQueryRepositoryImpl;
