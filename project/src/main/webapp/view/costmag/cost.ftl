@@ -15,19 +15,19 @@
 <script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="static/bootstrap/js/DatePicker/WdatePicker.js"></script>
-<script type="text/javascript" src="static/js/test.page.js"></script>
+<script type="text/javascript" src="static/js/page1.js"></script>
 
 <body>
 <div data-options="region:'center'" style="padding: 5px; background: #eee;width: 100%;">
-<table class="easyui-datagrid" title="资费列表" style="width:100%;height:500px;" data-options="
+<table id="dg" class="easyui-datagrid" title="资费列表" style="width:100%;height:500px;" data-options="
 				rownumbers:false,
 				singleSelect:true,
 				fitColumns:true,
 				autoRowHeight:false,
 				pagination:true,
 				toolbar:'#tb',
-				pageList:[10],
-				pageSize:10,
+				pageList:[15],
+				pageSize:15,
 				method:'get'">
  
 </table>
