@@ -1,5 +1,6 @@
 package com.yangsir.project.costmag.queryservice.impl;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -45,6 +46,12 @@ public class CostQueryServiceImpl implements ICostQueryService {
 	public int getCostBeanByBusinessBeanNums(Long id) {
 		// TODO Auto-generated method stub
 		return costQueryRepositoryImpl.getCostBeanByBusinessBeanNums(id);
+	}
+
+	@Override
+	public List<CostBean> getFindAllCostBean() {
+		// TODO Auto-generated method stub
+		return costQueryRepositoryImpl.getFindAllCostBean();
 	}
 
 }

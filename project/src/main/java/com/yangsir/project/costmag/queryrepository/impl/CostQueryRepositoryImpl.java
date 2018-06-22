@@ -54,4 +54,10 @@ public class CostQueryRepositoryImpl implements ICostQueryRepository {
 		return costMapper.getCostBeanByBusinessBeanNums(id);
 	}
 
+	@Override
+	public List<CostBean> getFindAllCostBean() {
+		// TODO Auto-generated method stub
+		return costMapper.getFindAllCostBean();
+	}
+
 }

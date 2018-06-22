@@ -50,6 +50,23 @@ public interface CostMapper {
 	public int getCostBeanNums();
 	
 	/**
+	 * 查询所有的资费对象
+	 * @return
+	 */
+	@Results({
+		@Result(id=true,property="id",column="id",javaType=long.class),
+		@Result(property="costName",column="cost_name",javaType=String.class),
+		@Result(property="costType",column="cost_type",javaType=int.class),
+		@Result(property="costTime",column="cost_time",javaType=int.class),
+		@Result(property="costBase",column="cost_base",javaType=double.class),
+		@Result(property="costUnit",column="cost_unit",javaType=double.class),
+		@Result(property="costStart",column="cost_start",javaType=Date.class),
+		@Result(property="costExplain",column="cost_explain",javaType=String.class),
+	})
+	@Select("select * from t_cost")
+	public List<CostBean> getFindAllCostBean();
+	
+	/**
 	 * 根据资费id查询所有的使用此资费的业务对象
 	 * @param id
 	 * @return

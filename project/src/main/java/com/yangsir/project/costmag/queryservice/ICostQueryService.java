@@ -1,14 +1,12 @@
 package com.yangsir.project.costmag.queryservice;
 
 
+import java.util.List;
 import java.util.Set;
-
-import org.springframework.data.domain.Page;
 
 import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.CostBean;
 import com.yangsir.project.beans.Pager;
-import com.yangsir.project.costmag.queryrepository.ICostQueryRepository;
 
 /**
  * @author Administrator
@@ -22,6 +20,12 @@ public interface ICostQueryService {
 	 * @param id
 	 */
 	public CostBean getCostBeanById(long id);
+	
+	/**
+	 * 查询所有的资费对象
+	 * @return
+	 */
+	public List<CostBean> getFindAllCostBean();
 
 	/**
 	 * 分页查询所有的对象

@@ -24,6 +24,12 @@ public interface ICostQueryRepository {
 	public CostBean getCostBeanById(long id);
 
 	/**
+	 * 查询所有的资费对象
+	 * @return
+	 */
+	public List<CostBean> getFindAllCostBean();
+	
+	/**
 	 * 分页查询所有的对象
 	 * @return
 	 */

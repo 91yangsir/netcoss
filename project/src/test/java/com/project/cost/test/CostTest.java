@@ -3,6 +3,7 @@ package com.project.cost.test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -75,7 +76,7 @@ public class CostTest {
 	 */
 	@Test
 	public void deleteCostBean() {
-		CostBean cost = costQueryServiceImpl.getCostBeanById(3l);
+		CostBean cost = costQueryServiceImpl.getCostBeanById(11l);
 		costHandleServiceImpl.deleteCostBean(cost);
 	}
 	/**
@@ -126,5 +127,11 @@ public class CostTest {
 	public void getCostBeanByIdBusiness() {
 		Set<BusinessBean> set = costQueryServiceImpl.getCostBeanByIdBusiness(1l);
 		System.out.println(set);
+	}
+	
+	@Test
+	public void findAllCostBean() {
+		List<CostBean> list = costQueryServiceImpl.getFindAllCostBean();
+		System.out.println(list);
 	}
 }
