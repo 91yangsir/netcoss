@@ -1,0 +1,29 @@
+
+
+#add1{
+    position: absolute;
+    left: 400px;
+}
+
+td {
+    font-size: 20px;
+}
+a{
+
+    font-size: 30px;
+
+}
+
+#tijiao{
+	position: absolute;
+    left: 100px;
+    height: 500px;
+    
+}
+
+#chongzhi{
+	position: absolute;
+    left: 100px;
+    height: 500px;
+    
+}

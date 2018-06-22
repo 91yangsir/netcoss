@@ -63,22 +63,52 @@ public class ManagerController {
 	/**
 	 * 增加用户
 	 */
-	@RequestMapping("/add")
-	public String Addmanager(ManagerBean manager) {
+	
+	@RequestMapping(value = "/add", method = {RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
+	public ModelAndView Addmanager(ManagerBean manager ) {
+			
+		if (manager!=null) {
+			managerHandleServiceImpl.saveManager(manager);
+		}
+		ModelAndView  mo =new ModelAndView();
+		   mo.setViewName("managermag/managerindex");
 
-		managerHandleServiceImpl.saveManager(manager);
-
-		return null;
+		return   mo;
 
 	}
 
 	/**
-	 * 修改用户
+	 * 
 	 */
-	@RequestMapping("/update")
-	public String UpdateManager(ModelAndView md, long id) {
+	@RequestMapping(value = "/update", method = {RequestMethod.GET }, produces = { "application/json;charset=utf-8" })
+	public ModelAndView UpdateManager(Integer id) {
+		System.out.println(id);
+		
+		  ManagerBean manager = managerQueryServiceImpl.getManger(id);
+		  ModelAndView modelAndView =new ModelAndView();
+		  modelAndView.setViewName("managermag/updateManager");
+		  modelAndView.addObject("manager",manager);
+		 
 
-		return null;
+		return modelAndView;
+
+	}
+	
+	/**
+	 * 
+	 * @param manager  修改提交
+	 * @return
+	 */
+	@RequestMapping(value = "/update1", method = {RequestMethod.GET }, produces = { "application/json;charset=utf-8" })
+	public ModelAndView UpdateManager(ManagerBean manager) {
+		
+		
+		 	managerHandleServiceImpl.updateManatger(manager);
+		  ModelAndView modelAndView =new ModelAndView();
+		  modelAndView.setViewName("managermag/managerindex");
+		
+
+		return modelAndView;
 
 	}
 	/**

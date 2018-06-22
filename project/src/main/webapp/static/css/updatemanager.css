@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+
+}
+
+#add1{
+    position: absolute;
+    left: 370px;
+}
+
+td {
+    font-size: 20px;
+}
+
+
+
+
+#nameRight,#nameError, #accRight,#accError ,#pwdRight,#pwdError,#pwdRight1,#pwdError1,
+
+#telRight,#telError,#mailRight,#mailError {
+    display: none;
+}
