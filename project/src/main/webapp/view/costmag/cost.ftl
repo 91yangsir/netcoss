@@ -1,26 +1,25 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
+<head lang="en">
     <meta charset="UTF-8">
-    <title>资费管理主页</title>
-    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="static/bootstrap/css/bootstrap-theme.min.css"/>
-	<link rel="stylesheet" href="static/bootstrap/css/project.css"/>
-	<link rel="stylesheet" type="text/css" href="static/easyui/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css">
-	<script src="static/js/jquery-3.3.1.min.js"></script>
-	<script src="static/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
-	<script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="static/js/test.page.js"></script>
-	<script type="text/javascript" src="static/bootstrap/js/DatePicker/WdatePicker.js"></script>
-	<script type="text/javascript" src="static/js/accounting.js"></script>
+    <title>资费列表</title>
 </head>
+<base href="/project/">
+<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="static/bootstrap/css/bootstrap-theme.min.css"/>
+<link rel="stylesheet" href="static/bootstrap/css/project.css"/>
+<link rel="stylesheet" type="text/css" href="static/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css">
+<script src="static/bootstrap/js/jquery-3.2.0.min.js"></script>
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="static/bootstrap/js/DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="static/js/test.page.js"></script>
+
 <body>
-<!--主体表格-->
-<div data-options="region:'center'"
-     style="padding: 5px; background: #eee;width: 100%;">
-    <table id="dg" title="资费列表" style="width:100%;height:500px; " data-options="
+<div data-options="region:'center'" style="padding: 5px; background: #eee;width: 100%;">
+<table class="easyui-datagrid" title="资费列表" style="width:100%;height:500px;" data-options="
 				rownumbers:false,
 				singleSelect:true,
 				fitColumns:true,
@@ -28,19 +27,10 @@
 				pagination:true,
 				toolbar:'#tb',
 				pageList:[10],
-				pageSize:10">
-        <thead>
-        <tr>
-            <th field="inv" width="110" align="right">资费名</th>
-            <th field="date" width="120" align="right">资费类型</th>
-            <th field="name" width="100" align="right">基本时长</th>
-            <th field="amount" width="100" align="right">基本费用</th>
-            <th field="price" width="100" align="right">单位费用</th>
-            <th field="cost" width="120" align="right">开通时间</th>
-            <th field="note" width="130" align="right">资费说明</th>
-        </tr>
-        </thead>
-    </table>
+				pageSize:10,
+				method:'get'">
+ 
+</table>
 </div>
 
 <!--表格中五个操作按钮-->
@@ -159,60 +149,5 @@
             data-options="iconCls:'icon-no',plain:true">取消</a>
 </div>
 
-
-<script>
-
-    function getData(){
-        var rows = [];
-        for(var i=1; i<=800; i++){
-            var amount = Math.floor(Math.random()*1000);
-            var price = Math.floor(Math.random()*1000);
-            rows.push({
-                inv: 'Inv No '+i,
-                date: $.fn.datebox.defaults.formatter(new Date()),
-                name: 'Name '+i,
-                amount: amount,
-                price: price,
-                cost: amount*price,
-                note: 'Note '+i
-            });
-        }
-        return rows;
-    }
-
-    function pagerFilter(data){
-        if (typeof data.length == 'number' && typeof data.splice == 'function'){	// is array
-            data = {
-                total: data.length,
-                rows: data
-            }
-        }
-        var dg = $(this);
-        var opts = dg.datagrid('options');
-        var pager = dg.datagrid('getPager');
-        pager.pagination({
-            onSelectPage:function(pageNum, pageSize){
-                opts.pageNumber = pageNum;
-                opts.pageSize = pageSize;
-                pager.pagination('refresh',{
-                    pageNumber:pageNum,
-                    pageSize:pageSize
-                });
-                dg.datagrid('loadData',data);
-            }
-        });
-        if (!data.originalRows){
-            data.originalRows = (data.rows);
-        }
-        var start = (opts.pageNumber-1)*parseInt(opts.pageSize);
-        var end = start + parseInt(opts.pageSize);
-        data.rows = (data.originalRows.slice(start, end));
-        return data;
-    }
-
-    $(function(){
-        $('#dg').datagrid({loadFilter:pagerFilter}).datagrid('loadData', getData());
-    });
-</script>
 </body>
 </html>
