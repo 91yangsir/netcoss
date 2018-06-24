@@ -20,7 +20,7 @@
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>
-
+ 
 	<!-- 开启springmvc注解支持 -->
 	<mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
  
@@ -47,7 +47,7 @@
 		<property name="maxInMemorySize" value="10240"></property>
 		<property name="defaultEncoding" value="utf-8"></property>
 	</bean>
-	
+	 
 	<!-- 配置freemaker试图解析器 -->
 	 <bean id="freemarkerConfig"
 		class=" com.yangsir.project.factory.FreeMarkerConfigExtend">

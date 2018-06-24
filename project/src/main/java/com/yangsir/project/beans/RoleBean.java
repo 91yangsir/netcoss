@@ -17,6 +17,8 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * @author xiongbing
  * @version 1.0
@@ -24,6 +26,7 @@ import org.hibernate.annotations.GenericGenerator;
  */
 @Entity
 @Table(name="t_role")
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
 public class RoleBean implements Serializable {
 
 	/**

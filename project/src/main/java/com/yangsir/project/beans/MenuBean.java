@@ -15,6 +15,8 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * @author xiongbing
  * @version 
@@ -22,6 +24,7 @@ import org.hibernate.annotations.GenericGenerator;
  */
 @Entity
 @Table(name="t_menu")
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
 public class MenuBean implements Serializable{
 
 	
