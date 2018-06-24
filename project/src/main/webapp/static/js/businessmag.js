@@ -1,14 +1,14 @@
 $(function() {
 	
 	//查询
-	$('#queryUser').bind('click', function(){   
+	$('#queryBusiness').bind('click', function(){   
 		getData();
 	    });
 
 	// 删除
-	$('#deleteUser').bind('click', function(){   
+	$('#deleteBusiness').bind('click', function(){   
 		
-		var datas =  $('#user_table').datagrid('getSelections');  
+		var datas =  $('#business_table').datagrid('getSelections');  
 		var lenth = datas.length;
 		if(lenth == 0){
 			$.messager.show({
@@ -22,7 +22,7 @@ $(function() {
 			console.log(jsonArray);
 			$.ajax({
 				   type: "DELETE",
-				   url: "user/delete",
+				   url: "business/delete",
 				   data: jsonArray,
 				   contentType:"application/json;charset=utf-8",
 				   success: function(msg){
@@ -40,8 +40,8 @@ $(function() {
 	
 	
 	//修改
-	$('#updateUser').bind('click', function(){   
-		var row =  $('#user_table').datagrid('getSelected'); 
+	$('#updateBusiness').bind('click', function(){   
+		var row =  $('#business_table').datagrid('getSelected'); 
 		
 		if(!row){
 			$.messager.show({
@@ -52,7 +52,7 @@ $(function() {
 			});
 		}else{
 			
-			var rows =  $('#user_table').datagrid('getSelections'); 
+			var rows =  $('#business_table').datagrid('getSelections'); 
 			var lenth = rows.length;
 			if(lenth > 1){
 				$.messager.show({
@@ -86,7 +86,7 @@ $(function() {
 // 得到查询参数
 function queryParams() {
 	var data = {
-		userName : $('#userName').val(),
+		userName : $('#businessAcc').val(),
 		userAcc : $('#userAcc').val()
 	};
 	console.log(data)
@@ -99,60 +99,51 @@ $(function() {
 	getData();
 });
 
-// 取得数据
+// 分页表格取得数据
 function getData() {
 	// 初始化表格
-	$('#user_table').datagrid({
-		url : 'user/showPage',
+	$('#business_table').datagrid({
+		url : 'business/showPage',
 		type : 'get',
 		queryParams : queryParams(),
 		// 格式化每个字段的显示
 		columns : [ [ {
-			field : 'userName',
-			title : '真实姓名',
-			width : 80,
+			field : 'user',
+			title : '账务帐号',
+			width : 120,
 			align : 'center'
 		},
 
 		{
-			field : 'userGender',
-			title : '性别',
-			width : 80,
-			align : 'center',
-			formatter : function(value, row, index) {
-				if (value == 0) {
-					return '女';
-				} else if (value == 1){
-					return '男';
-				} else {
-					return '其他';
-				}
-			}
-		},
-
-		{
-			field : 'userAcc',
-			title : '账务账号',
+			field : 'cost',
+			title : '资费类型',
 			width : 120,
 			align : 'center',
 		},
 
 		{
-			field : 'userTel',
-			title : '联系电话',
+			field : 'server',
+			title : '服务器',
 			width : 120,
 			align : 'center'
 		},
 		
 		{
-			field : 'userQQ',
-			title : 'QQ',
+			field : 'businessAcc',
+			title : '业务帐号',
 			width : 120,
 			align : 'center',
 		},
-
+		
 		{
-			field : 'userState',
+			field : 'businessPwd',
+			title : '密码',
+			width : 120,
+			align : 'center',
+		},
+		
+		{
+			field : 'businessState',
 			title : '状态',
 			width : 80,
 			align : 'center',
@@ -166,9 +157,9 @@ function getData() {
 		},
 		
 		{
-			field : 'userAddress',
-			title : '通信地址',
-			width : 280,
+			field : 'businessCostNext',
+			title : '下月资费',
+			width : 240,
 			align : 'center'
 		},
 
