@@ -59,44 +59,70 @@ public class CostController {
 	//修改资费
 	@ResponseBody
 	@RequestMapping(value="/update",method= {RequestMethod.POST},produces= {"application/json;charset=utf-8"})
-	public void updateCostBean(long id,String costName,int costType,int costTime,double costBase,double costUnit,String costExplain) throws UnsupportedEncodingException {
+	public boolean updateCostBean(long id,String costName,int costType,int costTime,double costBase,double costUnit,String costExplain) throws UnsupportedEncodingException {
 		System.out.println("进入修改资费controller");
-		System.out.println(costName);
 		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
-		bean.setCostName(new String(costName.getBytes("iso8859-1"),"utf-8"));
-		bean.setCostType(costType);
-		bean.setCostTime(costTime);
-		bean.setCostBase(costBase);
-		bean.setCostUnit(costUnit);
-		bean.setCostExplain(costExplain);
-		costHandleServiceImpl.updateCostBean(bean);
+		int num = costQueryServiceImpl.getCostBeanByBusinessBeanNums(id);
+		System.out.println("当前有"+num+"个用户使用此资费");
+		if(num == 0) {
+			bean.setCostName(costName);
+			bean.setCostType(costType);
+			bean.setCostTime(costTime);
+			bean.setCostBase(costBase);
+			bean.setCostUnit(costUnit);
+			bean.setCostExplain(costExplain);
+			costHandleServiceImpl.updateCostBean(bean);
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	//修改资费的状态为暂停
 	@ResponseBody
 	@RequestMapping(value="/updateout",method= {RequestMethod.POST})
-	public void updateStateOut(long id) {
+	public boolean updateStateOut(long id) {
 		System.out.println("进入修改资费状态为暂停");
 		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
-		costHandleServiceImpl.updateCostStateOut(bean);
+		int num = costQueryServiceImpl.getCostBeanByBusinessBeanNums(id);
+		System.out.println("当前有"+num+"个用户使用此资费");
+		if(num == 0) {
+			costHandleServiceImpl.updateCostStateOut(bean);
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 	//修改资费状态为开通
 	@ResponseBody
 	@RequestMapping(value="/updateopen",method= {RequestMethod.POST})
-	public void updateStateOpen(long id) {
+	public int updateStateOpen(long id) {
 		System.out.println("进入修改资费状态为开通");
 		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
-		costHandleServiceImpl.updateCostStateStart(bean);
+		System.out.println(bean.getCostStart());
+		if(bean.getCostStart() == null) {
+			costHandleServiceImpl.updateCostStateStart(bean);
+			return 1;
+		}else {
+			return 0;
+		}
 	}
 	
 	
 	//删除资费
 	@ResponseBody
 	@RequestMapping(value="/delete",method= {RequestMethod.POST})
-	public void deleteCostBean(long id) {
+	public boolean deleteCostBean(long id) {
 		System.out.println("进入删除资费页面");
 		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
-		costHandleServiceImpl.deleteCostBean(bean);
+		int num = costQueryServiceImpl.getCostBeanByBusinessBeanNums(id);
+		System.out.println("当前已有"+num+"个用户使用此资费");
+		if(num == 0) {
+			costHandleServiceImpl.deleteCostBean(bean);
+			return true;
+		}else {
+			return false;
+		}
 	}
 }

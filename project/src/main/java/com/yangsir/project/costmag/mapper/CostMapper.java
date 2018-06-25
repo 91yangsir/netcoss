@@ -101,7 +101,7 @@ public interface CostMapper {
 	 * @param id
 	 * @return
 	 */
-	@Select("select count(*) from t_business where fk_cost_id")
+	@Select("select count(*) from t_business where fk_cost_id = #{id}")
 	public int getCostBeanByBusinessBeanNums(long id);
 	
 	

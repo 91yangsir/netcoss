@@ -26,9 +26,9 @@ public class CostTest {
 	@Test
 	public void savaCostBean() {
 		CostBean cost = new CostBean();
-		cost.setCostName("全球通");
+		cost.setCostName("超级网卡");
 		cost.setCostType(1);
-		cost.setCostExplain("wefnwerwafasdf");
+		cost.setCostExplain("asdfasdfasdfasdfasdfasdfasdfasdfasddf");
 		cost.setCostBase(58);
 		cost.setCostUnit(90);
 		cost.setCostStart(new Date());

@@ -29,14 +29,23 @@ $(function() {
 			};
 			console.log(data.id);
 			$.post('/project/cost/update',data,function(info){
-				
+				if(info == true){
+					console.log(123456);
+					$.messager.show({
+						title:'提示',
+						msg:'修改资费成功',
+						timeout:5000,
+						showType:'slide'
+					})
+				}else{
+					$.messager.show({
+						title:'提示',
+						msg:'当前资费有用户使用，不能修改',
+						timeout:5000,
+						showType:'slide'
+					})
+				}
 			},'json')
-			$.messager.show({
-					title:'提示',
-					msg:'修改资费成功',
-					timeout:5000,
-					showType:'slide'
-				})
 			$("#update_dialog").dialog('close');
 			getData();
 			$("#update_costName").val('');
@@ -70,15 +79,24 @@ $(function() {
 			var data = {
 				id : row.id
 			}
+			console.log(data.id);
 			$.post('/project/cost/delete',data,function(info){
-				
+				if(info == true){
+					$.messager.show({
+						title:'提示',
+						msg:'删除资费成功',
+						timeout:5000,
+						showType:'slide'
+					})
+				}else{
+					$.messager.show({
+						title:'提示',
+						msg:'当前资费有用户使用，不能删除',
+						timeout:5000,
+						showType:'slide'
+					})
+				}
 			},'json');
-			$.messager.show({
-				title:'提示',
-				msg:'删除资费成功',
-				timeout:5000,
-				showType:'slide'
-			})
 			$("#delete_dialog").dialog('close');
 			getData();
 		})
@@ -108,14 +126,23 @@ $(function() {
 			}
 			console.log(data.id);
 			$.post('/project/cost/updateopen',data,function(info){
-				
+				if(info == 1){
+					$.messager.show({
+						title:'提示',
+						msg:'开通资费成功',
+						timeout:5000,
+						showType:'slide'
+					})
+				}else{
+					$.messager.show({
+						title:'提示',
+						msg:'资费已经是开通状态',
+						timeout:5000,
+						showType:'slide'
+					})
+				}
 			},'json');
-			$.messager.show({
-				title:'提示',
-				msg:'开通资费成功',
-				timeout:5000,
-				showType:'slide'
-			})
+			
 			$("#openCost_dialog").dialog('close');
 			getData();
 		})
@@ -145,14 +172,22 @@ $(function() {
 			}
 			console.log(data1.id);
 			$.post('/project/cost/updateout',data1,function(info){
-				
+				if(info == true){
+					$.messager.show({
+						title:'提示',
+						msg:'暂停资费成功',
+						timeout:5000,
+						showType:'slide'
+					})
+				}else{
+					$.messager.show({
+						title:'提示',
+						msg:'当前资费有用户使用，不能暂停',
+						timeout:5000,
+						showType:'slide'
+					})
+				}
 			},'json');
-			$.messager.show({
-				title:'提示',
-				msg:'暂停资费成功',
-				timeout:5000,
-				showType:'slide'
-			})
 			$("#closeCost_dialog").dialog('close');
 			getData();
 		})
