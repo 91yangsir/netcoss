@@ -1,18 +1,16 @@
 package com.yangsir.project.usersystemmag.handlerepository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.yangsir.project.beans.LoginLogBean;
 import com.yangsir.project.beans.UserBean;
 
 /**
- * @author Administrator
+ * @author æ¨Šç»é€š
  * @version 1.0
- * @created 13-6ÔÂ-2018 16:34:38
+ * @created 13-6ï¿½ï¿½-2018 16:34:38
  */
-public interface IUsersysHandleRepository {
+public interface IUsersysHandleRepository extends JpaRepository<UserBean, Long>{
 
-	/**
-	 * 
-	 * @param user
-	 */
-	public void updateUser(UserBean user);
 
 }

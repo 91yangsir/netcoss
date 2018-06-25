@@ -1,32 +1,50 @@
 package com.yangsir.project.usersystemmag.queryrepository;
 
+import java.util.List;
+import java.util.Map;
+
 import com.yangsir.project.beans.BillBean;
+import com.yangsir.project.beans.CostBean;
+import com.yangsir.project.beans.LoginLogBean;
+import com.yangsir.project.beans.Pager;
 import com.yangsir.project.beans.ServerInfoBean;
 import com.yangsir.project.beans.UserBean;
 
 /**
- * @author Administrator
+ * @author 樊绍通
  * @version 1.0
- * @created 13-6��-2018 16:34:39
+ * @created 13-6��-2018 16:34:39
  */
 public interface IUsersysQueryRepository {
-
 	/**
-	 * 
-	 * @param bill
+	 * 根据账务账号查询用户信息
+	 * @param userAcc
+	 * @return
 	 */
-	public BillBean findBill(BillBean bill);
-
+	public UserBean findUserByUserAcc(String userAcc);
 	/**
-	 * 
-	 * @param server
+	 * 根据参数查询账单总数
+	 * @param params 页面参数
+	 * @return 
 	 */
-	public ServerInfoBean findServerInfo(ServerInfoBean server);
-
+	public int countBillByParams(Map params);
+	
 	/**
-	 * 
-	 * @param user
+	 * 根据参数查询账单集合
+	 * @param params 页面参数
+	 * @return 
 	 */
-	public UserBean findUser(UserBean user);
-
+	public List<BillBean>findBillByParams(Map params);
+	
+	/**
+	 * 根据业务账号查询服务器信息
+	 * @return
+	 */
+	public ServerInfoBean findServerInfoBeanByBusinessAcc(String businessAcc);
+	/**
+	 * 根据业务账号查询资费信息
+	 * @param businessAcc
+	 * @return
+	 */
+	public CostBean findCostBeanByBusinessAcc(String businessAcc);
 }
