@@ -30,12 +30,12 @@
 
 			<div id="down1">
 
-				<button  id="add" ; style="width: 80px; height: 50px">添加</button>
+				<button  id="add"   style="width: 80px; height: 50px">添加</button>
 				&nbsp&nbsp&nbsp
-				<button id="update"; style="width: 80px; height: 50px">修改</button>
+				<button id="update"  style="width: 80px; height: 50px">修改</button>
 
 				&nbsp&nbsp&nbsp
-				<button style="width: 80px; height: 50px">删除</button>
+				<button id="delete"  style="width: 80px; height: 50px">删除</button>
 			</div>
 			<div id="down2">
 				<form id="ff" method="post">
