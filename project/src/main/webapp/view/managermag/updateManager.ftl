@@ -11,7 +11,7 @@
 	type="text/css">
 <script src="/project/static/js/jquery-3.3.1.min.js"></script>
 <script src="/project/static/easyui/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="/project/static/js/updateManagerIndex.js"></script>
+<script type="text/javascript" src="/project/static/js/updateManager.js"></script>
 </head>
 <body>
 
@@ -24,7 +24,10 @@
     <div style="margin:20px 0;"></div>
     <div class="easyui-panel" title="New Topic" style="width:600px ; height: 500px">
         <div style="padding:10px 60px 20px 60px">
-            <form id="ff" method="POST" action="/project/manager/add">
+            <form id="ff" method="POST" action="/project/manager/update1">
+            	<input type="hidden" value="${manager.id}" name="id">
+            	<input type="hidden" value="${manager.managerAcc}" name="managerAcc">
+            	<input type="hidden" value="${manager.managerName}" name="managerName">
                 <br/>  <br/>
                 <table cellpadding="5">
                     <tr>
@@ -67,7 +70,7 @@
                         <td>管理员类型:</td>
 
                         <td>
-                            <select name="" id="" style="height: 45px;width: 170px">
+                            <select name="roleName" id="" style="height: 45px;width: 170px">
                              <option value="用户管理员" <#if manager.role.roleName=="用户管理员"> selected</#if>   >用户管理员</option>
 							 <option value="超级管理员"  <#if manager.role.roleName=="超级管理员"> selected</#if> >超级管理员</option>
 							 <option value="资费管理">资费管理</option>
@@ -76,6 +79,7 @@
                         </td>
                     </tr>
                 </table>
+                <input type="submit"  width="50"  style="width: 100px;height: 40px" />
             </form>
             <div style="text-align:center;padding:5px">
                 

@@ -2,6 +2,8 @@ package com.yangsir.project.managermag.controller;
 
 import com.yangsir.project.managermag.handleservice.IManagerHandleService;
 import com.yangsir.project.managermag.queryservice.IManagerQueryService;
+import com.yangsir.project.powermag.queryrepository.impl.PowerQueryRepositoryImpl;
+import com.yangsir.project.powermag.queryservice.IPowerQueryService;
 import com.yangsir.project.viewobject.DataGrid;
 
 import java.util.HashMap;
@@ -33,16 +35,14 @@ public class ManagerController {
 
 	@Resource
 	public IManagerQueryService managerQueryServiceImpl;
-	
-	
-	
-	
+
+	@Resource
+	private IPowerQueryService powerQueryServiceImpl;
 
 	/**
 	 * 分頁展示
 	 */
-	
-	
+
 	@RequestMapping(value = "/page", method = { RequestMethod.GET }, produces = { "application/json;charset=utf-8" })
 	@ResponseBody
 	public DataGrid showManagerToPager(Pager pager, String managerName, String managerTel, String roleName) {
@@ -50,11 +50,11 @@ public class ManagerController {
 		Map<String, Object> params = new HashMap<>();
 		params.put("managerName", managerName);
 		params.put("managerTel", managerTel);
-		
-		//RoleBean role = managerQueryServiceImpl.getRoleBeanByName(roleName);
+
+		// RoleBean role = managerQueryServiceImpl.getRoleBeanByName(roleName);
 		params.put("role", roleName);
-		
-		Pager p=managerQueryServiceImpl.findManagerByParams2Pager(params, pager);
+
+		Pager p = managerQueryServiceImpl.findManagerByParams2Pager(params, pager);
 		System.out.println(p);
 		DataGrid dataGrid = new DataGrid((long) pager.getTotalRows(), pager.getDatas());
 		return dataGrid;
@@ -63,50 +63,58 @@ public class ManagerController {
 	/**
 	 * 增加用户
 	 */
-	
-	@RequestMapping(value = "/add", method = {RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
-	public ModelAndView Addmanager(ManagerBean manager ) {
-			
-		if (manager!=null) {
-			managerHandleServiceImpl.saveManager(manager);
-		}
-		ModelAndView  mo =new ModelAndView();
-		   mo.setViewName("managermag/managerindex");
 
-		return   mo;
+	@RequestMapping(value = "/add", method = { RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
+	public ModelAndView Addmanager(ManagerBean manager, String roleName) {
+
+		RoleBean roleBean = powerQueryServiceImpl.findRoleByName(roleName);
+		RoleBean role = new RoleBean();
+		role.setId(roleBean.getId());
+
+		manager.setRole(role);
+		managerHandleServiceImpl.saveManager(manager);
+
+		ModelAndView mo = new ModelAndView();
+		mo.setViewName("managermag/managerindex");
+
+		return mo;
 
 	}
 
 	/**
-	 * 
+	 * 修改用户
 	 */
-	@RequestMapping(value = "/update", method = {RequestMethod.GET }, produces = { "application/json;charset=utf-8" })
+	@RequestMapping(value = "/update", method = { RequestMethod.GET }, produces = { "application/json;charset=utf-8" })
 	public ModelAndView UpdateManager(Integer id) {
 		System.out.println(id);
-		
-		  ManagerBean manager = managerQueryServiceImpl.getManger(id);
-		  ModelAndView modelAndView =new ModelAndView();
-		  modelAndView.setViewName("managermag/updateManager");
-		  modelAndView.addObject("manager",manager);
-		 
+
+		ManagerBean manager = managerQueryServiceImpl.getManger(id);
+		System.out.println(manager);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("managermag/updateManager");
+		modelAndView.addObject("manager", manager);
 
 		return modelAndView;
 
 	}
-	
+
 	/**
 	 * 
-	 * @param manager  修改提交
+	 * @param manager
+	 *            修改提交
 	 * @return
 	 */
-	@RequestMapping(value = "/update1", method = {RequestMethod.GET }, produces = { "application/json;charset=utf-8" })
-	public ModelAndView UpdateManager(ManagerBean manager) {
+	@RequestMapping(value = "/update1", method = { RequestMethod.POST }, produces = {
+			"application/json;charset=utf-8" })
+	public ModelAndView updateManager(ManagerBean manager, String roleName) {
 		
-		
-		 	managerHandleServiceImpl.updateManatger(manager);
-		  ModelAndView modelAndView =new ModelAndView();
-		  modelAndView.setViewName("managermag/managerindex");
-		
+		RoleBean roleBean = powerQueryServiceImpl.findRoleByName(roleName);
+		RoleBean role = new RoleBean();
+		role.setId(roleBean.getId());
+		manager.setRole(role);
+		managerHandleServiceImpl.updateManatger(manager);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("managermag/managerindex");
 
 		return modelAndView;
 
@@ -114,5 +122,13 @@ public class ManagerController {
 	/**
 	 * 刪除用戶
 	 */
-
+	@RequestMapping(value = "/delete", method = { RequestMethod.DELETE })
+	public ModelAndView  deleteManager( Integer id) {
+		System.out.println(id);
+		managerHandleServiceImpl.deleteManager(id);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("managermag/managerindex");
+		return modelAndView;
+		
+	}
 }
