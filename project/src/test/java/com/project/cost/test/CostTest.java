@@ -55,7 +55,7 @@ public class CostTest {
 	 */
 	@Test
 	public void getCostBeanById() {
-		CostBean bean = costQueryServiceImpl.getCostBeanById(1l);
+		CostBean bean = costQueryServiceImpl.getCostBeanById(25l);
 		System.out.println(bean);
 	}
 	
@@ -92,46 +92,17 @@ public class CostTest {
 	 */
 	@Test
 	public void getCostBeanByBusinessBeanNums() {
-		int num = costQueryServiceImpl.getCostBeanByBusinessBeanNums(1l);
+		int num = costQueryServiceImpl.getCostBeanByBusinessBeanNums(23l);
 		System.out.println(num);
 	}
+		
 	/**
-	 * 修改资费状态为开通
+	 * 查询所有的资费对象	
 	 */
-	@Test
-	public void updateCostTypeStart() {
-		CostBean cost = costQueryServiceImpl.getCostBeanById(1l);
-		if(cost.getCostType() == 1) {
-			System.out.println("资费已经是开通状态");
-		}else {
-			CostBean bean = costHandleServiceImpl.updateCostTypeStart(cost);
-			System.out.println("资费修改成功");
-		}
-	}
-	
-	/**
-	 * 修改资费状态为开通
-	 */
-	@Test
-	public void updateCostTypeOut() {
-		CostBean cost = costQueryServiceImpl.getCostBeanById(1l);
-		if(cost.getCostType() == 0) {
-			System.out.println("资费已经是暂停状态");
-		}else {
-			CostBean bean = costHandleServiceImpl.updateCostTypeOut(cost);
-			System.out.println("资费修改成功");
-		}
-	}
-	
-	@Test
-	public void getCostBeanByIdBusiness() {
-		Set<BusinessBean> set = costQueryServiceImpl.getCostBeanByIdBusiness(1l);
-		System.out.println(set);
-	}
-	
 	@Test
 	public void findAllCostBean() {
 		List<CostBean> list = costQueryServiceImpl.getFindAllCostBean();
 		System.out.println(list);
 	}
+	
 }
