@@ -30,22 +30,39 @@
         <div class="col-md-8 col-md-offset-4">
             <div class="row" id="row_div">
                 <div class="col-md-3">
-                    <label for="user">账务帐号</label>
+                    	<b>账务帐号</b>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="user" name="user" data-options="required:true" />
+	                <input class="easyui-combobox" name="userAcc" editable="false"
+						data-options="
+						url:'/project/user/userCombobox',
+						method:'get',
+						valueField:'id',
+						textField:'userAcc',
+						panelHeight:'auto',
+						required:true
+					">
                 </div>
                 <div class="col-md-3">
-                    <label for="cost">资费类型</label>
+                    	<b>资费类型</b>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="cost" name="cost" data-options="required:true" />
+                	<input class="easyui-combobox" name="costName" editable="false"
+						data-options="
+						url:'/project/business/costCombobox',
+						method:'get',
+						valueField:'id',
+						textField:'costName',
+						panelHeight:'auto',
+						required:true
+					">
                 </div>
                 <div class="col-md-3">
-                    <label for="server">服务器</label>
+                    	<b>服务器</b>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="server" name="server" data-options="required:true" />
+                	<input id="serverIp" class="easyui-combobox" name="serverIp"  
+    					data-options="valueField:'id',textField:'text',url:'get_data.php'" />
                 </div>
                 <div class="col-md-3">
                     <label for="businessAcc">业务账号</label>

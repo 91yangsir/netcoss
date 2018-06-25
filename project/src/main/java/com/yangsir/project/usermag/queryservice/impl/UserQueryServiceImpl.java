@@ -1,5 +1,6 @@
 package com.yangsir.project.usermag.queryservice.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -37,6 +38,12 @@ public class UserQueryServiceImpl implements IUserQueryService {
 		pager.setDatas(userQueryRepositoryImpl.findUserByParams(map));
 		pager.setTotalRows(userQueryRepositoryImpl.countUserByParams(map));
 		return pager;
+	}
+
+	@Override
+	public List<?> getAllUser() {
+		// TODO Auto-generated method stub
+		return userQueryRepositoryImpl.getAllUser();
 	}
 
 }

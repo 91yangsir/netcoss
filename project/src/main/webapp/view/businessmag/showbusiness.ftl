@@ -26,7 +26,7 @@
              <label for="userAcc">账务账号&nbsp;&nbsp;&nbsp;</label><input type="text" name="userAcc" id="userAcc"/>
          </div>
          <div class="col-md-4">
-             <label for="businessAcc">真实姓名&nbsp;&nbsp;&nbsp;</label><input type="text" name="businessAcc" id="businessAcc"/>
+             <label for="businessAcc">业务账号&nbsp;&nbsp;&nbsp;</label><input type="text" name="businessAcc" id="businessAcc"/>
          </div>
          <div class="col-md-4">
              <button class="easyui-linkbutton" data-options="iconCls:'icon-search'" id="queryBusiness">查询</button>
@@ -66,7 +66,7 @@
                      <th field="businessAcc" width="120" align="center">业务帐号</th>
                      <th field="businessPwd" width="120" align="center">密码</th>
                      <th field="businessState" width="80" align="center">状态</th>
-                     <th field="businessCostNext" width="240" align="center">下月资费</th>
+                     <th field="businessCostNext" width="200" align="center">下月资费</th>
                  </tr>
                  </thead>
              </table>

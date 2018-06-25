@@ -29,7 +29,7 @@ $(function() {
 					   $.messager.show({
 							title:'提示',
 							msg: '删除成功',
-							timeout:5000,
+							timeout:2000,
 							showType:'slide'
 						});  
 				   }

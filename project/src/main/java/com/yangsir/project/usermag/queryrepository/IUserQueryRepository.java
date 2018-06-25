@@ -37,6 +37,12 @@ public interface IUserQueryRepository {
 	public int countUserByParams(Map params);
 	
 	/**
+	 * 查询所有开通用户
+	 * @return
+	 */
+	public List<?> getAllUser();
+	
+	/**
 	 * 根据参数查询用户,获得用户集合
 	 * @param params 页面获得的参数
 	 * @return 分页的用户集合

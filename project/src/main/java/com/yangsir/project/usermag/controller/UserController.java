@@ -5,6 +5,7 @@ import com.yangsir.project.usermag.queryservice.IUserQueryService;
 import com.yangsir.project.viewobject.DataGrid;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -45,7 +46,7 @@ public class UserController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return "usermag/showuser";
+		return "redirect:/showPage";
 	}
 	
 	/**
@@ -61,7 +62,7 @@ public class UserController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return "";
+		return "usermag/showuser";
 	}
 	
 	
@@ -106,6 +107,16 @@ public class UserController {
 //		System.out.println(pager);
 		DataGrid dataGrid = new DataGrid((long)pager.getTotalRows(),pager.getDatas());
 		return dataGrid;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/userCombobox",method= {RequestMethod.GET},produces = { 
+	"application/json;charset=utf-8" })
+	public List<UserBean> queryAllUser() {
+		
+		List<UserBean> datas = (List<UserBean>) userQueryServiceImpl.getAllUser();
+		
+		return datas;
 	}
 
 

@@ -1,6 +1,7 @@
 package com.yangsir.project.businessmag.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -11,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yangsir.project.beans.BusinessBean;
+import com.yangsir.project.beans.CostBean;
 import com.yangsir.project.beans.Pager;
+import com.yangsir.project.beans.UserBean;
 import com.yangsir.project.businessmag.handleservice.IBusinessHandleService;
 import com.yangsir.project.businessmag.queryservice.IBusinessQueryService;
+import com.yangsir.project.costmag.queryservice.ICostQueryService;
 import com.yangsir.project.viewobject.DataGrid;
 
 /**
@@ -30,6 +34,9 @@ public class BusinessController {
 	@Resource
 	private IBusinessQueryService businessQueryService;
 	
+	@Resource
+	public ICostQueryService costQueryServiceImpl;
+	
 	/**
 	 * 添加业务帐号
 	 * @param business
@@ -44,7 +51,7 @@ public class BusinessController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return "businessmag/showbusiness";
+		return "redirect:/view/businessmag/showbusiness.ftl";
 	}
 	
 	@ResponseBody
@@ -65,6 +72,15 @@ public class BusinessController {
 		return dataGrid;
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="/costCombobox",method= {RequestMethod.GET},produces = { 
+	"application/json;charset=utf-8" })
+	public List<CostBean> queryAllCost() {
+		
+		List<CostBean> datas = costQueryServiceImpl.getFindAllCostBean();
+		
+		return datas;
+	}
 	
 	
 }

@@ -36,7 +36,4 @@ public class UserMapperProvider {
 		return sb.toString();
 	}
 	
-
-	
-	 
 }
