@@ -19,7 +19,7 @@
 <script type="text/javascript" src="static/js/dateconvert.js"></script>
 <body>
 <div data-options="region:'center'" style="padding: 5px; background: #eee;width: 100%;">
-<table id="dg" class="easyui-datagrid" title="资费列表" style="width:100%;height:370px;" data-options="
+<table id="dg" class="easyui-datagrid" title="资费列表" style="width:100%;height:385px;" data-options="
 				rownumbers:false,
 				singleSelect:true,
 				fitColumns:true,
@@ -52,7 +52,7 @@
 </div>
 
 <!--修改页面-->
-<div id="update_dialog" class="easyui-dialog" title="修改资费" style="width:300px;height:350px;"
+<div id="update_dialog" class="easyui-dialog" title="修改资费" style="width:300px;height:330px;"
      data-options="iconCls:'icon-save',resizable:true,modal:true,buttons:'#update_dialog_tb',closed:true">
     <form id="update_cost_form" method="post">
         资费名：<input class="easyui-validatebox" data-options="required:true" id="update_costName" name="costName" /><br/><br/>
@@ -78,7 +78,7 @@
 </div>
 
 <!--添加页面-->
-<div id="save_dialog" class="easyui-dialog" title="添加资费" style="width:300px;height:350px;"
+<div id="save_dialog" class="easyui-dialog" title="添加资费" style="width:300px;height:330px;"
      data-options="iconCls:'icon-save',resizable:true,modal:true,buttons:'#save_dialog_tb',closed:true">
     <form id="save_cost_form" method="post">
         资费名：<input class="easyui-validatebox" data-options="required:true" id="save_costName" name="costName" /><br/><br/>

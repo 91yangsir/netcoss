@@ -14,9 +14,9 @@ $(function() {
 			update(row);
 		}
 	});
-
-	/*按钮确定*/
+	
 	function update(row){
+		/*按钮确定*/
 		$("#update_form_info").bind('click',function(){
 			var data = {
 				id : row.id,
@@ -28,20 +28,15 @@ $(function() {
 				costExplain:$("#update_costExplain").val()
 			};
 			console.log(data.id);
-			$.ajax({
-				type:"PUT",
-				data : data,
-				url:"/project/cost/update?id="+data.id+"&costName="+data.costName+"&costType="+data.costType+"&costTime="+data.costTime+"&costBase="+data.costBase+"&costUnit="+data.costUnit+"&costExplain="+data.costExplain+"",
-				datatype:"json",
-					success:function(msg){
-						$.messager.show({
-						title:'提示',
-						msg:'修改资费成功',
-						timeout:5000,
-						showType:'slide'
-					})
-				}
-			});
+			$.post('/project/cost/update',data,function(info){
+				
+			},'json')
+			$.messager.show({
+					title:'提示',
+					msg:'修改资费成功',
+					timeout:5000,
+					showType:'slide'
+				})
 			$("#update_dialog").dialog('close');
 			getData();
 			$("#update_costName").val('');
@@ -53,6 +48,119 @@ $(function() {
 		})
 	}
 
+	
+	/*删除页面*/
+	$("#deleteCost").bind('click',function(){
+		var row = $("#dg").datagrid('getSelected');
+		if(row != null){
+			$("#delete_dialog").dialog('open');
+			deleteCost(row);
+		}else{
+			$.messager.show({
+				title:'提示',
+				msg:'请选择需要删除的数据',
+				timeout:5000,
+				showType:'slide'
+			})
+		}
+	})
+	function deleteCost(row){
+		/*按钮确定*/
+		$("#delete_form_info").click(function(){
+			var data = {
+				id : row.id
+			}
+			$.post('/project/cost/delete',data,function(info){
+				
+			},'json');
+			$.messager.show({
+				title:'提示',
+				msg:'删除资费成功',
+				timeout:5000,
+				showType:'slide'
+			})
+			$("#delete_dialog").dialog('close');
+			getData();
+		})
+	}
+	
+	
+	/*开通页面*/
+	$("#openCost").bind('click',function(){
+		var row = $("#dg").datagrid('getSelected');
+		if(row != null){
+			$("#openCost_dialog").dialog('open');
+			updateState1(row);
+		}else{
+			$.messager.show({
+				title:'提示',
+				msg:'请选择需要开通的数据',
+				timeout:5000,
+				showType:'slide'
+			})
+		}
+	})
+	/*按钮确定*/
+	function updateState1(row){
+		$("#openCost_form_info").bind('click',function(){
+			var data = {
+				id : row.id
+			}
+			console.log(data.id);
+			$.post('/project/cost/updateopen',data,function(info){
+				
+			},'json');
+			$.messager.show({
+				title:'提示',
+				msg:'开通资费成功',
+				timeout:5000,
+				showType:'slide'
+			})
+			$("#openCost_dialog").dialog('close');
+			getData();
+		})
+	}
+	
+	/*暂停页面*/
+	$("#closeCost").bind('click',function(){
+		var row = $("#dg").datagrid('getSelected');
+		if(row != null){
+			$("#closeCost_dialog").dialog('open');
+			updateState(row);
+		}else{
+			$.messager.show({
+				title:'提示',
+				msg:'请选择需要暂停的数据',
+				timeout:5000,
+				showType:'slide'
+			})
+		}
+	})
+	
+	function updateState(row){
+		/*按钮确定*/
+		$("#closeCost_form_info").click(function(){
+			var data1 = {
+				id : row.id,
+			}
+			console.log(data1.id);
+			$.post('/project/cost/updateout',data1,function(info){
+				
+			},'json');
+			$.messager.show({
+				title:'提示',
+				msg:'暂停资费成功',
+				timeout:5000,
+				showType:'slide'
+			})
+			$("#closeCost_dialog").dialog('close');
+			getData();
+		})
+	}
+	
+	
+	
+	
 	/*添加页面*/
 	$("#saveCost").bind('click',function(){
 		$("#save_dialog").dialog('open');
@@ -94,70 +202,7 @@ $(function() {
 	
 	
 	
-	/*删除页面*/
-	$("#deleteCost").bind('click',function(){
-		var row = $("#dg").datagrid('getSelected');
-		if(row != null){
-			$("#delete_dialog").dialog('open');
-		}else{
-			$.messager.show({
-				title:'提示',
-				msg:'请选择需要删除的数据',
-				timeout:5000,
-				showType:'slide'
-			})
-		}
-	})
-	/*按钮确定*/
-	$("#delete_form_info").click(function(){
-		$("#delete_dialog").dialog('close');
-	})
 
-	
-	
-	
-	/*开通页面*/
-	$("#openCost").bind('click',function(){
-		var row = $("#dg").datagrid('getSelected');
-		if(row != null){
-			$("#openCost_dialog").dialog('open');
-		}else{
-			$.messager.show({
-				title:'提示',
-				msg:'请选择需要开通的数据',
-				timeout:5000,
-				showType:'slide'
-			})
-		}
-	})
-	/*按钮确定*/
-	$("#openCost_form_info").click(function(){
-		
-		$("#openCost_dialog").dialog('close');
-	})
-
-	
-	
-	
-	
-	/*暂停页面*/
-	$("#closeCost").bind('click',function(){
-		var row = $("#dg").datagrid('getSelected');
-		if(row != null){
-			$("#closeCost_dialog").dialog('open');
-		}else{
-			$.messager.show({
-				title:'提示',
-				msg:'请选择需要暂停的数据',
-				timeout:5000,
-				showType:'slide'
-			})
-		}
-	})
-	/*按钮确定*/
-	$("#closeCost_form_info").click(function(){
-		$("#closeCost_dialog").dialog('close');
-	})
 });
 
 

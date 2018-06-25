@@ -37,7 +37,7 @@ public interface ICostQueryService {
 	 * @param id
 	 * @return
 	 */
-	public Set<BusinessBean> getCostBeanByIdBusiness(long id);
+	public List<BusinessBean> getCostBeanByIdBusiness(long id);
 	
 	/**
 	 * 通过资费id查询该资费下用户的个数
@@ -45,4 +45,10 @@ public interface ICostQueryService {
 	 * @return
 	 */
 	public int getCostBeanByBusinessBeanNums(Long id);
+	
+	/**
+	 * 查询所有状态为开通（有开通时间）的资费
+	 * @return
+	 */
+	public List<CostBean> getFindStartNoNull();
 }

@@ -42,10 +42,10 @@ public class CostQueryRepositoryImpl implements ICostQueryRepository {
 	}
 
 	@Override
-	public Set<BusinessBean> getCostBeanByIdBusiness(long id) {
+	public List<BusinessBean> getCostBeanByIdBusiness(long id) {
 		// TODO Auto-generated method stub
-		Set<BusinessBean> set = costMapper.getBusinessBeanById(id);
-		return set;
+		List<BusinessBean> list = costMapper.getBusinessBeanById(id);
+		return list;
 	}
 
 	@Override
@@ -60,4 +60,10 @@ public class CostQueryRepositoryImpl implements ICostQueryRepository {
 		return costMapper.getFindAllCostBean();
 	}
 
+	@Override
+	public List<CostBean> getFindStartNoNull() {
+		// TODO Auto-generated method stub
+		return costMapper.getFindStartNoNull();
+	}
+	
 }

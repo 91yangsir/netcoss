@@ -1,5 +1,9 @@
 package com.yangsir.project.costmag.handleservice.impl;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -40,16 +44,25 @@ public class CostHandleServiceImpl implements ICostHandleService {
 	}
 
 	@Override
-	public CostBean updateCostTypeStart(CostBean cost) {
+	public CostBean updateCostStateStart(CostBean cost) {
 		// TODO Auto-generated method stub
-		cost.setCostType(1);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = sdf.format(new Date());
+		Date date = null;
+		try {
+			date = sdf.parse(time);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		cost.setCostStart(date);
 		return costHandleRepository.saveAndFlush(cost);
 	}
 
 	@Override
-	public CostBean updateCostTypeOut(CostBean cost) {
+	public CostBean updateCostStateOut(CostBean cost) {
 		// TODO Auto-generated method stub
-		cost.setCostType(0);
+		cost.setCostStart(null);
 		return costHandleRepository.saveAndFlush(cost);
 	}
 }

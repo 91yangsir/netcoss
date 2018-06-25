@@ -1,7 +1,6 @@
 package com.yangsir.project.costmag.controller;
 
 import java.io.UnsupportedEncodingException;
-import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -59,18 +58,45 @@ public class CostController {
 	
 	//修改资费
 	@ResponseBody
-	@RequestMapping(value="/update",method= {RequestMethod.PUT},produces= {"application/json;charset=utf-8"})
-	public void updateCostBean(int id,String costName,int costType,int costTime,double costBase,double costUnit,String costExplain) throws UnsupportedEncodingException {
+	@RequestMapping(value="/update",method= {RequestMethod.POST},produces= {"application/json;charset=utf-8"})
+	public void updateCostBean(long id,String costName,int costType,int costTime,double costBase,double costUnit,String costExplain) throws UnsupportedEncodingException {
 		System.out.println("进入修改资费controller");
+		System.out.println(costName);
 		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
-		System.out.println(bean.getId());
 		bean.setCostName(new String(costName.getBytes("iso8859-1"),"utf-8"));
-		System.out.println(bean.getCostName());
 		bean.setCostType(costType);
 		bean.setCostTime(costTime);
 		bean.setCostBase(costBase);
 		bean.setCostUnit(costUnit);
 		bean.setCostExplain(costExplain);
 		costHandleServiceImpl.updateCostBean(bean);
+	}
+	
+	//修改资费的状态为暂停
+	@ResponseBody
+	@RequestMapping(value="/updateout",method= {RequestMethod.POST})
+	public void updateStateOut(long id) {
+		System.out.println("进入修改资费状态为暂停");
+		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
+		costHandleServiceImpl.updateCostStateOut(bean);
+	}
+	
+	//修改资费状态为开通
+	@ResponseBody
+	@RequestMapping(value="/updateopen",method= {RequestMethod.POST})
+	public void updateStateOpen(long id) {
+		System.out.println("进入修改资费状态为开通");
+		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
+		costHandleServiceImpl.updateCostStateStart(bean);
+	}
+	
+	
+	//删除资费
+	@ResponseBody
+	@RequestMapping(value="/delete",method= {RequestMethod.POST})
+	public void deleteCostBean(long id) {
+		System.out.println("进入删除资费页面");
+		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
+		costHandleServiceImpl.deleteCostBean(bean);
 	}
 }

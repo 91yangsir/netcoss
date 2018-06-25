@@ -31,10 +31,10 @@ public interface ICostHandleService {
 	 * 修改资费状态为开通
 	 * @return
 	 */
-	public CostBean updateCostTypeStart(CostBean cost);
+	public CostBean updateCostStateStart(CostBean cost);
 	/**
 	 * 修改资费资费为暂停
 	 * @return
 	 */
-	public CostBean updateCostTypeOut(CostBean cost);
+	public CostBean updateCostStateOut(CostBean cost);
 }
