@@ -61,8 +61,15 @@
                     	<b>服务器</b>
                 </div>
                 <div class="col-md-9">
-                	<input id="serverIp" class="easyui-combobox" name="serverIp"  
-    					data-options="valueField:'id',textField:'text',url:'get_data.php'" />
+	                <input class="easyui-combobox" name="serverIp" editable="false"
+							data-options="
+							url:'/project/server/serverCombobox',
+							method:'get',
+							valueField:'id',
+							textField:'serverIp',
+							panelHeight:'auto',
+							required:true
+					">
                 </div>
                 <div class="col-md-3">
                     <label for="businessAcc">业务账号</label>

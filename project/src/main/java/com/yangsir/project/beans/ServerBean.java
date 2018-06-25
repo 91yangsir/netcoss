@@ -19,18 +19,19 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name="t_server")
 public class ServerBean implements Serializable {
 	
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -8610534288812440253L;
+
+
 	@Id
 	@Column(name="id")
 	@GenericGenerator(name="hibernate.id",strategy="identity")
 	@GeneratedValue(generator="hibernate.id")
-	private  int id;
+	private Long id;
 	
-
 
 	/**
 	 * 服务器的IP地址
@@ -38,19 +39,19 @@ public class ServerBean implements Serializable {
 	@Column(name="server_ip",length=20)
 	private String serverIp;
 	
-	public int getId() {
+	public ServerBean(){
+
+	}
+
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	public ServerBean(){
 
-	}
-	
 
 	public String getServerIp() {
 		return serverIp;
