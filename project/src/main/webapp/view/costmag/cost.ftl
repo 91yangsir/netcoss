@@ -16,20 +16,19 @@
 <script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="static/bootstrap/js/DatePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="static/js/page1.js"></script>
-
+<script type="text/javascript" src="static/js/dateconvert.js"></script>
 <body>
 <div data-options="region:'center'" style="padding: 5px; background: #eee;width: 100%;">
-<table id="dg" class="easyui-datagrid" title="资费列表" style="width:100%;height:500px;" data-options="
+<table id="dg" class="easyui-datagrid" title="资费列表" style="width:100%;height:370px;" data-options="
 				rownumbers:false,
 				singleSelect:true,
 				fitColumns:true,
 				autoRowHeight:false,
 				pagination:true,
 				toolbar:'#tb',
-				pageList:[15],
-				pageSize:15,
+				pageList:[10],
+				pageSize:10,
 				method:'get'">
- 
 </table>
 </div>
 
@@ -53,7 +52,7 @@
 </div>
 
 <!--修改页面-->
-<div id="update_dialog" class="easyui-dialog" title="修改资费" style="width:500px;height:350px;"
+<div id="update_dialog" class="easyui-dialog" title="修改资费" style="width:300px;height:350px;"
      data-options="iconCls:'icon-save',resizable:true,modal:true,buttons:'#update_dialog_tb',closed:true">
     <form id="update_cost_form" method="post">
         资费名：<input class="easyui-validatebox" data-options="required:true" id="update_costName" name="costName" /><br/><br/>
@@ -63,7 +62,7 @@
                     <option value="3">套餐</option>
                  </select><br/><br/>
         基本时长：<input class="easyui-validatebox" data-options="required:false" id="update_costTime" name="costTime" /><br/><br/>
-        基本费用：<input class="easyui-validatebox" id="update_costBase" name="costBase" data-options="required:false"/><br/><br/>
+        基本费用：<input class="easyui-validatebox" data-options="required:false" id="update_costBase" name="costBase"/><br/><br/>
         单位费用：<input class="easyui-validatebox" data-options="required:false" id="update_costUnit" name="costUnit" /><br/><br/>
         资费说明：<input class="easyui-validatebox" data-options="required:true" id="update_costExplain" name="costExplain" /><br/><br/>
     </form>
@@ -79,7 +78,7 @@
 </div>
 
 <!--添加页面-->
-<div id="save_dialog" class="easyui-dialog" title="添加资费" style="width:500px;height:350px;"
+<div id="save_dialog" class="easyui-dialog" title="添加资费" style="width:300px;height:350px;"
      data-options="iconCls:'icon-save',resizable:true,modal:true,buttons:'#save_dialog_tb',closed:true">
     <form id="save_cost_form" method="post">
         资费名：<input class="easyui-validatebox" data-options="required:true" id="save_costName" name="costName" /><br/><br/>
@@ -150,4 +149,44 @@
 </div>
 
 </body>
+<script>
+
+$(function() {
+	getData();
+});
+
+/* 初始化分页显示页面数据 */
+function getData(){    
+	console.log(111)
+    /*获得初始数据显示在页面*/
+	$("#dg").datagrid({
+		url:'/project/cost/findAll',
+		//格式化每个字段的显示
+		columns:[[
+			{field:'id',title:'资费ID',width:0,align:'center',hidden:true},
+			{field:'costName',title:'资费名',width:100,align:'center'},
+			{field:'costType',title:'资费类型',width:100,align:'center',formatter: function(value,row,index){
+				if(value==1){
+					return '包月'
+				}else if(value==2){
+					return '计时'
+				}else if(value==3){
+					return '套餐'
+				}
+			}},
+			{field:'costTime',title:'基本时长',width:90,align:'center'},
+			{field:'costBase',title:'基本费用',width:90,align:'center'},
+			{field:'costUnit',title:'单位费用',width:90,align:'center'},
+			{field:'costStart',title:'开通时间',width:120,align:'center',formatter: function(value,row,index){
+				if(value != null){
+					return formatDatebox(value);
+				}else{
+					return '未开通'
+				}
+			}},
+			{field:'costExplain',title:'资费说明',width:190,align:'center'}
+			]]
+	});
+}
+</script>
 </html>

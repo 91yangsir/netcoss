@@ -1,5 +1,6 @@
 package com.yangsir.project.costmag.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -30,13 +31,46 @@ public class CostController {
 	@Resource
 	public ICostQueryService costQueryServiceImpl;
 	
-	
-	@RequestMapping(value="/page",method= {RequestMethod.GET},produces= {"application/json;charset=utf-8"})
+	//查询所有的资费
 	@ResponseBody
+	@RequestMapping(value="/findAll",method= {RequestMethod.GET},produces= {"application/json;charset=utf-8"})
 	public DataGrid showCostToPager(Pager pager) {
-		System.out.println(11111);
-		//Pager p = costQueryServiceImpl.findAllCostBean(pager);
+		costQueryServiceImpl.findAllCostBean(pager);
 		DataGrid dataGrid = new DataGrid((long) pager.getTotalRows(), pager.getDatas());
 		return dataGrid;
+	}
+	
+	//添加资费
+	@ResponseBody
+	@RequestMapping(value="/save",method= {RequestMethod.POST},produces= {"application/json;charset=utf-8"})
+	public void saveCostBean(String costName,int costType,int costTime,double costBase,double costUnit,String costExplain) {
+		System.out.println(22222);
+		CostBean bean = new CostBean();
+		bean.setCostName(costName);
+		bean.setCostType(costType);
+		bean.setCostTime(costTime);
+		bean.setCostBase(costBase);
+		bean.setCostUnit(costUnit);
+		bean.setCostExplain(costExplain);
+		CostBean cost = costHandleServiceImpl.saveCostBean(bean);
+	}
+	
+	
+	
+	//修改资费
+	@ResponseBody
+	@RequestMapping(value="/update",method= {RequestMethod.PUT},produces= {"application/json;charset=utf-8"})
+	public void updateCostBean(int id,String costName,int costType,int costTime,double costBase,double costUnit,String costExplain) throws UnsupportedEncodingException {
+		System.out.println("进入修改资费controller");
+		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
+		System.out.println(bean.getId());
+		bean.setCostName(new String(costName.getBytes("iso8859-1"),"utf-8"));
+		System.out.println(bean.getCostName());
+		bean.setCostType(costType);
+		bean.setCostTime(costTime);
+		bean.setCostBase(costBase);
+		bean.setCostUnit(costUnit);
+		bean.setCostExplain(costExplain);
+		costHandleServiceImpl.updateCostBean(bean);
 	}
 }
