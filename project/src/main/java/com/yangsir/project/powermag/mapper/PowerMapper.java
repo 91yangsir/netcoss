@@ -26,7 +26,7 @@ public interface PowerMapper {
 		
 		
 	})
-	@Select(value= {"select * from t_role"})
+	@Select(value= {"select * from t_role order by id desc"})
 	public List<RoleBean> findAllRole();
 	
 	

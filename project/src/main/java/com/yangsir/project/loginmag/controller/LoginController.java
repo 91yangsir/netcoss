@@ -18,6 +18,7 @@ public class LoginController {
 	
 	@RequestMapping(value="/login")
 	public ModelAndView login() {
+		
 		ModelAndView mv=new ModelAndView();
 		mv.setViewName("index");
 		UserBean user=new UserBean();
@@ -29,7 +30,7 @@ public class LoginController {
 	@RequestMapping(value="/menu",method = { RequestMethod.POST })
 	public String login1(@RequestParam("username") String username, @RequestParam("password") String password) {
 		Subject currentUser = SecurityUtils.getSubject();
-		
+		System.out.println(1);
 		if (!currentUser.isAuthenticated()) {
         	// 把用户名和密码封装为 UsernamePasswordToken 对象
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
@@ -47,7 +48,7 @@ public class LoginController {
             }
         }
 		
-		return "menu";
+		return "powermag/menu";
 	
 	
 	}

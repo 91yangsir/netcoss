@@ -38,7 +38,6 @@ public class ShiroRealm extends AuthorizingRealm {
 		
 		//3. 调用数据库的方法, 从数据库中查询 username 对应的用户记录
 		UserBean user=userQueryRepositoryImpl.getUserByAcc(username);
-		System.out.println("从数据库中获取 username: " + user);
 		
 		//4. 若用户不存在, 则可以抛出 UnknownAccountException 异常
 		if("unknown".equals(username)){
@@ -85,7 +84,6 @@ public class ShiroRealm extends AuthorizingRealm {
 //		Object principal = 
 		String usename=(String) principals.getPrimaryPrincipal();
 		UserBean bean=userQueryRepositoryImpl.getUserByAcc(usename);
-		System.out.println("授权"+bean);
 		
 		//2. 利用登录的用户的信息来用户当前用户的角色或权限(可能需要查询数据库)
 		Set<String> roles = new HashSet<>();
