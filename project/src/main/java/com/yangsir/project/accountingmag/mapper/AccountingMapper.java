@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
 import com.yangsir.project.beans.DayUseBean;
@@ -91,5 +92,16 @@ public interface AccountingMapper {
 	@SelectProvider(type=AccountingMapperSqlProvider.class,method="findDuratingOfYearByParams")
 	public List<YearUseBean> findDuratingOfYearByParams(@Param("params")Map params);
 	
+	
+	@Results({
+		@Result(id=true,property="id",column="id",javaType=Long.class),
+		@Result(property="monthTime",column="month_time",javaType=Double.class),
+		@Result(property="businessAcc",column="business_acc",javaType=String.class),
+		@Result(property="month",column="month",javaType=String.class),
+		@Result(property="serverIP",column="server_ip",javaType=String.class),
+		@Result(property="monthMoney",column="month_money",javaType=Double.class)
+	})
+	@Select(value="select * from t_times_month where business_acc=#{acc} and month=#{month}")
+	public MonthUseBean findByBusAcc(@Param("acc")String acc,@Param("month")String month);
 
 }

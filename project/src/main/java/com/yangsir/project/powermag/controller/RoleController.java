@@ -71,6 +71,7 @@ public class RoleController {
 		
 	}
 	DataGrid dataGrid = new DataGrid((long) (powerMapper.findAllRole().size()), list1);
+	System.out.println(dataGrid);
 	return dataGrid;
 	
 	}
