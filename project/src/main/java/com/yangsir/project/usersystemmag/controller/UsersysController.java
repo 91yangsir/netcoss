@@ -29,7 +29,7 @@ public class UsersysController {
 	//查询用户个人信息
 	@RequestMapping(value = "/find", method = {RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
 	public ModelAndView showUserInfo(String userAcc) {
-		UserBean user=usersysQueryServiceImpl.findUserByUserAcc("1321923530");
+		UserBean user=usersysQueryServiceImpl.findUserByUserAcc(userAcc);
 		System.out.println(user);
 		ModelAndView modelAndView=new ModelAndView();
 		modelAndView.setViewName("usersystemmag/userinfo");

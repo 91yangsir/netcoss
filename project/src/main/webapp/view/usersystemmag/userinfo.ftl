@@ -51,7 +51,7 @@
      data-options="iconCls:'icon-save',resizable:true,modal:true,buttons:'#update_userinfo_tb',closed:true">
     <form id="update_userinfo_form" method="post" action="/project/usersystem/update">
 
-        真实姓名：&nbsp;&nbsp;&nbsp;<input class="easyui-validatebox" data-options="required:false" id="update_userName" name="userName" value="${user.userName}"/><br/><br/>
+        真实姓名：&nbsp;&nbsp;&nbsp;<input class="easyui-validatebox" data-options="required:false" id="update_userName" name="userName" placeholder="输入中文姓名"  value="${user.userName}"/><br/><br/>
 
 
         身份证号码：${user.userCard}<br/><br/>
@@ -60,7 +60,7 @@
         账务账号：&nbsp;&nbsp;&nbsp;${user.userAcc}<br/><br/>
 
 
-        电话：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-validatebox" data-options="required:true" id="update_userPhone" name="userPhone" value="${user.userTel}"/><br/><br/>
+        电话：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="easyui-validatebox" placeholder="输入正确的电话号码" data-options="required:true" id="update_userPhone" name="userPhone" value="${user.userTel}"/><br/><br/>
 
 
 
