@@ -137,5 +137,5 @@ public interface CostMapper {
 		@Result(property="costExplain",column="cost_explain",javaType=String.class),
 	})
 	@Select("select * from t_cost where cost_Name = #{costName}")
-	public CostBean getByNameCostBean();
+	public CostBean getByNameCostBean(@Param("costName")String costName);
 }

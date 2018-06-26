@@ -17,7 +17,9 @@ import com.yangsir.project.beans.Pager;
 import com.yangsir.project.beans.UserBean;
 import com.yangsir.project.businessmag.handleservice.IBusinessHandleService;
 import com.yangsir.project.businessmag.queryservice.IBusinessQueryService;
+import com.yangsir.project.costmag.mapper.CostMapper;
 import com.yangsir.project.costmag.queryservice.ICostQueryService;
+import com.yangsir.project.usermag.queryrepository.IUserQueryRepository;
 import com.yangsir.project.viewobject.DataGrid;
 
 /**
@@ -33,9 +35,12 @@ public class BusinessController {
 	private IBusinessHandleService businessHandleService;
 	@Resource
 	private IBusinessQueryService businessQueryService;
-	
 	@Resource
-	public ICostQueryService costQueryServiceImpl;
+	private ICostQueryService costQueryServiceImpl;
+	@Resource
+	private IUserQueryRepository userQueryRepositoryImpl;
+	@Resource
+	private CostMapper costMapper;
 	
 	/**
 	 * 添加业务帐号
@@ -44,8 +49,13 @@ public class BusinessController {
 	 */
 	@RequestMapping(value="/save",method= {RequestMethod.POST}, produces = {
 	"application/json;charset=utf-8" })
-	public String saveBusiness(BusinessBean business) {
+	public String saveBusiness(BusinessBean business,String userAcc,String costName,String serverIp) {
 		try {
+			UserBean user = userQueryRepositoryImpl.getUserByAcc(userAcc);
+			CostBean cost = costMapper.getByNameCostBean(costName);
+			business.setUser(user);
+			business.setCost(cost);
+			
 			businessHandleService.saveBusiness(business);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -54,6 +64,13 @@ public class BusinessController {
 		return "redirect:/view/businessmag/showbusiness.ftl";
 	}
 	
+	/**
+	 * 分页显示业务信息
+	 * @param pager
+	 * @param userAcc
+	 * @param businessAcc
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping(value="/showPage",method= {RequestMethod.GET},produces = { 
 			"application/json;charset=utf-8" })
@@ -67,11 +84,15 @@ public class BusinessController {
 			// TODO: handle exception
 		}
 		
-		System.out.println(pager);
+//		System.out.println(pager);
 		DataGrid dataGrid = new DataGrid((long)pager.getTotalRows(),pager.getDatas());
 		return dataGrid;
 	}
 	
+	/**
+	 * 查询显示cost下拉框
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping(value="/costCombobox",method= {RequestMethod.GET},produces = { 
 	"application/json;charset=utf-8" })

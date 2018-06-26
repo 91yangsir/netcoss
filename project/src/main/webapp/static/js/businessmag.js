@@ -82,29 +82,11 @@ $(function() {
 });	
 
 
-// combobox获取user数据
-
-$(document).ready(function(){  
-	queryUser();  
-  })  
-
-function queryUser(){  
-	var url = "${base}/combobox/queryUser.action";  
-	$.getJSON(url, function(json) {  
-           $('#userAcc').combobox({  
-                                data : json.data,//获取要显示的json数据  
-                                valueField: 'CODE',  
-                                textField: 'NAME',  
-                               });  
-                  });  
-}  
-
-
 
 // 得到查询参数
 function queryParams() {
 	var data = {
-		userName : $('#businessAcc').val(),
+		businessAcc : $('#businessAcc').val(),
 		userAcc : $('#userAcc').val()
 	};
 	console.log(data)
