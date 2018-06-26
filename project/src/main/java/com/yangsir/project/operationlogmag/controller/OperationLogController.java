@@ -65,7 +65,6 @@ public class OperationLogController {
 			endTime = c.getTime();
 			endDate = sdf.format(endTime);
 		}
-		System.out.println(endDate);
 		params.put("endTime", endDate);
 		operationLogQueryServiceImpl.findOperationLogByParams2Pager(params, pager);
 		DataGrid dataGrid = new DataGrid((long) pager.getTotalRows(), pager.getDatas());

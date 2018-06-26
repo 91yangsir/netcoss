@@ -1,5 +1,6 @@
 package com.yangsir.project.loginlogmag.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -56,17 +57,25 @@ public class LoginLogController {
 	public DataGrid findLoginLog2Pager(Pager pager,String manager,int type,Date startTime,Date endTime) {
 		Map<String, Object> params = new HashMap<>();
 		params.put("manager", manager);
-		params.put("startTime", startTime);
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String startDate = "";
+		String endDate = "";
 		if (startTime!=null) {
+			startDate = sdf.format(startTime);
+		}
+		
+		params.put("startTime", startDate);
+
+		if (endTime!=null) {
 			//由于页面得到的日期是当天0点，在查询时应该是当天最后一刻，所以使用日历类加一天在转换回来
 			Calendar c = new GregorianCalendar();
 			c.setTime(endTime);  
 			c.add(Calendar.DAY_OF_MONTH, 1);
 			endTime = c.getTime();
+			endDate = sdf.format(endTime);
 		}
-		
-		params.put("endTime", endTime);
+		params.put("endTime", endDate);
 		params.put("type", type);
 		loginLogQueryServiceImpl.findLoginLogByParams2Pager(params, pager);
 		System.out.println(pager);

@@ -1,7 +1,9 @@
 package com.yangsir.project.powermag.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.pagehelper.PageHelper;
 import com.yangsir.project.beans.MenuBean;
 import com.yangsir.project.beans.RoleBean;
 import com.yangsir.project.powermag.handleservice.impl.PowerHandleServiceImpl;
@@ -29,7 +32,6 @@ public class RoleController {
 	private PowerQueryRepositoryImpl powerQuery;
 	@Resource
 	private PowerHandleServiceImpl powerHandleServiceImpl;
-	
 	
 
 	@RequestMapping(value="/get",method= {RequestMethod.POST},produces = { "application/json;charset=utf-8" })
@@ -71,6 +73,59 @@ public class RoleController {
 		
 	}
 	DataGrid dataGrid = new DataGrid((long) (powerMapper.findAllRole().size()), list1);
+	return dataGrid;
+	
+	}
+	
+	/**
+	 * 模糊查询
+	 * @param page
+	 * @param rows
+	 * @return
+	 */
+	@RequestMapping(value="/check",method= {RequestMethod.POST},produces = { "application/json;charset=utf-8" })
+	public DataGrid  findAllRole1(int page,int rows,String manager,int type){
+		Map<String, Object> params = new HashMap<>();
+		params.put("manager", manager);
+		params.put("type", type);
+		PageHelper.startPage(page, rows);
+	List<RoleBean> list= powerMapper.findByParam(params);
+	List<RoleUtil> list1=new ArrayList<>();
+	for(int i=0;i<list.size();i++) {
+		RoleUtil u=new RoleUtil();
+		u.setId(list.get(i).getId());
+		u.setRoleName(list.get(i).getRoleName());
+		if(list.get(i).getRoleType()==1) {
+			u.setRoleType("超级管理员");
+		}else if(list.get(i).getRoleType()==2) {
+			u.setRoleType("普通管理员");
+		}else {
+			u.setRoleType("用户");
+		}
+		String str="";
+		List<MenuBean> list2=list.get(i).getList();
+		if(list2==null) {
+			u.setList("该角色拥有所有权限");
+		}else {
+			for(int j=0;j<list2.size();j++) {
+				if(j!=list2.size()-1) {
+					str+=list2.get(j).getMenuName()+"、";
+				}else {
+					str+=list2.get(j).getMenuName();
+				}
+				
+			}
+		}
+		if(str=="") {
+			u.setList("该角色拥有所有权限");
+		}else {
+			u.setList(str);
+		}
+		
+		list1.add(u);
+		
+	}
+	DataGrid dataGrid = new DataGrid((long) (powerMapper.findByParam(params).size()), list1);
 	return dataGrid;
 	
 	}

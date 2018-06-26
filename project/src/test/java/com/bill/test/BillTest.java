@@ -1,9 +1,9 @@
 package com.bill.test;
 
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.yangsir.project.beans.BillBean;
 import com.yangsir.project.beans.ServerInfoBean;
 import com.yangsir.project.billmag.handleservcie.IHandleBillService;
 import com.yangsir.project.billmag.queryservcie.IQueryBillService;
@@ -42,4 +43,17 @@ public class BillTest {
 		
 		System.out.println(queryBillServiceImpl.getMaxUseTimeBill("guosir"));
 	}
+	
+	@Test
+	public void findAll() {
+		
+		System.out.println(queryBillServiceImpl.findAll());
+	}
+	
+	@Test
+	public void findAllPage() {
+		
+		System.out.println(queryBillServiceImpl.findByPage(1, 5));
+	}
+
 }

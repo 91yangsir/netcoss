@@ -5,17 +5,11 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
-import org.omg.CORBA.PERSIST_STORE;
 
 /**
  * @author Administrator
@@ -39,7 +33,7 @@ public class TimeUseBean implements Serializable {
 	 * 使用服务器的业务账号
 	 */
 	@Column(name="business_acc",length=20)
-	private String businessAcc;
+	private String business;
 	/**
 	 * 使用服务器的登入时间
 	 */
@@ -94,12 +88,13 @@ public class TimeUseBean implements Serializable {
 		this.id = id;
 	}
 
-	public String businessAcc() {
-		return businessAcc;
+
+	public String getBusiness() {
+		return business;
 	}
 
-	public void businessAcc(String businessAcc) {
-		this.businessAcc = businessAcc;
+	public void setBusiness(String business) {
+		this.business = business;
 	}
 
 	public Date getLoginTime() {
@@ -168,10 +163,12 @@ public class TimeUseBean implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TimeUseBean [id=" + id + ", businessAcc=" + businessAcc + ", loginTime=" + loginTime + ", outTime="
-				+ outTime + ", useTime=" + useTime + ", serverIp=" + serverIp + ", totalUseTime=" + totalUseTime
-				+ ", cost=" + cost + ", onceMoney=" + onceMoney + ", serverText=" + serverText + "]";
+		return "TimeUseBean [id=" + id + ", business=" + business + ", loginTime=" + loginTime + ", outTime=" + outTime
+				+ ", useTime=" + useTime + ", serverIp=" + serverIp + ", totalUseTime=" + totalUseTime + ", cost="
+				+ cost + ", onceMoney=" + onceMoney + ", serverText=" + serverText + "]";
 	}
+
+	
 	
 
 

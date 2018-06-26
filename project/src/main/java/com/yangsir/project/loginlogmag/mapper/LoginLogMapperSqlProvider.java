@@ -28,13 +28,12 @@ public class LoginLogMapperSqlProvider {
 		if ((int)params.get("type") >=0) {
 			sb.append("and login_log_type=" + params.get("type") + " ");
 		}
-		if (params.get("startTime") != null) {
-			sb.append("and login_log_time >= '" + params.get("startTime") + "' ");
+		if (params.get("startTime")!=null&&StringUtils.hasLength(((String)params.get("startTime")).trim())) {
+			sb.append("and login_log_time >= '"+params.get("startTime")+"' ");
 		}
-		if (params.get("endTime") != null) {
-			sb.append("and login_log_time <= '" + params.get("endTime") + "' ");
+		if (params.get("endTime")!=null&&StringUtils.hasLength(((String)params.get("endTime")).trim())) {
+			sb.append("and login_log_time <= '"+params.get("endTime")+"' ");
 		}
-
 		return sb.toString();
 	}
 
@@ -54,11 +53,11 @@ public class LoginLogMapperSqlProvider {
 		if ((int)params.get("type") >=0) {
 			sb.append("and login_log_type=" + params.get("type") + " ");
 		}
-		if (params.get("startTime") != null) {
-			sb.append("and login_log_time > '" + params.get("startTime") + "' ");
+		if (params.get("startTime")!=null&&StringUtils.hasLength(((String)params.get("startTime")).trim())) {
+			sb.append("and login_log_time >= '"+params.get("startTime")+"' ");
 		}
-		if (params.get("endTime") != null) {
-			sb.append("and login_log_time < '" + params.get("endTime") + "' ");
+		if (params.get("endTime")!=null&&StringUtils.hasLength(((String)params.get("endTime")).trim())) {
+			sb.append("and login_log_time <= '"+params.get("endTime")+"' ");
 		}
 		sb.append("order by login_log_time desc ");
 		sb.append("limit " + params.get("index") + "," + params.get("rows"));

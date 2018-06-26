@@ -55,6 +55,9 @@ public class BillBean implements Serializable {
 	@JoinColumn(name="fk_user_id")
 	private UserBean user;
 	
+	@Column(name="use_month",length=20)
+	private int useMonth;
+	
 	public BillBean() {
 		// TODO Auto-generated constructor stub
 	}
@@ -131,13 +134,26 @@ public class BillBean implements Serializable {
 	public void setUser(UserBean user) {
 		this.user = user;
 	}
+	
+	
+
+	public int getUseMonth() {
+		return useMonth;
+	}
+
+
+
+	public void setUseMonth(int useMonth) {
+		this.useMonth = useMonth;
+	}
+
 
 	@Override
 	public String toString() {
 		return "BillBean [id=" + id + ", billYear=" + billYear + ", billMonth=" + billMonth + ", billMoney=" + billMoney
-				+ ", billType=" + billType + ", billState=" + billState + ", user=" + user + "]";
+				+ ", billType=" + billType + ", billState=" + billState + ", user=" + user + ", useMonth=" + useMonth
+				+ "]";
 	}
-	
 
 
 }

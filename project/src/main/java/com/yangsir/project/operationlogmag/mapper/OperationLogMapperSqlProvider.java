@@ -28,10 +28,10 @@ public class OperationLogMapperSqlProvider {
 		if ((int)params.get("model")>0) {
 			sb.append("and operation_log_model = "+params.get("model")+" ");
 		}
-		if (params.get("startTime")!=null) {
+		if (params.get("startTime")!=null&&StringUtils.hasLength(((String)params.get("startTime")).trim())) {
 			sb.append("and operation_log_time >= '"+params.get("startTime")+"' ");
 		}
-		if (params.get("endTime")!=null) {
+		if (params.get("endTime")!=null&&StringUtils.hasLength(((String)params.get("endTime")).trim())) {
 			sb.append("and operation_log_time <= '"+params.get("endTime")+"' ");
 		}
 		
@@ -56,10 +56,10 @@ public class OperationLogMapperSqlProvider {
 		if ((int)params.get("model")>0) {
 			sb.append("and operation_log_model = "+params.get("model")+" ");
 		}
-		if (params.get("startTime")!=null) {
+		if (params.get("startTime")!=null&&StringUtils.hasLength(((String)params.get("startTime")).trim())) {
 			sb.append("and operation_log_time >= '"+params.get("startTime")+"' ");
 		}
-		if (params.get("endTime")!=null) {
+		if (params.get("endTime")!=null&&StringUtils.hasLength(((String)params.get("endTime")).trim())) {
 			sb.append("and operation_log_time <= '"+params.get("endTime")+"' ");
 		}
 		sb.append("order by operation_log_time desc ");
