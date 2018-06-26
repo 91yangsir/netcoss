@@ -23,7 +23,7 @@ public class HandleBillServiceImpl implements IHandleBillService {
 	public void addOnceBill(ServerInfoBean info) {
 		// TODO Auto-generated method stub
 		TimeUseBean bean=new TimeUseBean();
-		bean.businessAcc(info.getBussinesAcc());//获取业务账号 
+		bean.setBusiness(info.getBussinesAcc());//获取业务账号 
 		bean.setLoginTime(info.getServerInTime());//获取登录时间
 		bean.setOutTime(info.getServerOutTime());//获取登出时间
 		bean.setServerIp(info.getServerIp());//获取服务器IP
