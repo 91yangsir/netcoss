@@ -82,6 +82,24 @@ $(function() {
 });	
 
 
+// combobox获取user数据
+
+$(document).ready(function(){  
+	queryUser();  
+  })  
+
+function queryUser(){  
+	var url = "${base}/combobox/queryUser.action";  
+	$.getJSON(url, function(json) {  
+           $('#userAcc').combobox({  
+                                data : json.data,//获取要显示的json数据  
+                                valueField: 'CODE',  
+                                textField: 'NAME',  
+                               });  
+                  });  
+}  
+
+
 
 // 得到查询参数
 function queryParams() {
@@ -111,7 +129,11 @@ function getData() {
 			field : 'user',
 			title : '账务帐号',
 			width : 120,
-			align : 'center'
+			align : 'center',
+			formatter : function(value, row, rec) {
+				return value.userAcc;
+			}
+				
 		},
 
 		{
@@ -119,13 +141,20 @@ function getData() {
 			title : '资费类型',
 			width : 120,
 			align : 'center',
+			formatter : function(value, row, rec) {
+				return value.costName;
+			}
 		},
 
 		{
 			field : 'server',
 			title : '服务器',
 			width : 120,
-			align : 'center'
+			align : 'center',
+			formatter : function(value, row, rec) {
+				return value.serverIp;
+			}
+				
 		},
 		
 		{
@@ -159,8 +188,11 @@ function getData() {
 		{
 			field : 'businessCostNext',
 			title : '下月资费',
-			width : 240,
-			align : 'center'
+			width : 200,
+			align : 'center',
+			formatter : function(value, row, index) {
+				return value.costName;
+			}
 		},
 
 		] ]

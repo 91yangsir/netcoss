@@ -1,6 +1,7 @@
 package com.user.test;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -36,6 +37,12 @@ public class TestUserQueryServiceImpl {
 		map.put("userAcc", "mmm");
 		userQueryServiceImpl.findUser2PageByMap(map, pager);
 		System.out.println(pager);
+	}
+	
+	@Test
+	public void testGetAllUser() {
+		List<UserBean> users = (List<UserBean>) userQueryServiceImpl.getAllUser();
+		System.out.println(users);
 	}
 	
 }

@@ -51,4 +51,11 @@ public class UserQueryRepositoryImpl implements IUserQueryRepository {
 	}
 
 
+	@Override
+	public List<?> getAllUser() {
+		// TODO Auto-generated method stub
+		return userMapper.getAllUser();
+	}
+
+
 }

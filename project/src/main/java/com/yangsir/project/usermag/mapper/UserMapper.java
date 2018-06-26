@@ -109,4 +109,25 @@ public interface UserMapper {
 	@SelectProvider(type=UserMapperProvider.class, method = "findUserByParams")
 	public List<UserBean> findUserByParams(@Param("params")Map params);
 	
+	
+	/**
+	 * 查询所有开通用户
+	 * @return
+	 */
+	@Results({
+		@Result(id=true,property="id",column="id",javaType=Long.class),
+		@Result(property="userName",column="user_name",javaType=String.class),
+		@Result(property="userGender",column="user_gender",javaType=Integer.class),
+		@Result(property="userCard",column="user_card",javaType=String.class),
+		@Result(property="userAcc",column="user_acc",javaType=String.class),
+		@Result(property="userPwd",column="user_pwd",javaType=String.class),
+		@Result(property="userTel",column="user_tel",javaType=String.class),
+		@Result(property="userAddress",column="user_address",javaType=String.class),
+		@Result(property="userPost",column="user_post",javaType=String.class),
+		@Result(property="userQQ",column="user_qq",javaType=String.class),
+		@Result(property="userPost",column="user_post",javaType=String.class),
+		@Result(property="userState",column="user_state",javaType=Integer.class),
+	})
+	@Select(value= {"select * from t_user where user_state=1"})
+	public List<UserBean> getAllUser();
 }

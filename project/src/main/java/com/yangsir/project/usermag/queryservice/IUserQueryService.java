@@ -1,5 +1,6 @@
 package com.yangsir.project.usermag.queryservice;
 
+import java.util.List;
 import java.util.Map;
 
 import com.yangsir.project.beans.Pager;
@@ -18,6 +19,12 @@ public interface IUserQueryService {
 	 * @return
 	 */
 	public UserBean getUserById(Long id);
+	
+	/**
+	 * 查询所有开通用户
+	 * @return
+	 */
+	public List<?> getAllUser();
 
 	/**
 	 * 分页查询用户
