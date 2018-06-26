@@ -11,7 +11,7 @@ public class BillMapperSqlProvider {
 		Map<String, Object> params = (Map<String, Object>) map.get("params");
 		StringBuilder sb = new StringBuilder("select * from t_bill b left join t_user u on b.fk_user_id=u.id where 1=1 ");
 		if (params.get("userAcc") != null && StringUtils.hasLength(((String) params.get("userAcc")).trim())) {
-			sb.append(" and u.user_name like concat('" + params.get("userAcc") + "','%') ");
+			sb.append(" and u.user_acc like concat('" + params.get("userAcc") + "','%') ");
 		}
 		
 		if (params.get("idCard") != null && StringUtils.hasLength(((String) params.get("idCard")).trim())) {
