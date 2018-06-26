@@ -2,14 +2,15 @@ package com.yangsir.project.billmag.mapper;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
-import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.One;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.mapping.FetchType;
 
 import com.yangsir.project.beans.BillBean;
@@ -55,4 +56,20 @@ public interface BillMapper {
 	})
 	@Select(value="select * from t_once_money where  use_month=#{month} and business_acc=#{acc}")
 	public List<TimeUseBean> findByPage(@Param("acc")String acc,@Param("month")String month); 
+	
+	@Results({
+		@Result(id=true,property="id",column="id",javaType=Integer.class),
+		@Result(property="billYear",column="bill_year",javaType=Integer.class),
+		@Result(property="billMonth",column="bill_month",javaType=Integer.class),
+		@Result(property="billMoney",column="bill_money",javaType=Integer.class),
+		@Result(property="billType",column="bill_type",javaType=Integer.class),
+		@Result(property="billState",column="bill_state",javaType=Integer.class),
+		@Result(property="user",column="fk_user_id",javaType=UserBean.class,one=@One(fetchType=FetchType.LAZY,select="com.yangsir.project.usermag.mapper.UserMapper.getUserById"))
+		
+		
+	})
+	@SelectProvider(type=BillMapperSqlProvider.class,method="findBillByParam")
+	public List<BillBean> findByParam(@Param("params")Map params);
+
+
 }
