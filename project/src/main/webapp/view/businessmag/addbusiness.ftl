@@ -33,7 +33,7 @@
                     	<b>账务帐号</b>
                 </div>
                 <div class="col-md-9">
-	                <input class="easyui-combobox" name="user" editable="false"
+	                <input class="easyui-combobox" name="userAcc" editable="false"
 						data-options="
 						url:'/project/user/userCombobox',
 						method:'get',
@@ -47,7 +47,7 @@
                     	<b>资费类型</b>
                 </div>
                 <div class="col-md-9">
-                	<input class="easyui-combobox" name="cost" editable="false"
+                	<input class="easyui-combobox" name="costName" editable="false"
 						data-options="
 						url:'/project/business/costCombobox',
 						method:'get',
@@ -61,7 +61,7 @@
                     	<b>服务器</b>
                 </div>
                 <div class="col-md-9">
-	                <input class="easyui-combobox" name="server" editable="false"
+	                <input class="easyui-combobox" name="serverIp" editable="false"
 							data-options="
 							url:'/project/server/serverCombobox',
 							method:'get',
