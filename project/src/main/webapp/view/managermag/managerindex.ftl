@@ -13,7 +13,7 @@
 <script type="text/javascript" src="/project/static/js/managerIndex.js"></script>
 </head>
 <body>
-	<h1>用户管理</h1>
+	<h1>welcome!!管理员管理系统</h1>
 
 	<div id="container">
 
@@ -51,15 +51,11 @@
 					</div>
 					<br /> <br />
 					<div>
-						分配管理员:<select id="managerType" style="width: 170px">
-							<option value="用户管理员" selected="selected">用户管理员</option>
-							<option value="账单管理员">账单管理员</option>
-							<option value="资费管理">资费管理</option>
-							<option value="账务管理员">账务管理员</option>
-						</select>
+						分配管理员:<input id = "roleName" name="roleName" class="easyui-combobox" 
+						data-options="panelHeight:'auto',valueField:'id',textField:'roleName',method:'get', url:'/project/manager/rolelist'"/>
 					</div>
-					<br /> <br /> <input type="submit" width="50" onclick="sub"
-						style="width: 100px; height: 40px" />
+					<br /> <br /> <input type="button"  onclick="submitForm()" width="50"
+						style="width: 100px; height:40px"  value = "查询"/>
 				</form>
 			</div>
 		</div>

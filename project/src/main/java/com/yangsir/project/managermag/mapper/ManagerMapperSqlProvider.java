@@ -14,10 +14,10 @@ public class ManagerMapperSqlProvider {
 		if (params.get("managerName") != null && StringUtils.hasLength(((String) params.get("managerName")).trim())) {
 			sb.append("and m.man_name like concat('" + params.get("managerName") + "','%') ");
 		}
-		if (params.get("managerTel") != null) {
+		if (params.get("managerTel") != null&&params.get("managerTel") != "") {
 			sb.append("and m.man_tel like concat('" + params.get("managerTel") + "','%') ");
 		}
-		if (params.get("roleName") != null) {
+		if (params.get("roleName") != null&&params.get("roleName") != "") {
 			sb.append("and r.role_name ='" + params.get("roleName") + "'");
 		}
 	
@@ -33,10 +33,10 @@ public class ManagerMapperSqlProvider {
 		if (params.get("managerName") != null && StringUtils.hasLength(((String) params.get("managerName")).trim())) {
 			sb.append("and m.man_name like concat('" + params.get("managerName") + "','%') ");
 		}
-		if (params.get("managerTel") != null) {
+		if (params.get("managerTel") != null&&params.get("managerTel") != "") {
 			sb.append("and m.man_tel like concat('" + params.get("managerTel") + "','%') ");
 		}
-		if (params.get("roleName") != null) {
+		if (params.get("roleName") != null&&params.get("roleName") != "") {
 			sb.append("and r.role_name ='" + params.get("roleName") + "'");
 		}
 

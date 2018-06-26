@@ -24,10 +24,10 @@
     <div style="margin:20px 0;"></div>
     <div class="easyui-panel" title="New Topic" style="width:600px ; height: 500px">
         <div style="padding:10px 60px 20px 60px">
-            <form id="ff" method="POST" action="/project/manager/update1">
-            	<input type="hidden" value="${manager.id}" name="id">
-            	<input type="hidden" value="${manager.managerAcc}" name="managerAcc">
-            	<input type="hidden" value="${manager.managerName}" name="managerName">
+            <form id="ff" method="POST">
+            	<input type="hidden" value="${manager.id}" id="managerId">
+            	<input type="hidden" value="${manager.managerAcc}" id="managerAcc">
+            	<input type="hidden" value="${manager.managerName}" id="managerName">
                 <br/>  <br/>
                 <table cellpadding="5">
                     <tr>
@@ -70,16 +70,14 @@
                         <td>管理员类型:</td>
 
                         <td>
-                            <select name="roleName" id="" style="height: 45px;width: 170px">
-                             <option value="用户管理员" <#if manager.role.roleName=="用户管理员"> selected</#if>   >用户管理员</option>
-							 <option value="超级管理员"  <#if manager.role.roleName=="超级管理员"> selected</#if> >超级管理员</option>
-							 <option value="资费管理">资费管理</option>
-							 <option value="账务管理员">账务管理员</option>
-                            </select>
+                           <input id = "roleName" name="roleName" class="easyui-combobox " 
+						data-options="panelHeight:'auto',valueField:'id',textField:'roleName',method:'get', url:'/project/manager/rolelist'" 
+						
+						/>
                         </td>
                     </tr>
                 </table>
-                <input type="submit"  width="50"  style="width: 100px;height: 40px" />
+                <input type="button" value="提交"  id="up" width="50"  style="width: 100px;height: 40px" />
             </form>
             <div style="text-align:center;padding:5px">
                 
