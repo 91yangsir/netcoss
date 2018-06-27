@@ -1,23 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>账务查询</title>
-</head>
-<link rel="stylesheet" href="/project/static/bootstrap/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="/project/static/bootstrap/css/bootstrap-theme.min.css"/>
-<link rel="stylesheet" href="/project/static/bootstrap/css/project.css"/>
-<link rel="stylesheet" href="/project/static/easyui/themes/default/easyui.css">
-<link rel="stylesheet" href="/project/static/easyui/themes/icon.css">
-<script src="/project/static/bootstrap/js/jquery-3.2.0.min.js"></script>
-<script src="/project/static/bootstrap/js/bootstrap.min.js"></script>
-<script src="/project/static/easyui/jquery.easyui.min.js"></script>
-<script src="/project/static/easyui/locale/easyui-lang-zh_CN.js"></script>
-<script src="/project/static/bootstrap/js/DatePicker/WdatePicker.js"></script>
-<script src="/project/static/js/accounting.js"></script>
-<script src="/project/static/js/dateconvert.js"></script>
 
-<body>
+<script src="/project/static/js/accounting.js"></script>
+
 <div style="margin:20px 0;"></div>
 <!-- 查询条件 -->
 <div class="row">
@@ -100,5 +83,3 @@
 	    </div>
 	</div>
 </div>
-</body>
-</html>

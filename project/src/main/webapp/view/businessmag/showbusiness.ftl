@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>业务管理系统</title>
-    <base href="/project/">
-    <link rel="stylesheet" type="text/css" href="static/easyui/themes/default/easyui.css"/>
-    <link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css"/>
-	<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
-    <script type="text/javascript" src="static/js/jquery.json-2.4.js"></script>
-	<script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
+
+  
 	<script type="text/javascript" src="static/js/businessmag.js"></script>
 	
-</head>
-<style>
-
-</style>
-<body>
 <br/><br/>
-<div style="width: 1000px;margin-left: 200px" id="show_div" class="row">
+<div style="width: 1000px;margin-left: 100px;" id='show_div' class="row">
      <div class="row" id="row_div">
          <div class="col-md-4">
              <label for="userAcc">账务账号&nbsp;&nbsp;&nbsp;</label><input type="text" name="userAcc" id="userAcc"/>
@@ -51,7 +34,7 @@
 
          <div class="col-md-12">
              <br/>
-             <table id="business_table" title="业务详情" style="width:950px;height:400px" data-options="
+             <table id="business_table" title="业务详情" style="width:900px;height:400px" data-options="
 				rownumbers:true,
 				singleSelect:true,
 				autoRowHeight:false,
@@ -74,8 +57,3 @@
      </div>
 </div>
 
-</body>
-<script>
-     
-</script>
-</html>

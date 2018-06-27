@@ -1,24 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>操作日志查询</title>
-</head>
-<base href="/project/">
-<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="static/bootstrap/css/bootstrap-theme.min.css"/>
-<link rel="stylesheet" href="static/bootstrap/css/project.css"/>
-<link rel="stylesheet" type="text/css" href="static/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css">
-<script src="static/bootstrap/js/jquery-3.2.0.min.js"></script>
-<script src="static/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src="static/bootstrap/js/DatePicker/WdatePicker.js"></script>
-<script type="text/javascript" src="static/js/operationlog.js"></script>
-<script type="text/javascript" src="static/js/dateconvert.js"></script>
 
-<body>
+
+
+
+<script type="text/javascript" src="static/js/operationlog.js"></script>
 
 <!--查询表单-->
 
@@ -98,5 +82,4 @@
 
     </div>
 </div>
-</body>
-</html>
+

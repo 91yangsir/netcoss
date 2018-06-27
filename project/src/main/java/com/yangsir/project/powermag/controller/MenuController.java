@@ -34,6 +34,7 @@ public class MenuController {
 	public List<TreeNode>  findAllMenu(){
 		
 		List<MenuBean> list=menuMapper.findAllMenu();
+		System.out.println(TreeUtil.toListNode(list));
 		return TreeUtil.tree(TreeUtil.toListNode(list));
 	}
 	

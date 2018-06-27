@@ -60,7 +60,7 @@
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<!-- 安全管理器 -->
 		<property name="securityManager" ref="securityManager" />
-		<property name="loginUrl" value="/index.ftl" />
+		<property name="loginUrl" value="/managerLogin.ftl" />
 		<property name="successUrl" value="/static/menu.ftl" />
 		<property name="filterChainDefinitionMap" ref="filterChainDefinitionMap"></property>
 

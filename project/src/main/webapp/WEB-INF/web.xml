@@ -159,7 +159,7 @@
 	
 	<!-- 设置欢迎界面为index.ftl -->
 	<welcome-file-list>
-		<welcome-file>index.ftl</welcome-file>
+		<welcome-file>managerLogin.ftl</welcome-file>
 	</welcome-file-list>
 	
 </web-app>

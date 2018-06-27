@@ -1,31 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head lang="en">
-<meta charset="UTF-8">
-<title>登陆日志查询</title>
-</head>
-<base href="/project/">
-<link rel="stylesheet" type="text/css"
-	href="static/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css"
-	href="static/easyui/themes/icon.css">
-<script src="static/js/jquery-3.3.1.min.js"></script>
 
-<script type="text/javascript"
-	src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
-
-<body>
 	<div id="window1"></div>
 	<br>
 	<br>
 	<!--分页数据-->
-	<div style="margin-left: 350px;">
+	<div style="margin-left: 100px;">
 		<table id="dg" style="width: 600px;"></table>
 	</div>
 	<!--查询表单-->
 
-	<div style="margin-left: 350px; margin-top: 20px;">
+	<div style="margin-left: 100px; margin-top: 20px;">
 		<div class="easyui-panel" title="角色管理" style="width: 600px;">
 			<form id="ff" method="post">
 				<br> <br> 身份证号: <input
@@ -41,7 +24,7 @@
 				id="check">查询</button>
 		</div>
 	</div>
-</body>
+
 <script type="text/javascript">
 	var billId = 0;
 	var month = 0;
@@ -135,4 +118,3 @@
 		getData();
 	})
 </script>
-</html>

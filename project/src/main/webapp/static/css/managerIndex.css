@@ -4,7 +4,7 @@ text-align: center;
 }
 
 #container {
-    height: 600px;
+    height: 500px;
     width: 800px;
     border: 1px solid black;
     margin: 0 auto ;
@@ -20,20 +20,23 @@ text-align: center;
 
 #down1{
     position: absolute;
-    height:100px;
+    height:197px;
     width:400px;
-    left: 350px;
-
-   top: 570px;
+    left: 182px;
+  
 
 }
 #down2{
         position: absolute;
-    height:295px;
-    width: 300px;
-   left: 800px;
+    height:197px;
+    width: 325px;
+   left: 657px;
     border: 1px solid black;
     margin: 0 auto ;
 
 }
 
+#down1 button{
+	margin-top: 150px;
+	
+}

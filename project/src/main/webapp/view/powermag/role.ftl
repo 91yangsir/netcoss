@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<script src="/project/static/js/jquery-3.3.1.min.js"></script>
-<script src="/project/static/easyui/jquery.easyui.min.js"></script>
-<link rel="stylesheet"
-	href="/project/static/easyui/themes/default/easyui.css">
-<link rel="stylesheet" href="/project/static/easyui/themes/icon.css">
-<body>
+<div style="margin-left: 100px;margin-top: 20px;">
 <ul id="tt"></ul> 
 <div id="window1"></div>
 <br><br>
 <button id="addBtn">增加菜单</button>&nbsp;&nbsp;&nbsp;<button id="updateBtn">修改菜单</button>
 &nbsp;&nbsp;&nbsp;&nbsp;<button id="deleBtn">删除菜单</button>
-</body>
+</div>
 
 <script type="text/javascript">
 
@@ -107,4 +96,3 @@ $("#deleBtn").click(function(){
 })
 
 </script>
-</html>

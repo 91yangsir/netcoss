@@ -23,7 +23,7 @@
         }
         #scend{
             position: relative;
-            top: 300px;
+            top: 100px;
         }
 
         #a{
@@ -39,7 +39,7 @@
         #p{
             position: relative;
             left: 500px;
-            top: 160px;
+            mtop: 100px;
             font-family: fantasy;
             font-size:xx-large;
             font-style: oblique;
@@ -52,19 +52,15 @@
 </head>
 <body>
 <div id="max">
-    <div>
-
-    </div>
-    <br/><br/><br/>
-
+ <br><br>
     <p id="p">欢迎使用本系统——管理员入口</p>
-    <form id="scend" action="#" method="post">
+    <form id="scend" action="user/menu" method="post">
         <div class="container-fluid">
             <div class="row" id="a">
                 <div class="col-lg-6 col-md-offset-3">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                        <input type="text" class="form-control" placeholder="请输入字母，数字" id="name">
+                        <input type="text" class="form-control" placeholder="请输入字母，数字" id="name" name="username">
                     </div>
                 </div>
                 <div class="col-lg-1 text-center" id="c">
@@ -78,7 +74,7 @@
                 <div class="col-lg-6 col-md-offset-3">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
-                        <input type="text" class="form-control" placeholder="请输入6位数字" id="pwd">
+                        <input type="text" class="form-control" placeholder="请输入6位数字" id="pwd" name="password">
                     </div>
                 </div>
                 <div class="col-lg-1 text-center"id="d">
@@ -142,15 +138,7 @@
             bo2 = true
         }
     }
-    $("#button1").click(function(){
-        if(bo1&&bo2){
-            userName.value = ""
-            pwd.value = ""
-            return true
-        }else{
-            return false
-        }
-    })
+
 
 </script>
 </html>

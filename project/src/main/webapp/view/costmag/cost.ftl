@@ -1,23 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>资费列表</title>
-</head>
+
 <base href="/project/">
-<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="static/bootstrap/css/bootstrap-theme.min.css"/>
-<link rel="stylesheet" href="static/bootstrap/css/project.css"/>
-<link rel="stylesheet" type="text/css" href="static/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css">
-<script src="static/bootstrap/js/jquery-3.2.0.min.js"></script>
-<script src="static/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src="static/bootstrap/js/DatePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="static/js/page1.js"></script>
 <script type="text/javascript" src="static/js/dateconvert.js"></script>
-<body>
+
+
 <div data-options="region:'center'" style="padding: 5px; background: #eee;width: 100%;">
 <table id="dg" class="easyui-datagrid" title="资费列表" style="width:100%;height:385px;" data-options="
 				rownumbers:false,
@@ -148,7 +134,7 @@
             data-options="iconCls:'icon-no',plain:true">取消</a>
 </div>
 
-</body>
+
 <script>
 
 $(function() {
@@ -188,4 +174,3 @@ function getData(){
 	});
 }
 </script>
-</html>

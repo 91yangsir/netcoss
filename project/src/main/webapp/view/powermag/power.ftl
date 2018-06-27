@@ -1,35 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head lang="en">
-<meta charset="UTF-8">
-<title>登陆日志查询</title>
-</head>
-<base href="/project/">
-<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="static/bootstrap/css/bootstrap-theme.min.css" />
-<link rel="stylesheet" href="static/bootstrap/css/project.css" />
-<link rel="stylesheet" type="text/css"
-	href="static/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css"
-	href="static/easyui/themes/icon.css">
-<script src="static/js/jquery-3.3.1.min.js"></script>
 
-<script type="text/javascript"
-	src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
-
-<body>
 	<div id="window1"></div>
 	<br>
 	<br>
 	<!--分页数据-->
-	<div style="margin-left: 350px;">
+	<div style="margin-left: 100px;">
 		<table id="dg" style="width: 600px;"></table>
 	</div>
 	<!--查询表单-->
 
-	<div style="margin-left: 350px; margin-top: 20px;">
+	<div style="margin-left: 100px; margin-top: 20px;">
 		<div class="easyui-panel" title="角色管理" style="width: 600px;">
 			<form id="ff" method="post">
 				<br> 角色名称: <input class="easyui-textbox" type="text"
@@ -50,7 +29,7 @@
 				id="update">更改角色</button>
 		</div>
 	</div>
-</body>
+
 <script type="text/javascript">
 	var roleName = "";
 	var roleType = "";
@@ -215,4 +194,3 @@
 	})
 	
 </script>
-</html>
