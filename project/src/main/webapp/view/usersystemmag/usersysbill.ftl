@@ -1,55 +1,135 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>账单信息</title>
-    <link rel="stylesheet" type="text/css" href="/project/static/easyui/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="/project/static/easyui/themes/icon.css">
-    <script type="text/javascript" src="/project/static/js/jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/project/static/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="/project/static/js/userlist.page.js"></script>
-    <script type="text/javascript" src="/project/static/easyui/locale/easyui-lang-zh_CN.js"></script>
-    <script type="text/javascript" src="/project/static/js/jquery.json-2.4.js"></script>
-    <script type="text/javascript" src="/project/static/js/userinfo.page.js"></script>
+<head lang="en">
+<meta charset="UTF-8">
+<title>登陆日志查询</title>
 </head>
+<base href="/project/">
+<link rel="stylesheet" type="text/css"
+	href="static/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="static/easyui/themes/icon.css">
+<script src="static/js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript"
+	src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
+
 <body>
-<div data-options="region:'center'"
-     style="padding: 5px; background: #eee;width: 100%;">
+	<div id="window1"></div>
+	<br>
+	<br>
+	<!--分页数据-->
+	<div style="margin-left: 350px;">
+		<table id="dg" style="width: 600px;"></table>
+	</div>
+	<!--查询表单-->
 
-    <table id="tt" class="easyui-datagrid" style="width:950px;height:450px"
-           url="datagrid24_getdata.php" toolbar="#tb"
-           title="账单信息" iconCls="icon-save"
-           rownumbers="true" pagination="true">
-        <thead>
-        <tr>
-            <th field="itemid" width="150">年份</th>
-            <th field="productid" width="150">月份</th>
-            <th field="listprice" width="150" align="right">金额</th>
-            <th field="unitcost" width="230" align="right">支付方式</th>
-            <th field="attr1" width="250">状态</th>
+	<div style="margin-left: 350px; margin-top: 20px;">
+		<div class="easyui-panel" title="角色管理" style="width: 600px;">
+			<form id="ff" method="post">
+				 <br> <br> 年份: <input
+					class="easyui-textbox" type="text" id="useYear" name="useYear">
+				<br> <br> 月份: <input class="easyui-textbox" type="text"
+					id="useMonth" name="useMonth"> <br>
 
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>2014</td>
-            <td>6</td>
-            <td>5000</td>
-            <td>支付宝</td>
-            <td>已付</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-<div id="tb" style="padding:3px">
-    <span>月份:</span>
-    <input id="time" style="line-height:26px;border:1px solid #ccc">
-
-    <a href="#" class="easyui-linkbutton" plain="true" onclick="doSearch()">查询</a>
-</div>
-
-
-
-
+			</form>
+			<button style="margin-left: 50px; width: 100px; margin-top: 15px;"
+				id="check">查询</button>
+		</div>
+	</div>
 </body>
+<script type="text/javascript">
+	var billId = 0;
+	var month = 0;
+
+	function queryParams() {
+		var data = {
+			userAcc : $('#userAcc').val(),
+			idCard : $('#idCard').val(),
+			useMonth : $('#useMonth').val(),
+			useYear : $('#useYear').val()
+		};
+		return data;
+	}
+
+	function getData() {
+		$("#dg").datagrid({
+			url : '/project/bill/check',
+			queryParams : queryParams(),
+			columns : [ [ {
+				field : 'account',
+				title : '账务账号',
+				width : 80,
+				align : 'center'
+
+			}, {
+				field : 'idCard',
+				title : '身份证号',
+				width : 160,
+				align : 'center'
+			}, {
+				field : 'year',
+				title : '年份',
+				width : 50,
+				align : 'center'
+			}, {
+				field : 'month',
+				title : '月份',
+				width : 50
+			}, {
+				field : 'costMoney',
+				title : '账单金额',
+				width : 50,
+				align : 'center'
+			}, {
+				field : 'payType',
+				title : '支付方式',
+				width : 50,
+				align : 'center'
+			}, {
+				field : 'payState',
+				title : '支付状态',
+				width : 60,
+				align : 'center'
+			}, ] ],
+			fitColumns : true,
+			singleSelect : true,
+			pagination : true,
+			pageNumber : 1,
+			pageSize : 5,
+			pageList : [ 5, 10 ],
+			fit : false,
+			rownumbers : true,
+			onDblClickRow : function() {
+				var rowInfo = $("#dg").datagrid('getSelected');
+				billId = rowInfo.id;
+				month = rowInfo.month;
+				$("#window1").window({
+					title : "业务账号账单详情",
+					width : 615,
+					height : 400,
+					left : 400,
+					top : 100,
+					minimizable : false,
+					maximizable : false,
+					collapsible : false,
+					closable : true,
+					draggable : true,
+					resizable : false,
+					href : "/project/view/usersystemmag/data.ftl"
+				});
+
+			}
+		});
+	}
+
+	$(function() {
+		getData();
+	})
+
+	$("#check").click(function() {
+		getData();
+	})
+</script>
 </html>
