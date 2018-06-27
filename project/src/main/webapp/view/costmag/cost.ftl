@@ -157,7 +157,6 @@ $(function() {
 
 /* 初始化分页显示页面数据 */
 function getData(){    
-	console.log(111)
     /*获得初始数据显示在页面*/
 	$("#dg").datagrid({
 		url:'/project/cost/findAll',
