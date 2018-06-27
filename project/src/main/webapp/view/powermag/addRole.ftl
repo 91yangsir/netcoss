@@ -37,7 +37,7 @@ $("#btn1").click(function(){
 		
 	},'json')
 	$.messager.alert("提示框","增加成功","warning",function(){
-		window.location.reload(true);
+		$('#dg4').datagrid('reload')
 	});
 	
 })

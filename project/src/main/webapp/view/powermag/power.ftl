@@ -123,9 +123,7 @@
 		if (rowInfo == null) {
 			$.messager.alert("警告框", "请选择一行", "warning");
 		} else {
-			$.messager.alert("警告框", "确定要删除吗？", "warning", function() {
-
-			});
+		
 			roleId = rowInfo.id;
 			roleName = rowInfo.roleName;
 			roleType = rowInfo.roleType;
@@ -136,7 +134,7 @@
 			}, 'json')
 
 			$.messager.alert("提示框", "删改成功", "warning", function() {
-				window.location.reload(true);
+				$('#dg4').datagrid('reload')
 			});
 
 		}

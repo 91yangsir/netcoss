@@ -63,7 +63,7 @@ $("#updateBtn").click(function(){
 			},'json')
 			
 			$.messager.alert("提示框","更改成功","warning",function(){
-				window.location.reload(true);
+				$('#tt').tree('reload');
 			});
 		})
 		
@@ -78,14 +78,11 @@ $("#deleBtn").click(function(){
 	if(selected==null){
 		$.messager.alert("警告框","请选择一个节点","warning");
 	}else{
-		$.messager.alert("警告框","确定要删除吗？","warning",function(){
-			
-		});
 		$.post('/project/menu/dele',{"id":id},function(info){
 			
 		},'json')
 		$.messager.alert("提示框","删除成功","warning",function(){
-			window.location.reload(true);
+			$('#tt').tree('reload');
 		});
 		
 	}
