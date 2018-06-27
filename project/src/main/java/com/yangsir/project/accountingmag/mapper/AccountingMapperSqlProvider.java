@@ -54,7 +54,9 @@ public class AccountingMapperSqlProvider {
 		if (params.get("month")!=null) {
 			sb.append("and month like '"+params.get("month")+"%' ");
 		}
-		sb.append("limit "+params.get("index")+","+params.get("rows"));
+		if (params.get("index")!=null&params.get("rows")!=null) {
+			sb.append("limit "+params.get("index")+","+params.get("rows"));
+		}
 		return sb.toString();
 	}
 	
