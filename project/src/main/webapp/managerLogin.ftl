@@ -1,17 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>欢迎登陆本系统</title>
-    <base href="/project/">
-    <link rel="stylesheet" type="text/css" href="static/easyui/themes/default/easyui.css"/>
-    <link rel="stylesheet" type="text/css" href="static/easyui/themes/icon.css"/>
-	<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="static/easyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="static/easyui/locale/easyui-lang-zh_CN.js"></script>
-    <script type="text/javascript" src="static/js/jquery.json-2.4.js"></script>
-	<script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="/project/static/bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/project/static/bootstrap/css/bootstrap-theme.min.css"/>
+<link rel="stylesheet" href="/project/static/bootstrap/css/project.css"/>
+<link rel="stylesheet" type="text/css" href="/project/static/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="/project/static/easyui/themes/icon.css">
+<script src="/project/static/bootstrap/js/jquery-3.2.0.min.js"></script>
+<script src="/project/static/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/project/static/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/project/static/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/project/static/bootstrap/js/DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/project/static/js/dateconvert.js"></script>
     <style>
         #max{
             position: relative;

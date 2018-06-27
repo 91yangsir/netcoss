@@ -9,7 +9,7 @@ public class FilterChainDefinitionMapBuilder {
 		
 		map.put("/index.ftl", "anon");
 		map.put("/user/menu", "anon");
-		map.put( "/shiro/logout", "logout");
+		map.put( "/user/shiro/logout", "logout");
 		map.put("/**", "authc");
 		
 		return map;

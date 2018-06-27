@@ -45,6 +45,7 @@ public class LoginController {
             catch (AuthenticationException ae) {
                 //unexpected condition?  error?
             	System.out.println("登录失败: " + ae.getMessage());
+            	return "redirect:/project/managerLogin.ftl";
             }
         }
 		
