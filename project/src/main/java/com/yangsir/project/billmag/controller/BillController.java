@@ -1,8 +1,10 @@
 package com.yangsir.project.billmag.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -38,9 +40,21 @@ public class BillController {
 	@Resource
 	private AccountingMapper accountMapper;
 
-	@RequestMapping(value = "/get", method = { RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
-	public DataGrid findAllRole(int page, int rows) {
-		List<BillBean> list = queryBillServiceImpl.findByPage(page, rows);
+	/**
+	 * 模糊查询
+	 * @param page
+	 * @param rows
+	 * @return
+	 */
+	@RequestMapping(value = "/check", method = { RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
+	public DataGrid findAllRole1(int page, int rows,String userAcc,String idCard,String useMonth,String useYear) {
+		Map<String, Object> params = new HashMap<>();
+		params.put("userAcc", userAcc);
+		params.put("idCard", idCard);
+		params.put("month", useMonth);
+		params.put("year", useYear);
+		PageHelper.startPage(page, rows);
+		List<BillBean> list = billMapper.findByParam(params);
 		List<BillUtil> list1 = new ArrayList<>();
 		for (int i = 0; i < list.size(); i++) {
 			BillUtil bean = new BillUtil();
@@ -69,6 +83,9 @@ public class BillController {
 //		System.out.println(data);
 		return data;
 	}
+	
+	
+	
 
 	@RequestMapping(value = "/get1", method = { RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
 	public DataGrid findAllBusiness(int page, int rows, int id,String month) {
@@ -88,17 +105,13 @@ public class BillController {
 			}
 			
 		}
-		
-//		System.out.println(list);
 		 DataGrid data = new DataGrid((long)(list.size()),list);
-		 
-//		 System.out.println(data);
 		 return data;
 	}
 	
 	@RequestMapping(value = "/get2", method = { RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
 	public DataGrid findTimeUseByPage(int rows,int page,String acc,String month) {
-//	PageHelper.startPage(page, rows);
+	PageHelper.startPage(page, rows);
 	List<TimeUseBean> list=	billMapper.findByPage(acc, month);
 	System.out.println(list);
 	DataGrid data = new DataGrid((long) list.size(), list);

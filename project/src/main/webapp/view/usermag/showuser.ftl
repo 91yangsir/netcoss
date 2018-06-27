@@ -47,7 +47,7 @@
              <button class="easyui-linkbutton" data-options="iconCls:'icon-reload'">恢复</button>
          </div>
          <div class="col-md-2">
-             <a href="view/usermag/updateuser.ftl" class="easyui-linkbutton" data-options="iconCls:'icon-edit'" id="updateUser">修改</a>
+         	<button class="easyui-linkbutton" data-options="iconCls:'icon-edit'" id="updateUser">修改</button>
          </div>
          <div class="col-md-2">
              <button class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" id="deleteUser">删除</button>

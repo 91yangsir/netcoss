@@ -55,7 +55,7 @@
 <div id="update_dialog" class="easyui-dialog" title="修改资费" style="width:300px;height:330px;"
      data-options="iconCls:'icon-save',resizable:true,modal:true,buttons:'#update_dialog_tb',closed:true">
     <form id="update_cost_form" method="post">
-        资费名：<input class="easyui-validatebox" data-options="required:true" id="update_costName" name="costName" /><br/><br/>
+        资费名：<input style="width:200px" class="easyui-validatebox" data-options="required:true" id="update_costName" name="costName" placeholder="请输入中文，字母，数字或下划线"/><br/><br/>
         资费类型：<select style="width: 100px" data-options="required:false;" id="update_costType" name="costType">
                     <option value="1" selected>包月</option>
                     <option value="2">计时</option>
@@ -63,8 +63,8 @@
                  </select><br/><br/>
         基本时长：<input class="easyui-validatebox" data-options="required:false" id="update_costTime" name="costTime" /><br/><br/>
         基本费用：<input class="easyui-validatebox" data-options="required:false" id="update_costBase" name="costBase"/><br/><br/>
-        单位费用：<input class="easyui-validatebox" data-options="required:false" id="update_costUnit" name="costUnit" /><br/><br/>
-        资费说明：<input class="easyui-validatebox" data-options="required:true" id="update_costExplain" name="costExplain" /><br/><br/>
+        单位费用：<input class="easyui-validatebox" data-options="required:false" id="update_costUnit" name="costUnit" disabled="disabled" value="0"/><br/><br/>
+        资费说明：<input class="easyui-validatebox" data-options="required:true" id="update_costExplain" name="costExplain" placeholder="请输入资费说明"/><br/><br/>
     </form>
 </div>
 <!--修改页面里的两个按钮-->
@@ -81,16 +81,16 @@
 <div id="save_dialog" class="easyui-dialog" title="添加资费" style="width:300px;height:330px;"
      data-options="iconCls:'icon-save',resizable:true,modal:true,buttons:'#save_dialog_tb',closed:true">
     <form id="save_cost_form" method="post">
-        资费名：<input class="easyui-validatebox" data-options="required:true" id="save_costName" name="costName" /><br/><br/>
+        资费名：<input style="width:200px" class="easyui-validatebox" data-options="required:true" id="save_costName" name="costName" placeholder="请输入中文，字母，数字或下划线"/><br/><br/>
         资费类型：<select style="width:100px;" data-options="required:false;" id="save_costType" name="costType">
                     <option value="1" selected>包月</option>
                     <option value="2">计时</option>
                     <option value="3">套餐</option>
                 </select><br/><br/>
         基本时长：<input class="easyui-validatebox" data-options="required:false" id="save_costTime" name="costTime" /><br/><br/>
-        基本费用：<input class="easyui-validatebox" id="save_costBase" name="costBase" data-options="required:false"/><br/><br/>
-        单位费用：<input class="easyui-validatebox" data-options="required:false" id="save_costUnit" name="costUnit" /><br/><br/>
-        资费说明：<input class="easyui-validatebox" data-options="required:true" id="save_costExplain" name="costExplain" /><br/><br/>
+        基本费用：<input class="easyui-validatebox" data-options="required:false" id="save_costBase" name="costBase"/><br/><br/>
+        单位费用：<input class="easyui-validatebox" data-options="required:false" id="save_costUnit" name="costUnit" disabled="disabled" value="0"/><br/><br/>
+        资费说明：<input class="easyui-validatebox" data-options="required:true" id="save_costExplain" name="costExplain" placeholder="请输入资费说明"/><br/><br/>
     </form>
 </div>
 <!--添加页面里的两个按钮-->
@@ -98,9 +98,9 @@
     <a id="save_form_info" href="javascript:void(0)" class="easyui-linkbutton"
        data-options="iconCls:'icon-save',plain:true">保存</a>
     <a
-            href="javascript:$('#save_dialog').dialog('close')"
-            class="easyui-linkbutton"
-            data-options="iconCls:'icon-no',plain:true">取消</a>
+       href="javascript:$('#save_dialog').dialog('close')"
+       class="easyui-linkbutton"
+       data-options="iconCls:'icon-no',plain:true">取消</a>
 </div>
 
 <!--删除页面-->
@@ -128,9 +128,9 @@
     <a id="openCost_form_info" href="javascript:void(0)" class="easyui-linkbutton"
        data-options="iconCls:'icon-save',plain:true">确定</a>
     <a
-            href="javascript:$('#openCost_dialog').dialog('close')"
-            class="easyui-linkbutton"
-            data-options="iconCls:'icon-no',plain:true">取消</a>
+	   href="javascript:$('#openCost_dialog').dialog('close')"
+	   class="easyui-linkbutton"
+	   data-options="iconCls:'icon-no',plain:true">取消</a>
 </div>
 
 <!--暂停页面-->
@@ -157,7 +157,6 @@ $(function() {
 
 /* 初始化分页显示页面数据 */
 function getData(){    
-	console.log(111)
     /*获得初始数据显示在页面*/
 	$("#dg").datagrid({
 		url:'/project/cost/findAll',

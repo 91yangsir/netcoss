@@ -8,8 +8,9 @@ $(function() {
 	// 删除
 	$('#deleteUser').bind('click', function(){   
 		
-		var datas =  $('#user_table').datagrid('getSelections');  
+		var datas =  $('#user_table').datagrid('getSelected');  
 		var lenth = datas.length;
+		var id = datas.id;
 		if(lenth == 0){
 			$.messager.show({
 				title:'提示',
@@ -19,19 +20,19 @@ $(function() {
 			});
 		}else{
 			var jsonArray = $.toJSON(datas);
-			console.log(jsonArray);
 			$.ajax({
 				   type: "DELETE",
-				   url: "user/delete",
+				   url: "user/delete?id="+id,
 				   data: jsonArray,
 				   contentType:"application/json;charset=utf-8",
 				   success: function(msg){
 					   $.messager.show({
 							title:'提示',
 							msg: '删除成功',
-							timeout:2000,
+							timeout:3000,
 							showType:'slide'
-						});  
+						});
+					   $('#user_table').datagrid('reload');
 				   }
 				});
 		}
@@ -62,16 +63,8 @@ $(function() {
 					showType:'slide'
 				});
 			}else{
-				
-				$('#update_dialog').dialog('open');
-				$('#update_id').val(row.id);
-				$('#update_version').val(row.version);
-				$('#update_customerName').val(row.customerName);
-				$('#update_loginName').val(row.loginName);
-				$('#update_telphone').val(row.telphone);
-				
-
-				
+				console.log(111);
+				location.href="/project/view/usermag/updateuser.ftl";
 			}
 		}
     });

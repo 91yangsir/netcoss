@@ -1,12 +1,15 @@
 package com.yangsir.project.powermag.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Many;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
 import org.apache.ibatis.mapping.FetchType;
 
 import com.yangsir.project.beans.RoleBean;
@@ -50,6 +53,15 @@ public interface PowerMapper {
 	@Select(value = "select r.id as id,role_name as roleName,role_type as roleType from t_role as r left join t_power as p on r.id = p.fk_role_id where p.fk_menu_id = #{id}")
 	public RoleBean findRoleById1(long id);
 	
-	
+	@Results({
+		@Result(id=true,property="id",column="id",javaType=Integer.class),
+		@Result(property="roleName",column="role_name",javaType=String.class),
+		@Result(property="roleType",column="role_type",javaType=Integer.class),
+		@Result(property="list",column="id",javaType=List.class,many=@Many(fetchType=FetchType.LAZY,select="com.yangsir.project.powermag.mapper.MenuMapper.getMenuById1"))
+		
+		
+	})
+	@SelectProvider(type=PowerMapperProvider.class,method="findRoleByParam")
+	public List<RoleBean> findByParam(@Param("params")Map params);
 	
 }
