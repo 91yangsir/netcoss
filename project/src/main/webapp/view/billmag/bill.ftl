@@ -4,7 +4,7 @@
 	<br>
 	<!--分页数据-->
 	<div style="margin-left: 100px;">
-		<table id="dg" style="width: 600px;"></table>
+		<table id="dg5" style="width: 600px;"></table>
 	</div>
 	<!--查询表单-->
 
@@ -40,7 +40,7 @@
 	}
 
 	function getData() {
-		$("#dg").datagrid({
+		$("#dg5").datagrid({
 			url : '/project/bill/check',
 			queryParams : queryParams(),
 			columns : [ [ {
@@ -88,7 +88,7 @@
 			fit : false,
 			rownumbers : true,
 			onDblClickRow : function() {
-				var rowInfo = $("#dg").datagrid('getSelected');
+				var rowInfo = $("#dg5").datagrid('getSelected');
 				billId = rowInfo.id;
 				month = rowInfo.month;
 				$("#window1").window({

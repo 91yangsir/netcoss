@@ -53,7 +53,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <div style="margin:20px 0;"></div>
-        <table id="dg" title="使用记录" style="width:700px;height:250px"
+        <table id="dg1" title="使用记录" style="width:700px;height:250px"
                data-options="rownumbers:true,singleSelect:true,fitColumns:true,pagination:true,method:'get'">
         </table>
 

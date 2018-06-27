@@ -4,12 +4,12 @@
 
 <div id="window2"></div>
 <div>
-		<table id="dg1" style="width: 600px;"></table>
+		<table id="dg6" style="width: 600px;"></table>
 	</div>
 
 <script type="text/javascript">
 var businessAcc1=0;
-$("#dg1").datagrid({
+$("#dg6").datagrid({
 	url : '/project/bill/get1?id='+billId+'&month='+month,
 	columns : [ [ {
 		field : 'businessAcc',
@@ -46,7 +46,7 @@ $("#dg1").datagrid({
 	fit : false,
 	rownumbers : true,
 	onDblClickRow:function(){
-		var rowInfo1 = $("#dg1").datagrid('getSelected');
+		var rowInfo1 = $("#dg6").datagrid('getSelected');
 		businessAcc1=rowInfo1.businessAcc;
 		$("#window2").window({
 			title : "消费详情",

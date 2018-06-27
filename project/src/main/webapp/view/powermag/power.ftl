@@ -4,7 +4,7 @@
 	<br>
 	<!--分页数据-->
 	<div style="margin-left: 100px;">
-		<table id="dg" style="width: 600px;"></table>
+		<table id="dg4" style="width: 600px;"></table>
 	</div>
 	<!--查询表单-->
 
@@ -44,7 +44,7 @@
 	}
 	
 	function getData() {
-	$("#dg").datagrid({
+	$("#dg4").datagrid({
 		url : '/project/role/check',
 		queryParams : queryParams(),
 		columns : [ [ {
@@ -91,7 +91,7 @@
 
 	$("#update").click(function() {
 		//打开窗口1
-		var rowInfo = $("#dg").datagrid('getSelected');
+		var rowInfo = $("#dg4").datagrid('getSelected');
 		if (rowInfo == null) {
 			$.messager.alert("警告框", "请选择一行", "warning");
 		} else {
@@ -119,7 +119,7 @@
 
 	$("#dele").click(function() {
 		//打开窗口1
-		var rowInfo = $("#dg").datagrid('getSelected');
+		var rowInfo = $("#dg4").datagrid('getSelected');
 		if (rowInfo == null) {
 			$.messager.alert("警告框", "请选择一行", "warning");
 		} else {
@@ -143,7 +143,7 @@
 	});
 	
 	$(function(){
-		$("#dg").datagrid({
+		$("#dg4").datagrid({
 			url : '/project/role/get',
 			queryParams : queryParams(),
 			columns : [ [ {

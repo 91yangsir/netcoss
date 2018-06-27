@@ -29,7 +29,7 @@ $(function() {
 // 取得数据
 function getData() {
 	// 初始化表格
-	$('#dg').datagrid({
+	$('#dg2').datagrid({
 		url : 'loginlog/getLoginLogPager',
 		queryParams : queryParams(),
 		// 格式化每个字段的显示

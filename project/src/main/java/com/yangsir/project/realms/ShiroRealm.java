@@ -66,15 +66,15 @@ public class ShiroRealm extends AuthorizingRealm {
 		return info;
 	}
 
-//	public static void main(String[] args) {
-//		String hashAlgorithmName = "MD5";
-//		Object credentials = "123456";
-//		Object salt = ByteSource.Util.bytes("xiaoming");;
-//		int hashIterations = 1024;
-//		
-//		Object result = new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations);
-//		System.out.println(result);
-//	}
+	public static void main(String[] args) {
+		String hashAlgorithmName = "MD5";
+		Object credentials = "q";
+		Object salt = ByteSource.Util.bytes("q");;
+		int hashIterations = 1024;
+		
+		Object result = new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations);
+		System.out.println(result);
+	}
 
 	//授权会被 shiro 回调的方法
 	@Override

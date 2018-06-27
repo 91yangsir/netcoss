@@ -49,7 +49,7 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <div style="margin:20px 0;"></div>
-        <table id="dg" title="登陆日志" style="width:700px;height:250px"
+        <table id="dg2" title="登陆日志" style="width:700px;height:250px"
                data-options="rownumbers:true,singleSelect:true,fitColumns:true,pagination:true,method:'get'">
             <thead>
             <tr>

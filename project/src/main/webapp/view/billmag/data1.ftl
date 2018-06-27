@@ -1,14 +1,14 @@
 
 
 <div>
-		<table id="dg2" style="width: 1000px;"></table>
+		<table id="dg7" style="width: 1000px;"></table>
 	</div>
 
 <script type="text/javascript">
 Date.prototype.toLocaleString = function() {
     return this.getFullYear() + "/" + (this.getMonth() + 1) + "/" + this.getDate() + "/ " + this.getHours() + ":" + this.getMinutes() + ":" + this.getSeconds();
 };
-$("#dg2").datagrid({
+$("#dg7").datagrid({
 	url : '/project/bill/get2?month='+month+"&acc="+businessAcc1,
 	columns : [ [ {
 		field : 'business',
