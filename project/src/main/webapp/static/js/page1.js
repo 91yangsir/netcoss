@@ -31,16 +31,15 @@ $(function() {
 				if(info == true){
 					console.log(123456);
 					$.messager.alert("提示","修改资费成功","warning",function(){
-						window.location.reload(true);
+						$("#dg").datagrid("reload");
 					});
 				}else{
 					$.messager.alert("提示","当前资费有用户使用，无法修改","warning",function(){
-						window.location.reload(true);
+						$("#dg").datagrid("reload");
 					});
 				}
 			},'json')
 			$("#update_dialog").dialog('close');
-			getData();
 			$("#update_costName").val('');
 			$("#update_costType").val(1);
 			$("#update_costTime").val('');
@@ -75,16 +74,15 @@ $(function() {
 			$.post('/project/cost/delete',data,function(info){
 				if(info == true){
 					$.messager.alert("提示","删除成功","warning",function(){
-						window.location.reload(true);
+						$("#dg").datagrid("reload");
 					});
 				}else{
 					$.messager.alert("提示","当前资费有用户使用，不能删除","warning",function(){
-						window.location.reload(true);
+						$("#dg").datagrid("reload");
 					});
 				}
 			},'json');
 			$("#delete_dialog").dialog('close');
-			getData();
 		})
 	}
 	
@@ -113,17 +111,16 @@ $(function() {
 			$.post('/project/cost/updateopen',data,function(info){
 				if(info == 1){
 					$.messager.alert("提示","开通成功","warning",function(){
-						window.location.reload(true);
+						$("#dg").datagrid("reload");
 					});
 				}else{
 					$.messager.alert("提示","资费已经是开通状态","warning",function(){
-						window.location.reload(true);
+						$("#dg").datagrid("reload");
 					});
 				}
 			},'json');
 			
 			$("#openCost_dialog").dialog('close');
-			getData();
 		})
 	}
 	
@@ -152,16 +149,15 @@ $(function() {
 			$.post('/project/cost/updateout',data1,function(info){
 				if(info == true){
 					$.messager.alert("提示","暂停成功","warning",function(){
-						window.location.reload(true);
+						$("#dg").datagrid("reload");
 					});
 				}else{
 					$.messager.alert("提示","当前资费有用户使用，不能暂停","warning",function(){
-						window.location.reload(true);
+						$("#dg").datagrid("reload");
 					});
 				}
 			},'json');
 			$("#closeCost_dialog").dialog('close');
-			getData();
 		})
 	}
 	
@@ -189,12 +185,11 @@ $(function() {
 			datatype:"json",
 			success:function(msg){
 				$.messager.alert("提示","添加资费成功","warning",function(){
-					window.location.reload(true);
+					$("#dg").datagrid("reload");
 				});
 			}
 		});
 		$("#save_dialog").dialog('close');
-		getData();
 		$("#save_costName").val('');
 		$("#save_costType").val(1);
 		$("#save_costTime").val('');
