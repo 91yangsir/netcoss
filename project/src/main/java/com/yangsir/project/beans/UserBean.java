@@ -76,11 +76,11 @@ public class UserBean implements Serializable{
 	private RoleBean role;
 	
 	@OneToMany(fetch=FetchType.LAZY,mappedBy="user")
-	@Cascade(value= {CascadeType.ALL})
+	@Cascade(value= {CascadeType.SAVE_UPDATE})
 	private Set<BusinessBean> business;
 	
 	@OneToMany(fetch=FetchType.LAZY,mappedBy="user")
-	@Cascade(value= {CascadeType.ALL})
+	@Cascade(value= {CascadeType.SAVE_UPDATE})
 	private List<BillBean> bills;
 
 	public UserBean(){

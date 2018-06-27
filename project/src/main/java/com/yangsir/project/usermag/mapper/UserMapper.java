@@ -45,7 +45,9 @@ public interface UserMapper {
 		@Result(property="userPost",column="user_post",javaType=String.class),
 		@Result(property="userState",column="user_state",javaType=Integer.class),
 		@Result(property="business",column="id",javaType=Set.class,
-		many=@Many(fetchType=FetchType.LAZY,select="com.yangsir.project.businessmag.mapper.BusinessMapper.getBusinessByUserId"))
+		many=@Many(fetchType=FetchType.LAZY,select="com.yangsir.project.businessmag.mapper.BusinessMapper.getBusinessByUserId")),
+		@Result(property="role",column="fk_role_id",javaType=RoleBean.class,
+		many=@Many(fetchType=FetchType.LAZY,select="com.yangsir.project.powermag.mapper.PowerMapper.findRoleById"))
 	})
 	@Select(value= {"select * from t_user where id=#{id}"})
 	public UserBean getUserById(@Param("id")Long id);

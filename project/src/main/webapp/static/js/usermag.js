@@ -9,9 +9,8 @@ $(function() {
 	$('#deleteUser').bind('click', function(){   
 		
 		var datas =  $('#user_table').datagrid('getSelected');  
-		var lenth = datas.length;
-		var id = datas.id;
-		if(lenth == 0){
+		
+		if(datas == null){
 			$.messager.show({
 				title:'提示',
 				msg:'请选择需要删除的数据！',
@@ -20,6 +19,7 @@ $(function() {
 			});
 		}else{
 			var jsonArray = $.toJSON(datas);
+			var id = datas.id;
 			$.ajax({
 				   type: "DELETE",
 				   url: "user/delete?id="+id,
@@ -37,9 +37,11 @@ $(function() {
 				});
 		}
 		
-    }); 
+    });
 	
+});	
 	
+$(function() {
 	//修改
 	$('#updateUser').bind('click', function(){   
 		var row =  $('#user_table').datagrid('getSelected'); 
@@ -63,14 +65,11 @@ $(function() {
 					showType:'slide'
 				});
 			}else{
+				location.href="/project/user/update?id="+row.id;
 				console.log(111);
-				location.href="/project/view/usermag/updateuser.ftl";
 			}
 		}
-    });
-	
-	
-	
+    	});
 	
 });	
 

@@ -25,63 +25,71 @@
 <br/>
 <h1 style="text-align: center;color: #e38d13"><b>修改用户信息</b></h1>
 
-<form id="user_form" method="post">
+<form id="user_form" action="/project/user/update1" method="POST">
     <div style="width: 1000px;margin-left: 200px" id="update_div" class="row">
+    	<input type="hidden" value="${user.id}" id="userId" name="id">
+    	<input type="hidden" value="${user.userState}" id="userState" name="userState">
+    	<input type="hidden" value="${user.role.id}" id="roleId" name="roleId">
+    	
         <div class="col-md-8 col-md-offset-4">
             <div class="row" id="row_div">
                 <div class="col-md-3">
                     <label for="name">真实姓名</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="userName" name="userName" />
+                    <input class="easyui-validatebox" type="text" id="userName" name="userName" value="${user.userName}"/>
                 </div>
                 <div class="col-md-3">
-                    <label for="gender">性别</label>
+                    <b>性别</b>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="userGender" name="userGender" />
+                	<select id="userGender" class="easyui-combobox" name="userGender" editable="false" style="width:247px;">  
+					    <option value="0" <#if user.userGender == 0>selected</#if>>女</option>
+					    <option value="1" <#if user.userGender == 1>selected</#if>>男</option>
+					    <option value="2" <#if user.userGender == 2>selected</#if>>其他</option>
+					</select>
                 </div>
                 <div class="col-md-3">
                     <label for="card">身份证号</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="userCard" name="userCard" />
+                    <input class="easyui-validatebox" type="text" id="userCard" name="userCard" value="${user.userCard}"/>
                 </div>
                 <div class="col-md-3">
                     <label for="acc">账务账号</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="userAcc" name="userAcc" />
+                    <input class="easyui-validatebox" type="text" id="userAcc" name="userAcc" value="${user.userAcc}"/>
                 </div>
                 <div class="col-md-3">
                     <label for="pwd">密码</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="userPwd" name="userPwd" />
+                    <input class="easyui-validatebox" type="text" id="userPwd" name="userPwd" value="${user.userPwd}"/>
                 </div>
                 <div class="col-md-3">
                     <label for="tel">联系电话</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="userTel" name="userTel" />
+                    <input class="easyui-validatebox" type="text" id="userTel" name="userTel" value="${user.userTel}"/>
                 </div>
                 <div class="col-md-3">
                     <label for="address">通信地址</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="userAddress" name="userAddress" />
+                    <input class="easyui-validatebox" type="text" id="userAddress" name="userAddress" value="${user.userAddress}"/>
                 </div>
                 <div class="col-md-3">
                     <label for="post">邮编</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="userPost" name="userPost" />
+                    <input class="easyui-validatebox" type="text" id="userPost" name="userPost" value="${user.userPost}"/>
                 </div>
                 <div class="col-md-3">
                     <label for="qq">QQ号</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="userQQ" name="userQQ"/>
+                    <input class="easyui-validatebox" type="text" id="userQQ" name="userQQ" value="${user.userQQ}"/>
                 </div>
                 <div class="col-md-12"></div>
                 <div class="col-md-3">

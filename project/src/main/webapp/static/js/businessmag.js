@@ -8,7 +8,7 @@ $(function() {
 	// 删除
 	$('#deleteBusiness').bind('click', function(){   
 		
-		var datas =  $('#business_table').datagrid('getSelected');  
+		var datas =  $('#business_table').datagrid('getSelections');  
 		var lenth = datas.length;
 		var id = datas.id;
 		if(lenth == 0){
@@ -32,7 +32,8 @@ $(function() {
 							msg: '删除成功',
 							timeout:3000,
 							showType:'slide'
-						});  
+						});
+					   $('#business_table').datagrid('reload');
 				   }
 				});
 		}

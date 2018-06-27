@@ -14,8 +14,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.yangsir.project.beans.Pager;
+import com.yangsir.project.beans.RoleBean;
 import com.yangsir.project.beans.UserBean;
 
 /**
@@ -55,7 +57,7 @@ public class UserController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/{id}",method= {RequestMethod.DELETE})
+	@RequestMapping(value="/delete",method= {RequestMethod.DELETE})
 	public String deleteUser(UserBean user) {
 		try {
 			userHandleServiceImpl.deleteUser(user);
@@ -63,7 +65,7 @@ public class UserController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return "usermag/showuser";
+		return "";
 	}
 	
 	
@@ -72,8 +74,26 @@ public class UserController {
 	 * @param user
 	 * @return
 	 */
-	public String updateUser(UserBean user) {
+	@RequestMapping(value="/update",method= {RequestMethod.GET})
+	public ModelAndView updateUser(Long id) {
+		UserBean user = userQueryServiceImpl.getUserById(id);
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("usermag/updateuser");
+		modelAndView.addObject("user", user);
+//		System.out.println(user);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/update1",method= {RequestMethod.POST}, produces = {
+	"application/json;charset=utf-8" })
+	public String updateUser1(UserBean user,Long roleId) {
+//		System.out.println(user);
+//		System.out.println(roleId);
 		try {
+			RoleBean roleBean = new RoleBean();
+			roleBean.setId(roleId);
+			user.setRole(roleBean);
 			userHandleServiceImpl.updateUser(user);
 		} catch (Exception e) {
 			// TODO: handle exception

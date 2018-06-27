@@ -53,11 +53,15 @@ public class BusinessController {
 	 */
 	@RequestMapping(value="/save",method= {RequestMethod.POST}, produces = {
 	"application/json;charset=utf-8" })
-	public String saveBusiness(BusinessBean business,String userAcc,String costName,String serverIp) {
+	public String saveBusiness(BusinessBean business,Long userId,Long costId,Long serverId) {
 		try {
-			UserBean user = userQueryRepositoryImpl.getUserByAcc(userAcc);
-			CostBean cost = costMapper.getByNameCostBean(costName);
-			ServerBean server = serverMapper.getServerByIp(serverIp);
+			UserBean user = new UserBean();
+			user.setId(userQueryRepositoryImpl.getUserById(userId).getId());
+			System.out.println(userId);
+			CostBean cost = new CostBean();
+			cost.setId(costMapper.getCostBeanById(costId).getId());
+			ServerBean server = new ServerBean();
+			server.setId(serverMapper.getSeverById(serverId).getId());
 			business.setUser(user);
 			business.setCost(cost);
 			business.setServer(server);
@@ -102,7 +106,7 @@ public class BusinessController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/{id}",method= {RequestMethod.DELETE})
+	@RequestMapping(value="/delete",method= {RequestMethod.DELETE})
 	public String deleteBusiness(BusinessBean business) {
 		
 		try {
@@ -111,7 +115,7 @@ public class BusinessController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return "businessmag/showbusiness";
+		return "";
 	}
 	
 	
