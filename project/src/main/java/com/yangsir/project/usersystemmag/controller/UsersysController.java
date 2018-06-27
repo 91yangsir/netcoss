@@ -28,12 +28,21 @@ public class UsersysController {
 
 	//查询用户个人信息
 	@RequestMapping(value = "/find", method = {RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
-	public ModelAndView showUserInfo(String userAcc) {
+	public ModelAndView showUserInfo(String userAcc,String userinfo) {
 		UserBean user=usersysQueryServiceImpl.findUserByUserAcc(userAcc);
 		System.out.println(user);
+		
 		ModelAndView modelAndView=new ModelAndView();
-		modelAndView.setViewName("usersystemmag/userinfo");
-		modelAndView.addObject("user", user);
+		if (userinfo.equals("个人信息")) {
+			modelAndView.setViewName("usersystemmag/userinfo");
+			modelAndView.addObject("user", user);
+			
+		}else if (userinfo.equals("账单信息")) {
+			modelAndView.setViewName("usersystemmag/usersysbill");
+			modelAndView.addObject("user", user);
+			
+		}
+		
 		return modelAndView;
 		
 	}
