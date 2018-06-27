@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,7 +18,7 @@
     <h2>添加管理员</h2>
 
 
-    <h2>Basic Form</h2>
+   
     <p>Fill the form and submit it.</p>
     <div style="margin:20px 0;"></div>
     <div class="easyui-panel" title="New Topic" style="width:600px ; height: 500px">
@@ -63,28 +63,24 @@
 
                     </tr>
                     <tr>
-                        <td>管理员类型:</td>
+                        <td>分配管理员:</td>
 
                         <td>
-                            <select name="roleName" id="" style="height: 45px;width: 170px">
-                            <option value="用户管理员" selected="selected">用户管理员</option>
-							<option value="账单管理员">账单管理员</option>
-							<option value="资费管理">资费管理</option>
-							<option value="账务管理员">账务管理员</option>
-                            </select>
+                            <input id = "roleName" name="roleName" class="easyui-combobox" 
+						data-options="panelHeight:'auto',valueField:'id',textField:'roleName',method:'get', url:'/project/manager/rolelist'" />
                         </td>
                     </tr>
                 </table>
                 <br/><br/><br/>
 			<div id="tijiao">
-			 <input type="submit">
+			
 			</div>
                
             </form>
+             <input  id="ad" type="button" style="width: 100px; height:40px" value="添加"/>
             <div  style="text-align:center;padding:5px">
              <div style="text-align:center;padding:5px">
-                    <a href="javascript:void(0)" class="easyui-linkbutton" id="check" onclick="submitForm()">查询</a>
-                    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">重置</a>
+                    
                 </div>
             </div>
         </div>

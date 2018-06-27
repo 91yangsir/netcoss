@@ -8,8 +8,9 @@ $(function() {
 	// 删除
 	$('#deleteBusiness').bind('click', function(){   
 		
-		var datas =  $('#business_table').datagrid('getSelections');  
+		var datas =  $('#business_table').datagrid('getSelected');  
 		var lenth = datas.length;
+		var id = datas.id;
 		if(lenth == 0){
 			$.messager.show({
 				title:'提示',
@@ -22,14 +23,14 @@ $(function() {
 			console.log(jsonArray);
 			$.ajax({
 				   type: "DELETE",
-				   url: "business/delete",
+				   url: "business/delete?id="+id,
 				   data: jsonArray,
 				   contentType:"application/json;charset=utf-8",
 				   success: function(msg){
 					   $.messager.show({
 							title:'提示',
 							msg: '删除成功',
-							timeout:5000,
+							timeout:3000,
 							showType:'slide'
 						});  
 				   }
@@ -82,29 +83,11 @@ $(function() {
 });	
 
 
-// combobox获取user数据
-
-$(document).ready(function(){  
-	queryUser();  
-  })  
-
-function queryUser(){  
-	var url = "${base}/combobox/queryUser.action";  
-	$.getJSON(url, function(json) {  
-           $('#userAcc').combobox({  
-                                data : json.data,//获取要显示的json数据  
-                                valueField: 'CODE',  
-                                textField: 'NAME',  
-                               });  
-                  });  
-}  
-
-
 
 // 得到查询参数
 function queryParams() {
 	var data = {
-		userName : $('#businessAcc').val(),
+		businessAcc : $('#businessAcc').val(),
 		userAcc : $('#userAcc').val()
 	};
 	console.log(data)

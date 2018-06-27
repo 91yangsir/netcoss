@@ -100,7 +100,7 @@ public class CostController {
 	public int updateStateOpen(long id) {
 		System.out.println("进入修改资费状态为开通");
 		CostBean bean = costQueryServiceImpl.getCostBeanById(id);
-		System.out.println(bean.getCostStart());
+		System.out.println("当前资费开通时间为"+bean.getCostStart());
 		if (bean.getCostStart() == null) {
 			costHandleServiceImpl.updateCostStateStart(bean);
 			return 1;

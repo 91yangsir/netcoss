@@ -17,6 +17,8 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * @author Administrator
  * @version 1.0
@@ -24,12 +26,15 @@ import org.hibernate.annotations.GenericGenerator;
  */
 @Table(name="t_manager")
 @Entity
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
 public class ManagerBean implements Serializable {
 
-	/** 
+	
+	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 8749333438226149259L;
+
 	@Id
 	@Column
 	@GenericGenerator(name = "hibernate.id", strategy = "identity")
@@ -52,7 +57,6 @@ public class ManagerBean implements Serializable {
 	private String managerMail;//管理员邮箱
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@Cascade(CascadeType.ALL)
 	@JoinColumn(name="fk_role_id")
 	private  RoleBean  role;  //管理对应的角色
 

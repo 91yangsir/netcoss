@@ -14,10 +14,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.CostBean;
 import com.yangsir.project.beans.Pager;
+import com.yangsir.project.beans.ServerBean;
 import com.yangsir.project.beans.UserBean;
 import com.yangsir.project.businessmag.handleservice.IBusinessHandleService;
 import com.yangsir.project.businessmag.queryservice.IBusinessQueryService;
+import com.yangsir.project.costmag.mapper.CostMapper;
 import com.yangsir.project.costmag.queryservice.ICostQueryService;
+import com.yangsir.project.servermag.mapper.ServerMapper;
+import com.yangsir.project.usermag.queryrepository.IUserQueryRepository;
 import com.yangsir.project.viewobject.DataGrid;
 
 /**
@@ -30,12 +34,17 @@ import com.yangsir.project.viewobject.DataGrid;
 public class BusinessController {
 
 	@Resource
-	private IBusinessHandleService businessHandleService;
+	private IBusinessHandleService businessHandleServiceImpl;
 	@Resource
-	private IBusinessQueryService businessQueryService;
-	
+	private IBusinessQueryService businessQueryServiceImpl;
 	@Resource
-	public ICostQueryService costQueryServiceImpl;
+	private ICostQueryService costQueryServiceImpl;
+	@Resource
+	private IUserQueryRepository userQueryRepositoryImpl;
+	@Resource
+	private CostMapper costMapper;
+	@Resource
+	private ServerMapper serverMapper;
 	
 	/**
 	 * 添加业务帐号
@@ -44,9 +53,16 @@ public class BusinessController {
 	 */
 	@RequestMapping(value="/save",method= {RequestMethod.POST}, produces = {
 	"application/json;charset=utf-8" })
-	public String saveBusiness(BusinessBean business) {
+	public String saveBusiness(BusinessBean business,String userAcc,String costName,String serverIp) {
 		try {
-			businessHandleService.saveBusiness(business);
+			UserBean user = userQueryRepositoryImpl.getUserByAcc(userAcc);
+			CostBean cost = costMapper.getByNameCostBean(costName);
+			ServerBean server = serverMapper.getServerByIp(serverIp);
+			business.setUser(user);
+			business.setCost(cost);
+			business.setServer(server);
+			
+			businessHandleServiceImpl.saveBusiness(business);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -54,6 +70,13 @@ public class BusinessController {
 		return "redirect:/view/businessmag/showbusiness.ftl";
 	}
 	
+	/**
+	 * 分页显示业务信息
+	 * @param pager
+	 * @param userAcc
+	 * @param businessAcc
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping(value="/showPage",method= {RequestMethod.GET},produces = { 
 			"application/json;charset=utf-8" })
@@ -62,16 +85,40 @@ public class BusinessController {
 		params.put("userAcc", userAcc);
 		params.put("businessAcc", businessAcc);
 		try {
-			pager = businessQueryService.findBusiness2PageByMap(params, pager);
+			pager = businessQueryServiceImpl.findBusiness2PageByMap(params, pager);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		
-		System.out.println(pager);
+//		System.out.println(pager);
 		DataGrid dataGrid = new DataGrid((long)pager.getTotalRows(),pager.getDatas());
 		return dataGrid;
 	}
 	
+	
+	/**
+	 * 删除业务帐号
+	 * @param business
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value="/{id}",method= {RequestMethod.DELETE})
+	public String deleteBusiness(BusinessBean business) {
+		
+		try {
+			businessHandleServiceImpl.deleteBusiness(business);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return "businessmag/showbusiness";
+	}
+	
+	
+	/**
+	 * 查询显示cost下拉框
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping(value="/costCombobox",method= {RequestMethod.GET},produces = { 
 	"application/json;charset=utf-8" })

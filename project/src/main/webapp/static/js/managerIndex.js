@@ -13,11 +13,17 @@
 
 
 // 得到查询参数
+
+   
+
+
+
 function queryParams() {
+	
 	var data = {
-		managerAcc : $('#managerName').val(),
+		managerName : $('#managerName').val(),
 		managerTel : $('#managerTel').val(),
-		roleName : $('#managerType').val()
+		roleName : $('#roleName').combobox('getText')
 
 	};
 
@@ -29,21 +35,19 @@ function submitForm() {
 	getData();
 }
 
-function clearForm() {
-	$('#manager').form('reset');
-}
+
 
 // 自启动
 $(function() {
 	getData();
-
+	queryParams : queryParams(),
 	// 点击添加时添加的对象
 	$('#add').click(function() {
 
 		location.href = "/project/view/managermag/manageradd.ftl"
 	});
 	// 点击修改管理员
-
+ 
 	$('#update').click(function() {
 		var ma = $('#manager').datagrid("getSelected");
 

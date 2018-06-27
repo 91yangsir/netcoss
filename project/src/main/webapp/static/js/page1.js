@@ -27,7 +27,6 @@ $(function() {
 				costUnit:$("#update_costUnit").val(),
 				costExplain:$("#update_costExplain").val()
 			};
-			console.log(data.id);
 			$.post('/project/cost/update',data,function(info){
 				if(info == true){
 					console.log(123456);
@@ -73,7 +72,6 @@ $(function() {
 			var data = {
 				id : row.id
 			}
-			console.log(data.id);
 			$.post('/project/cost/delete',data,function(info){
 				if(info == true){
 					$.messager.alert("提示","删除成功","warning",function(){
@@ -112,7 +110,6 @@ $(function() {
 			var data = {
 				id : row.id
 			}
-			console.log(data.id);
 			$.post('/project/cost/updateopen',data,function(info){
 				if(info == 1){
 					$.messager.alert("提示","开通成功","warning",function(){
@@ -152,7 +149,6 @@ $(function() {
 			var data1 = {
 				id : row.id,
 			}
-			console.log(data1.id);
 			$.post('/project/cost/updateout',data1,function(info){
 				if(info == true){
 					$.messager.alert("提示","暂停成功","warning",function(){
