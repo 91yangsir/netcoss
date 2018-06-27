@@ -81,4 +81,20 @@ public interface ManagerMapper {
 	@SelectProvider(type = ManagerMapperSqlProvider.class, method = "findManagerByParams")
 	public List<ManagerBean> findManagerByParams(@Param("params") Map params);
 
+	
+	
+	@Results({ @Result(id = true, property = "id", column = "id", javaType = Long.class),
+		@Result(property = "managerAcc", column = "man_acc", javaType = String.class),
+		@Result(property = "managerName", column = "man_name", javaType = String.class),
+		@Result(property = "managerPwd", column = "man_pwd", javaType = String.class),
+		@Result(property = "managerTel", column = "man_tel", javaType = String.class),
+		@Result(property = "managerMail", column = "man_mail", javaType = String.class),
+		@Result(property = "role", column = "fk_role_id", javaType = RoleBean.class, one = @One(fetchType=FetchType.LAZY,  select = "getRoleById"))
+
+})
+
+@Select("select*from t_manager where man_name=#{name}")
+public ManagerBean getManager1(@Param("name")String name);
+
+	
 }

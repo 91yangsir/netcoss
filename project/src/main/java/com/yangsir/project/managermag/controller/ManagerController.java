@@ -12,6 +12,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -71,6 +73,15 @@ public class ManagerController {
 
 		RoleBean roleBean = powerQueryServiceImpl.findRoleByName(roleName);
 		RoleBean role = new RoleBean();
+		String manName=manager.getManagerName();
+		String  password=manager.getManagerPwd();
+		String hashAlgorithmName = "MD5";
+		Object credentials = password;
+		Object salt = ByteSource.Util.bytes(manName);
+		int hashIterations = 1024;
+		Object result = new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations);
+		System.out.println(result);
+		manager.setManagerPwd(result.toString());
 		role.setId(roleBean.getId());
 
 		manager.setRole(role);

@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.annotation.Resource;
 
+import org.apache.catalina.session.ManagerBase;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -19,12 +20,17 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 
+import com.yangsir.project.beans.ManagerBean;
 import com.yangsir.project.beans.UserBean;
+import com.yangsir.project.managermag.mapper.ManagerMapper;
 import com.yangsir.project.usermag.queryrepository.IUserQueryRepository;
 
 public class ShiroRealm extends AuthorizingRealm {
 	@Resource
 	private IUserQueryRepository userQueryRepositoryImpl;
+	
+	@Resource
+	private ManagerMapper managerMapper;
 
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(
@@ -37,7 +43,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		String username = upToken.getUsername();
 		
 		//3. 调用数据库的方法, 从数据库中查询 username 对应的用户记录
-		UserBean user=userQueryRepositoryImpl.getUserByAcc(username);
+		ManagerBean user=managerMapper.getManager1(username);
 		
 		//4. 若用户不存在, 则可以抛出 UnknownAccountException 异常
 		if("unknown".equals(username)){
@@ -54,7 +60,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		//1). principal: 认证的实体信息. 可以是 username, 也可以是数据表对应的用户的实体类对象. 
 		Object principal = username;
 		//2). credentials: 密码. 
-		Object credentials = user.getUserPwd();
+		Object credentials = user.getManagerPwd();
 		
 		//3). realmName: 当前 realm 对象的 name. 调用父类的 getName() 方法即可
 		String realmName = getName();
@@ -68,8 +74,8 @@ public class ShiroRealm extends AuthorizingRealm {
 
 	public static void main(String[] args) {
 		String hashAlgorithmName = "MD5";
-		Object credentials = "111";
-		Object salt = ByteSource.Util.bytes("a");;
+		Object credentials = "666";
+		Object salt = ByteSource.Util.bytes("666");;
 		int hashIterations = 1024;
 		
 		Object result = new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations);
@@ -83,7 +89,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		//1. 从 PrincipalCollection 中来获取登录用户的信息
 //		Object principal = 
 		String usename=(String) principals.getPrimaryPrincipal();
-		UserBean bean=userQueryRepositoryImpl.getUserByAcc(usename);
+		ManagerBean bean=managerMapper.getManager1(usename);
 		
 		//2. 利用登录的用户的信息来用户当前用户的角色或权限(可能需要查询数据库)
 		Set<String> roles = new HashSet<>();
