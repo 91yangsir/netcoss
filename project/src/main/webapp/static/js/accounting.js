@@ -4,7 +4,7 @@ $(function() {
 		"display" : "none"
 	})
 	// 初始化表格
-	$('#dg').datagrid({
+	$('#dg1').datagrid({
 		title : "使用记录",
 		// 格式化每个字段的显示
 		columns : [ [ {
@@ -89,7 +89,7 @@ function clearForm() {
 function getYearData() {
 
 	// 初始化表格
-	$('#dg').datagrid({
+	$('#dg1').datagrid({
 		url : '/project/accounting/getYearUsePager',
 		queryParams : queryParams(),
 		title : "账务帐号为：  " + $('#acc').val() + "  的年使用记录",
@@ -135,7 +135,7 @@ function getYearData() {
 function getMonthData() {
 
 	// 初始化表格
-	$('#dg').datagrid({
+	$('#dg1').datagrid({
 		url : '/project/accounting/getMonthUsePager',
 		queryParams : queryParams(),
 		title : "账务帐号为：  " + $('#acc').val() + "  的月使用记录",

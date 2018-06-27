@@ -1,4 +1,3 @@
-
 <script src="/project/static/js/accounting.js"></script>
 
 <div style="margin:20px 0;"></div>
