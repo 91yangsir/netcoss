@@ -46,7 +46,7 @@ public class UserController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return "redirect:/showPage";
+		return "redirect:/view/usermag/showuser.ftl";
 	}
 	
 	/**
@@ -54,7 +54,8 @@ public class UserController {
 	 * @param user
 	 * @return
 	 */
-	@RequestMapping(value="/delete",method= {RequestMethod.DELETE})
+	@ResponseBody
+	@RequestMapping(value="/{id}",method= {RequestMethod.DELETE})
 	public String deleteUser(UserBean user) {
 		try {
 			userHandleServiceImpl.deleteUser(user);
@@ -78,7 +79,7 @@ public class UserController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return "usermag/showuser";
+		return "redirect:/view/usermag/showuser.ftl";
 	}
 	
 	

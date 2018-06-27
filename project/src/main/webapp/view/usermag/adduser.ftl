@@ -36,10 +36,14 @@
                     <input class="easyui-validatebox" type="text" id="name" name="userName" data-options="required:true" />
                 </div>
                 <div class="col-md-3">
-                    <label for="gender">性别</label>
+                    <b>性别</b>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="gender" name="userGender" data-options="required:true" />
+                	<select id="gender" class="easyui-combobox" name="userGender" editable="false" style="width:247px;">  
+					    <option value="0">女</option>
+					    <option value="1">男</option>
+					    <option value="2" selected>其他</option>
+					</select>
                 </div>
                 <div class="col-md-3">
                     <label for="card">身份证号</label>
@@ -89,7 +93,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确认开通</button>
                 </div>
                 <div class="col-md-9">
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a id="btn" href="/project/view/usermag/showuser.ftl" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
                 </div>
             </div>
         </div>

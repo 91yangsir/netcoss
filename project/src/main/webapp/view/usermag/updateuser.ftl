@@ -88,7 +88,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">确认修改</button>
                 </div>
                 <div class="col-md-9">
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a id="btn" href="/project/view/usermag/showuser.ftl" class="easyui-linkbutton" data-options="iconCls:'icon-back'">返回</a>
                 </div>
             </div>
         </div>
