@@ -67,7 +67,7 @@ public class ManagerController {
 
 	@ResponseBody
 	@RequestMapping(value = "/add", method = { RequestMethod.POST }, produces = { "application/json;charset=utf-8" })
-	public String  Addmanager(ManagerBean manager, String roleName) {
+	public ManagerBean  Addmanager(ManagerBean manager, String roleName) {
 
 		RoleBean roleBean = powerQueryServiceImpl.findRoleByName(roleName);
 		RoleBean role = new RoleBean();
@@ -78,7 +78,7 @@ public class ManagerController {
 
 		
 
-		return "ok";
+		return manager;
 
 	}
 

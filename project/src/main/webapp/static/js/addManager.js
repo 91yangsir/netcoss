@@ -23,7 +23,7 @@ $(function(){
 	           dataType: 'json',          
 	           type: "POST",  
 	           // traditional: true,  
-	           success: function (res) {  
+	           success: function (msg) {  
 	        	  console.log(111111)
 	               location.href="/project/view/managermag/managerindex.ftl"  
 
