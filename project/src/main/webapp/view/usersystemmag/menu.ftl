@@ -11,7 +11,7 @@
 </head>
 <style>
     #center{
-     width: 300px;
+     width: 300px;  
         height: 300px;
         border: 1px solid black;
         position: absolute;

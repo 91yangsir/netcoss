@@ -12,7 +12,7 @@ $("#dg2").datagrid({
 	url : '/project/bill/get2?month='+month+"&acc="+businessAcc1,
 	columns : [ [ {
 		field : 'business',
-		title : '业务账号',
+		title : '业务账号',  
 		width : 80,
 		align : 'center'
 	

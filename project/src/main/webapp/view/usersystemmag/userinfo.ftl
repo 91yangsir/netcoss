@@ -12,7 +12,7 @@
     <script type="text/javascript" src="/project/static/js/usersystemmag/userinfo.js"></script>
     <script type="text/javascript" src="/project/static/bootstrap/js/DatePicker/WdatePicker.js"></script>
 </head>
-<body>
+<body>   
 <table id="tt" class="easyui-datagrid" style="width:900px;height:250px"
        title="个人信息" iconCls="icon-update"
        toolbar="#tb">

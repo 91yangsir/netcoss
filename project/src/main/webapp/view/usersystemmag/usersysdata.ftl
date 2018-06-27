@@ -12,7 +12,7 @@ var businessAcc1=0;
 $("#dg1").datagrid({
 	url : '/project/bill/get1?id='+billId+'&month='+month,
 	columns : [ [ {
-		field : 'businessAcc',
+		field : 'businessAcc ',
 		title : '账务账号',
 		width : 80,
 		align : 'center'
