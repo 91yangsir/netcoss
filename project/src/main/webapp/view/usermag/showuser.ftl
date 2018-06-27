@@ -3,7 +3,7 @@
 	
 
 <br/><br/>
-<div style="width: 1000px;margin-left: 100px;" id="show_div" class="row">
+<div style="width: 1000px;margin-left: 200px" id="show_div" class="row">
      <div class="row" id="row_div">
          <div class="col-md-4">
              <label for="userName">真实姓名&nbsp;&nbsp;&nbsp;</label><input type="text" name="userName" id="userName"/>
@@ -58,4 +58,3 @@
          </div>
      </div>
 </div>
-s

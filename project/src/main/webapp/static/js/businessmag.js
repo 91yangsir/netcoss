@@ -8,10 +8,9 @@ $(function() {
 	// 删除
 	$('#deleteBusiness').bind('click', function(){   
 		
-		var datas =  $('#business_table').datagrid('getSelections');  
-		var lenth = datas.length;
-		var id = datas.id;
-		if(lenth == 0){
+		var datas =  $('#business_table').datagrid('getSelected');  
+		
+		if(datas == null){
 			$.messager.show({
 				title:'提示',
 				msg:'请选择需要删除的数据！',
@@ -20,7 +19,7 @@ $(function() {
 			});
 		}else{
 			var jsonArray = $.toJSON(datas);
-			console.log(jsonArray);
+			var id = datas.id;
 			$.ajax({
 				   type: "DELETE",
 				   url: "business/delete?id="+id,
@@ -40,7 +39,10 @@ $(function() {
 		
     }); 
 	
-	
+});	
+
+
+$(function() {
 	//修改
 	$('#updateBusiness').bind('click', function(){   
 		var row =  $('#business_table').datagrid('getSelected'); 
@@ -64,24 +66,16 @@ $(function() {
 					showType:'slide'
 				});
 			}else{
-				
-				$('#update_dialog').dialog('open');
-				$('#update_id').val(row.id);
-				$('#update_version').val(row.version);
-				$('#update_customerName').val(row.customerName);
-				$('#update_loginName').val(row.loginName);
-				$('#update_telphone').val(row.telphone);
-				
-
-				
+				location.href="/project/business/update?id="+row.id;
+				console.log(34245353);
 			}
 		}
     });
 	
+});		
 	
 	
 	
-});	
 
 
 

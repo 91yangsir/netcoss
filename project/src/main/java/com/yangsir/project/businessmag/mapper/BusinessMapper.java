@@ -15,6 +15,7 @@ import org.apache.ibatis.mapping.FetchType;
 import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.CostBean;
 import com.yangsir.project.beans.Pager;
+import com.yangsir.project.beans.ServerBean;
 import com.yangsir.project.beans.UserBean;
 
 /**
@@ -42,6 +43,9 @@ public interface BusinessMapper {
 		
 		@Result(property="cost",column="fk_cost_id",javaType=CostBean.class,
 		one=@One(fetchType=FetchType.LAZY,select="com.yangsir.project.costmag.mapper.CostMapper.getCostBeanById")),
+		
+		@Result(property="server",column="fk_server_id",javaType=ServerBean.class,
+		one=@One(fetchType=FetchType.LAZY,select="com.yangsir.project.servermag.mapper.ServerMapper.getServerById")),
 	})
 	@Select(value= {"select * from t_business where id=#{id}"})
 	public BusinessBean getBusinessById(@Param("id")Long id);

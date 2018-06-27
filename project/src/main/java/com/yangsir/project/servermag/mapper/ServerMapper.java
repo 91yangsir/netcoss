@@ -39,6 +39,6 @@ public interface ServerMapper {
 		@Result(property="serverIp",column="server_ip",javaType=String.class),
 	})
 	@Select(value= {"select * from t_server where id=#{id}"})
-	public ServerBean getSeverById(Long id);
+	public ServerBean getServerById(@Param("id")Long id);
 	
 }

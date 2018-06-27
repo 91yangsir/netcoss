@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.yangsir.project.beans.BusinessBean;
 import com.yangsir.project.beans.CostBean;
@@ -61,7 +62,7 @@ public class BusinessController {
 			CostBean cost = new CostBean();
 			cost.setId(costMapper.getCostBeanById(costId).getId());
 			ServerBean server = new ServerBean();
-			server.setId(serverMapper.getSeverById(serverId).getId());
+			server.setId(serverMapper.getServerById(serverId).getId());
 			business.setUser(user);
 			business.setCost(cost);
 			business.setServer(server);
@@ -116,6 +117,45 @@ public class BusinessController {
 			e.printStackTrace();
 		}
 		return "";
+	}
+	
+	
+	/**
+	 * 修改业务帐号
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value="/update",method= {RequestMethod.GET})
+	public ModelAndView updateBusiness(Long id) {
+		BusinessBean business = businessQueryServiceImpl.getBusinessById(id);
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("businessmag/updatebusiness");
+		modelAndView.addObject("business", business);
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/update1",method= {RequestMethod.POST}, produces = {
+	"application/json;charset=utf-8" })
+	public String updateBusiness1(BusinessBean business,Long userId,Long costId,Long serverId) {
+		try {
+			UserBean user = new UserBean();
+			user.setId(userId);
+			CostBean cost = new CostBean();
+			cost.setId(costId);
+			ServerBean server = new ServerBean();
+			server.setId(serverId);
+			business.setUser(user);
+			business.setCost(cost);
+			business.setServer(server);
+			businessHandleServiceImpl.updateBusiness(business);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return "redirect:/view/businessmag/showbusiness.ftl";
 	}
 	
 	

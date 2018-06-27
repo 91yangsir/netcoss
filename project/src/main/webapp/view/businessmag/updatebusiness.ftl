@@ -24,45 +24,45 @@
 <br/>
 <h1 style="text-align: center;color: #e38d13"><b>修改业务信息</b></h1>
 
-<form id="business_form" method="post">
+<form id="business_form" action="/project/business/update1" method="post">
     <div style="width: 1000px;margin-left: 200px" id="update_div" class="row">
+    	<input type="hidden" value="${business.id}" id="businessId" name="id">
+    	<input type="hidden" value="${business.businessState}" id="businessState" name="businessState">
+    	<input type="hidden" value="${business.businessCostNext}" id="businessCostNext" name="businessCostNext">
+    	<input type="hidden" value="${business.user.id}" id="userId" name="userId">
+    	<input type="hidden" value="${business.cost.id}" id="costId" name="costId">
+    	<input type="hidden" value="${business.server.id}" id="serverId" name="serverId">
         <div class="col-md-8 col-md-offset-4">
             <div class="row" id="row_div">
                 <div class="col-md-3">
-                    <label for="user">账务帐号</label>
+                    <b>账务帐号</b>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="user" name="user" data-options="required:true" />
+                    <input class="easyui-validatebox" type="text" id="user" name="userAcc" value="${business.user.userAcc}" readonly/>
                 </div>
                 <div class="col-md-3">
-                    <label for="cost">资费类型</label>
+                	<b>资费类型</b>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="cost" name="cost" data-options="required:true" />
+                    <input class="easyui-validatebox" type="text" id="cost" name="costName" value="${business.cost.costName}" readonly/>
                 </div>
                 <div class="col-md-3">
-                    <label for="server">服务器</label>
+                	<b>服务器</b>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="server" name="server" data-options="required:true" />
+                    <input class="easyui-validatebox" type="text" id="server" name="serverIp" value="${business.server.serverIp}" readonly/>
                 </div>
                 <div class="col-md-3">
                     <label for="businessAcc">业务账号</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="businessAcc" name="businessAcc" data-options="required:true" />
+                    <input class="easyui-validatebox" type="text" id="businessAcc" name="businessAcc" value="${business.businessAcc}" />
                 </div>
                 <div class="col-md-3">
-                    <label for="pwd">原密码</label>
+                    <label for="businessPwd">密码</label>
                 </div>
                 <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="pwd" name="pwd" data-options="required:true" />
-                </div>
-                <div class="col-md-3">
-                    <label for="businessPwd">新密码</label>
-                </div>
-                <div class="col-md-9">
-                    <input class="easyui-validatebox" type="text" id="businessPwd" name="businessPwd" data-options="required:true" />
+                    <input class="easyui-validatebox" type="text" id="businessPwd" name="businessPwd" value="${business.businessPwd}" />
                 </div>
                 <div class="col-md-12"></div>
                 <div class="col-md-3">

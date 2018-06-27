@@ -66,7 +66,6 @@ $(function() {
 				});
 			}else{
 				location.href="/project/user/update?id="+row.id;
-				console.log(111);
 			}
 		}
     	});
